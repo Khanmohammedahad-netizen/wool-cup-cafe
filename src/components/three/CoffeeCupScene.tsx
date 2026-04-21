@@ -88,7 +88,7 @@ function FloatingBeans({ count = 15 }) {
   const pointsRef = useRef<THREE.Group>(null);
   
   const beans = useMemo(() => {
-    return Array.from({ count }).map(() => ({
+    return Array.from({ length: count }).map(() => ({
        position: new THREE.Vector3(
          (Math.random() - 0.5) * 6,
          (Math.random() - 0.5) * 6,
@@ -158,9 +158,7 @@ function Steam() {
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            count={40}
-            array={points}
-            itemSize={3}
+            args={[points, 3]}
           />
         </bufferGeometry>
         <PointMaterial 
