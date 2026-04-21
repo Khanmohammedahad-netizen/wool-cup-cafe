@@ -3,7 +3,7 @@
 import { ReactLenis } from '@studio-freight/react-lenis';
 import React, { ReactNode } from 'react';
 
-export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+export default function SmoothScroll({ children }: { children: any }) {
   return (
     <ReactLenis
       root
