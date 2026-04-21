@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+:root {
+  /* Core */
+  --bg-primary:       #080604;       /* Deep void black */
+  --bg-secondary:     #0D0A07;       /* Warm dark */
+  --bg-tertiary:      #111010;       /* Card surfaces */
+
+  /* Coffee spectrum */
+  --espresso:         #1A120B;       /* Darkest brown */
+  --mocha:            #2C1E12;       /* Rich brown */
+  --roast:            #3E2723;       /* Medium roast */
+  --brew:             #5D4037;       /* Brewed coffee */
+
+  /* Accent — warm gold/caramel */
+  --caramel:          #C8956C;       /* Primary accent */
+  --gold:             #D4A574;       /* Secondary accent */
+  --amber:            #E8C097;       /* Highlight */
+  --honey:            #F0D5A8;       /* Brightest warm */
+
+  /* Neutrals */
+  --cream:            #F5E6D3;       /* Primary text */
+  --latte:            #E8D5C0;       /* Secondary text */
+  --smoke:            #8B7355;       /* Muted text */
+  --ash:              #5A4A3A;       /* Disabled/subtle text */
+  --charcoal:         #2A2320;       /* Borders */
+
+  /* Functional */
+  --glass:            rgba(26, 18, 11, 0.6);
+  --glass-border:     rgba(200, 149, 108, 0.08);
+  --glow:             rgba(200, 149, 108, 0.04);
+
+  /* Typography */
+  --font-display:     'Playfair Display', Georgia, serif;
+  --font-body:        'Outfit', -apple-system, sans-serif;
+
+  /* Scale (fluid clamp) */
+  --text-hero:        clamp(3.5rem, 12vw, 9rem);      /* Hero headline */
+  --text-h1:          clamp(2.5rem, 6vw, 4.5rem);      /* Section headlines */
+  --text-h2:          clamp(1.8rem, 4vw, 3rem);        /* Sub-headlines */
+  --text-h3:          clamp(1.3rem, 2.5vw, 1.8rem);    /* Card titles */
+  --text-body:        clamp(0.95rem, 1.2vw, 1.1rem);   /* Body copy */
+  --text-small:       clamp(0.8rem, 1vw, 0.9rem);      /* Captions */
+  --text-micro:       clamp(0.65rem, 0.8vw, 0.75rem);  /* Labels, overlines */
+
+  /* Easing */
+  --ease-smooth:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-butter:      cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-snap:        cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-cinematic:   cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-caramel: var(--caramel);
+  --color-gold: var(--gold);
+  --color-amber: var(--amber);
+  --color-honey: var(--honey);
+  --color-cream: var(--cream);
+  --color-latte: var(--latte);
+  --color-smoke: var(--smoke);
+  --color-ash: var(--ash);
+  --color-charcoal: var(--charcoal);
+  
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--cream);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mocha);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--roast);
+}
+
+/* Lenis CSS */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
