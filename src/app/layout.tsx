@@ -1,28 +1,44 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { LenisProvider } from "@/lib/lenis-provider";
+import { CustomCursor } from "@/components/ui/CustomCursor";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const dmsans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dmsans",
+  weight: ["400", "500"],
+  display: "swap",
+});
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500"],
   style: ["normal", "italic"],
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wool-cup-cafe.vercel.app"),
-  title: "Wool Cup — Specialty Coffee | Film Nagar, Hyderabad",
-  description: "Specialty Coffee & Artisanal Food. Brewed for moments that matter. Film Nagar & Financial District, Hyderabad.",
-  keywords: "wool cup cafe, filmnagar cafe, hyderabad coffee, specialty coffee hyderabad, best cafe filmnagar",
+  title: "Wool Cup — Coffee, Quieted.",
+  description:
+    "Single-estate specialty coffee, hand-pulled espresso, and quiet mornings. Film Nagar, Hyderabad.",
+  keywords:
+    "wool cup, specialty coffee, hyderabad, film nagar, single-estate arabica, espresso, cafe",
   openGraph: {
-    title: "Wool Cup — Specialty Coffee | Film Nagar, Hyderabad",
-    description: "Brewed for moments that matter. Specialty coffee in the heart of Film Nagar.",
+    title: "Wool Cup — Coffee, Quieted.",
+    description:
+      "Single-estate specialty coffee, hand-pulled espresso, and quiet mornings.",
     type: "website",
     locale: "en_IN",
   },
@@ -35,9 +51,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body>
-        {children}
+    <html lang="en" className={`${playfair.variable} ${dmsans.variable} ${cormorant.variable}`}>
+      <body className="antialiased bg-bg-primary text-ink font-sans">
+        <ScrollProgress />
+        <CustomCursor />
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   );
