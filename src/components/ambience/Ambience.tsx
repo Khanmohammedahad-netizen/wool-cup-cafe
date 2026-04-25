@@ -4,12 +4,12 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const IMAGES = [
-  { src: '/images/cafe-interior.png', alt: 'Wool Cup café interior' },
-  { src: '/images/cup-closeup.png', alt: 'Latte art closeup' },
-  { src: '/images/cafe-interior.png', alt: 'Wool Cup ambience' },
-  { src: '/images/cup-closeup.png', alt: 'Detailed coffee shot' },
-  { src: '/images/cafe-interior.png', alt: 'Luxury seating area' },
-  { src: '/images/cup-closeup.png', alt: 'The craft of coffee' },
+  { src: '/images/new/exterior-wide.jpg', alt: 'Wool Cup café exterior' },
+  { src: '/images/new/interior-sofa.jpg', alt: 'Cozy interior seating' },
+  { src: '/images/new/interior-hand-chairs.jpg', alt: 'Unique hand-shaped chairs' },
+  { src: '/images/new/dessert-case.jpg', alt: 'Fresh dessert display' },
+  { src: '/images/new/interior-dining.jpg', alt: 'Elegant dining area' },
+  { src: '/images/new/interior-wide-cloud.jpg', alt: 'Atmospheric cloud lighting' },
 ];
 
 export function Ambience() {

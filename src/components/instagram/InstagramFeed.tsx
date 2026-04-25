@@ -7,12 +7,12 @@ import { InstagramTile } from './InstagramTile';
 import { GhostButton } from '@/components/ui/GhostButton';
 
 const placeholders = [
-  "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80",
-  "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
-  "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80",
-  "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80",
-  "https://images.unsplash.com/photo-1514432324607-a09d9b4aefda?w=600&q=80",
-  "https://images.unsplash.com/photo-1504630083234-14187a9df0f5?w=600&q=80",
+  "/images/new/cake-slice.jpg",
+  "/images/new/barista-pour.jpg",
+  "/images/new/exterior-night.jpg",
+  "/images/new/interior-hand-chairs.jpg",
+  "/images/new/dessert-case.jpg",
+  "/images/new/interior-sofa.jpg",
 ];
 
 export function InstagramFeed() {

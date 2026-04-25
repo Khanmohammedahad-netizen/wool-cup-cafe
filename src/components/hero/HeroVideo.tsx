@@ -18,7 +18,7 @@ export function HeroVideo() {
         loop
         playsInline
         preload="metadata"
-        poster="/images/cup-poster.jpg"
+        poster="/images/new/exterior-night.jpg"
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover animate-hero-poster brightness-[0.7]"
       >
