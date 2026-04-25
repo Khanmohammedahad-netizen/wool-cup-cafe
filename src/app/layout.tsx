@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmsans.variable} ${cormorant.variable}`}>
-      <body className="antialiased bg-bg-primary text-ink font-sans">
+      <body className="antialiased font-sans">
         <ScrollProgress />
         <CustomCursor />
         <LenisProvider>{children}</LenisProvider>

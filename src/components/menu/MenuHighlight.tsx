@@ -13,36 +13,48 @@ const menuItems = [
 
 export function MenuHighlight() {
   return (
-    <Section id="menu" className="bg-bg-primary">
-      <div className="max-w-[1000px] mx-auto">
-        <div className="mb-20 text-center">
-          <h2 className="font-serif text-display-md text-ink">Offerings.</h2>
+    <Section id="menu" className="bg-bg-dark">
+      <div className="max-w-[800px] mx-auto px-6">
+        <div className="mb-24 text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-serif text-[clamp(2.5rem,5vw,4rem)] text-text-light"
+          >
+            Offerings.
+          </motion.h2>
         </div>
 
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.2, once: true }}
-          className="flex flex-col"
+          viewport={{ amount: 0.1, once: true }}
+          className="space-y-12"
         >
           {menuItems.map((item, i) => (
             <motion.div 
               key={i} 
-              variants={fadeUp}
-              className="group border-b border-cream py-8 px-4 transition-colors duration-300 hover:bg-bg-secondary/50 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+              variants={{
+                hidden: { opacity: 0, x: -40 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+              }}
+              className="group"
             >
-              <div>
-                <h3 className="font-serif italic text-[28px] text-ink mb-2">
+              <div className="flex items-end justify-between mb-3">
+                <h3 className="font-serif italic text-[clamp(1.5rem,3vw,2rem)] text-text-light group-hover:text-gold transition-colors duration-300">
                   {item.name}
                 </h3>
-                <p className="font-accent italic text-[16px] text-mute">
-                  {item.desc}
-                </p>
+                <div className="dotted-leader hidden md:block" />
+                <span className="font-sans font-medium text-[clamp(1.1rem,2vw,1.25rem)] text-gold">
+                  {item.price}
+                </span>
               </div>
-              <span className="font-sans font-medium text-[18px] text-accent">
-                {item.price}
-              </span>
+              <p className="font-sans text-[14px] md:text-[15px] text-text-muted max-w-[85%]">
+                {item.desc}
+              </p>
+              <div className="mt-8 border-b border-border-dark" />
             </motion.div>
           ))}
         </motion.div>
@@ -50,3 +62,4 @@ export function MenuHighlight() {
     </Section>
   );
 }
+

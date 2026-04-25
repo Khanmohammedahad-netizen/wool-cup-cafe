@@ -6,10 +6,10 @@ export function HeroVideo() {
       <style>{`
         @keyframes kenBurns {
           0% { transform: scale(1); }
-          100% { transform: scale(1.05); }
+          100% { transform: scale(1.08); }
         }
         .animate-hero-poster {
-          animation: kenBurns 12s ease-in-out infinite alternate;
+          animation: kenBurns 20s ease-in-out infinite alternate;
         }
       `}</style>
       <video
@@ -20,10 +20,11 @@ export function HeroVideo() {
         preload="metadata"
         poster="/images/cup-poster.jpg"
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover animate-hero-poster"
+        className="absolute inset-0 w-full h-full object-cover animate-hero-poster brightness-[0.7]"
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
     </>
   );
 }
+

@@ -1,23 +1,22 @@
 @import "tailwindcss";
 
-/* ─── V3 LUXURY DESIGN TOKENS ─── */
+/* ─── V4 ESPRESSO & GOLD DESIGN TOKENS ─── */
 :root {
   /* Palette */
-  --color-bg-primary: #FAF7F2;
-  --color-bg-secondary: #F3EDE4;
-  --color-bg-tertiary: #EDE6DA;
-  --color-bg-hero: #FFFFFF;
-  --color-surface: #F7F3EC;
-  --color-rule: #D9CFBF;
-  --color-ink: #1A1A18;
-  --color-mute: #8A7E6F;
-  --color-accent: #5B6B56;
-  --color-accent-hover: #4A5843;
-  --color-brew: #6F4E37;
-  --color-cream: #E8DFD0;
+  --color-bg-dark: #0A0A0A;
+  --color-bg-footer: #050505;
+  --color-bg-cream: #F5F0E8;
+  --color-bg-latte: #E8DFD0;
+  --color-gold: #C9A84C;
+  --color-gold-hover: #E8C97A;
+  --color-text-light: #FAF7F2;
+  --color-text-dark: #1A1A1A;
+  --color-text-muted: #8A8478;
+  --color-border-dark: rgba(255, 255, 255, 0.1);
+  --color-border-light: #D4CFC5;
 
   /* Font stacks */
-  --font-serif: var(--font-playfair), var(--font-cormorant), Georgia, serif;
+  --font-serif: var(--font-cormorant), var(--font-playfair), Georgia, serif;
   --font-sans: var(--font-dmsans), system-ui, sans-serif;
   --font-accent: var(--font-cormorant), Georgia, serif;
 
@@ -26,18 +25,17 @@
 }
 
 @theme {
-  --color-bg-primary: var(--color-bg-primary);
-  --color-bg-secondary: var(--color-bg-secondary);
-  --color-bg-tertiary: var(--color-bg-tertiary);
-  --color-bg-hero: var(--color-bg-hero);
-  --color-surface: var(--color-surface);
-  --color-rule: var(--color-rule);
-  --color-ink: var(--color-ink);
-  --color-mute: var(--color-mute);
-  --color-accent: var(--color-accent);
-  --color-accent-hover: var(--color-accent-hover);
-  --color-brew: var(--color-brew);
-  --color-cream: var(--color-cream);
+  --color-bg-dark: var(--color-bg-dark);
+  --color-bg-footer: var(--color-bg-footer);
+  --color-bg-cream: var(--color-bg-cream);
+  --color-bg-latte: var(--color-bg-latte);
+  --color-gold: var(--color-gold);
+  --color-gold-hover: var(--color-gold-hover);
+  --color-text-light: var(--color-text-light);
+  --color-text-dark: var(--color-text-dark);
+  --color-text-muted: var(--color-text-muted);
+  --color-border-dark: var(--color-border-dark);
+  --color-border-light: var(--color-border-light);
 
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
@@ -62,8 +60,8 @@ html.lenis { height: auto; }
 
 /* ─── BASE ─── */
 body {
-  background: var(--color-bg-primary);
-  color: var(--color-ink);
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -76,10 +74,19 @@ body {
   position: fixed;
   inset: 0;
   background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E") repeat;
-  opacity: 0.025;
+  opacity: 0.04;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: multiply;
+  mix-blend-mode: overlay;
+}
+
+.dotted-leader {
+  flex-grow: 1;
+  border-bottom: 2px dotted var(--color-border-dark);
+  margin: 0 16px;
+  position: relative;
+  top: -8px;
+  opacity: 0.3;
 }
 
 /* ─── GLOBAL MOTION UTILITIES ─── */

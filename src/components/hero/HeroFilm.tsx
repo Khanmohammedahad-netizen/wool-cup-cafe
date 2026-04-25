@@ -20,7 +20,7 @@ export function HeroFilm() {
   return (
     <section
       ref={ref}
-      className="relative h-screen w-full overflow-hidden bg-bg-hero"
+      className="relative h-screen w-full overflow-hidden bg-bg-dark"
       aria-label="Hero"
     >
       {/* Video layer with parallax */}
@@ -31,20 +31,20 @@ export function HeroFilm() {
         <HeroVideo />
       </motion.div>
 
-      {/* Radial gradient overlay */}
+      {/* Dark gradient overlay */}
       <div
         className="absolute inset-0 pointer-events-none z-10"
         style={{
           background:
-            'radial-gradient(ellipse at center, rgba(255,255,255,0.25) 0%, rgba(247,247,245,0.85) 80%)',
+            'radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%)',
         }}
       />
 
-      {/* Bottom gradient transition to ivory */}
+      {/* Bottom gradient transition to espresso */}
       <div 
-        className="absolute bottom-0 left-0 right-0 h-[120px] pointer-events-none z-20"
+        className="absolute bottom-0 left-0 right-0 h-[240px] pointer-events-none z-20"
         style={{
-          background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--color-bg-primary) 100%)'
+          background: 'linear-gradient(to bottom, rgba(10,10,10,0) 0%, var(--color-bg-dark) 100%)'
         }}
       />
 
@@ -60,9 +60,9 @@ export function HeroFilm() {
           transition={{ duration: 0.6, ease: cinematic }}
           className="flex items-center gap-4 mb-8"
         >
-          <span className="text-eyebrow text-mute">SPECIALTY COFFEE</span>
-          <span className="w-4 h-px bg-rule"></span>
-          <span className="text-eyebrow text-mute">HYDERABAD</span>
+          <span className="text-eyebrow text-gold tracking-[0.4em]">SPECIALTY COFFEE</span>
+          <span className="w-4 h-px bg-gold/50"></span>
+          <span className="text-eyebrow text-gold tracking-[0.4em]">HYDERABAD</span>
         </motion.div>
 
         {/* Hero title */}
@@ -70,7 +70,7 @@ export function HeroFilm() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: cinematic }}
-          className="font-serif font-medium text-display-xl text-ink"
+          className="font-serif font-light text-[clamp(3rem,8vw,7rem)] leading-[1.1] text-text-light"
         >
           Coffee, quieted.
         </motion.h1>
@@ -78,18 +78,22 @@ export function HeroFilm() {
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
-          className="absolute bottom-12 flex flex-col items-center gap-3"
+          className="absolute bottom-12 flex flex-col items-center gap-4"
         >
-          <span className="text-eyebrow text-mute text-[10px]">
+          <span className="text-eyebrow text-gold text-[10px] tracking-[0.4em]">
             SCROLL
           </span>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
+            animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-px h-8 bg-gradient-to-b from-brew to-transparent"
-          />
+            className="text-gold"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+            </svg>
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>

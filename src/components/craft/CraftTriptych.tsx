@@ -1,8 +1,51 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { fadeUp, staggerContainer } from '@/lib/motion';
+
+const stats = [
+  { label: 'Cups Served', value: 12000, suffix: '+' },
+  { label: 'Rating', value: 4.9, suffix: '' },
+  { label: 'Bean Score', value: 86, suffix: '+' },
+  { label: 'Est.', value: 2024, suffix: '' },
+];
+
+function StatCounter({ value, suffix, label }: { value: number; suffix: string; label: string }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = value;
+    const duration = 2000;
+    const increment = end / (duration / 16);
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(start);
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [value]);
+
+  return (
+    <div className="text-center">
+      <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-serif text-gold mb-2">
+        {value % 1 === 0 ? Math.floor(count).toLocaleString() : count.toFixed(1)}
+        {suffix}
+      </div>
+      <div className="text-eyebrow text-text-muted text-[10px] tracking-[0.2em]">
+        {label}
+      </div>
+    </div>
+  );
+}
 
 const craftItems = [
   {
@@ -21,8 +64,21 @@ const craftItems = [
 
 export function CraftTriptych() {
   return (
-    <Section id="story" className="bg-bg-secondary">
+    <Section id="story" className="bg-bg-cream">
       <div className="max-w-[1400px] mx-auto">
+        {/* Stats Row */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32"
+        >
+          {stats.map((stat, i) => (
+            <StatCounter key={i} {...stat} />
+          ))}
+        </motion.div>
+
+        {/* Craft Cards */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -34,10 +90,10 @@ export function CraftTriptych() {
             <motion.div 
               key={i} 
               variants={fadeUp} 
-              className="flex flex-col bg-surface border-t-2 border-accent px-8 py-10 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-[400ms] ease-out"
+              className="flex flex-col bg-bg-latte border border-border-light border-t-4 border-t-gold px-10 py-12 shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-[500ms] ease-out group"
             >
-              <h3 className="font-serif text-[24px] text-ink mb-4">{item.title}</h3>
-              <p className="font-sans text-[16px] text-mute leading-relaxed max-w-sm">
+              <h3 className="font-serif text-[28px] text-text-dark mb-6 group-hover:text-gold transition-colors">{item.title}</h3>
+              <p className="font-sans text-[16px] text-text-muted leading-relaxed">
                 {item.desc}
               </p>
             </motion.div>
@@ -47,3 +103,4 @@ export function CraftTriptych() {
     </Section>
   );
 }
+

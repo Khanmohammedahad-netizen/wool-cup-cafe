@@ -20,7 +20,7 @@ export function Navbar() {
   const bg = useTransform(
     scrollY,
     [0, 60],
-    ['rgba(250,247,242,0)', 'rgba(250,247,242,0.85)']
+    ['rgba(10,10,10,0)', 'rgba(10,10,10,0.85)']
   );
   const blur = useTransform(
     scrollY,
@@ -39,14 +39,14 @@ export function Navbar() {
         {/* Bottom border */}
         <motion.div
           style={{ opacity: borderOpacity }}
-          className="absolute bottom-0 left-0 right-0 h-px bg-cream"
+          className="absolute bottom-0 left-0 right-0 h-px bg-white/10"
         />
 
         <div className="h-full max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="font-accent text-[18px] font-normal tracking-[0.25em] text-ink transition-all duration-300"
+            className="font-serif text-[20px] font-normal tracking-[0.25em] text-text-light transition-all duration-300"
           >
             WOOL CUP
           </Link>
@@ -57,7 +57,7 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="font-sans text-[14px] font-normal tracking-[0.08em] text-ink/70 hover:text-ink transition-all duration-300 ease-in-out"
+                className="font-sans text-[14px] font-normal tracking-[0.08em] text-text-light/70 hover:text-gold transition-all duration-300 ease-in-out"
               >
                 {link.name}
               </a>
@@ -66,7 +66,7 @@ export function Navbar() {
 
           {/* Right: CTA + Hamburger */}
           <div className="flex items-center gap-4">
-            <button className="hidden md:inline-flex bg-accent text-white rounded-full px-6 py-2 text-sm font-sans font-medium transition-all duration-400 ease-in-out hover:bg-accent-hover">
+            <button className="hidden md:inline-flex border border-gold text-gold rounded-full px-6 py-2 text-sm font-sans font-medium transition-all duration-400 ease-in-out hover:bg-gold hover:text-bg-dark">
               Reserve
             </button>
 
@@ -76,8 +76,8 @@ export function Navbar() {
               className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px]"
               aria-label="Open menu"
             >
-              <span className="block w-5 h-[1px] bg-ink" />
-              <span className="block w-5 h-[1px] bg-ink" />
+              <span className="block w-5 h-[1px] bg-text-light" />
+              <span className="block w-5 h-[1px] bg-text-light" />
             </button>
           </div>
         </div>
