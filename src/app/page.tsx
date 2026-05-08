@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Navbar } from '@/components/navbar/Navbar';
 import { HeroFilm } from '@/components/hero/HeroFilm';
 import { FoundersPreview } from '@/components/founders/FoundersPreview';
@@ -11,6 +12,16 @@ import { MenuHighlight } from '@/components/menu/MenuHighlight';
 import { InstagramFeed } from '@/components/instagram/InstagramFeed';
 import { Locations } from '@/components/locations/Locations';
 import { Footer } from '@/components/footer/Footer';
+
+export const metadata: Metadata = {
+  title: 'Wool Cup Urban Café & Bistro — Hyderabad',
+  description: 'A slow café for honest coffee, handcrafted food, and quiet mornings. Located in Hyderabad.',
+  openGraph: {
+    title: 'Wool Cup Urban Café & Bistro',
+    description: 'Honest coffee. Handcrafted food. Hyderabad.',
+    images: ['/images/new/hero-espresso.jpg'],
+  },
+};
 
 export default function Home() {
   return (

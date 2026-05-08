@@ -3,78 +3,115 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+const NAV_LINKS = [
+  { name: 'Story', href: '/about' },
+  { name: 'Menu', href: '/menu' },
+  { name: 'Cakes', href: '/cakes' },
+  { name: 'Space', href: '/#ambience' },
+  { name: 'Visit', href: '/#locations' },
+];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Story', href: '/about' },
-    { name: 'Menu', href: '/menu' },
-    { name: 'Cakes', href: '/cakes' },
-    { name: 'Philosophy', href: '#philosophy' },
-    { name: 'Origin', href: '#origin' },
-    { name: 'Offerings', href: '#offerings' },
-    { name: 'Space', href: '#space' },
-    { name: 'Visit', href: '#locations' },
-  ];
+  const isActive = (href: string) => {
+    if (href.startsWith('/#')) return false;
+    return pathname === href;
+  };
+
+  const textColor = scrolled
+    ? 'text-[#231f20]'
+    : 'text-white';
+
+  const linkColor = scrolled
+    ? 'text-[#231f20]/70 hover:text-[#231f20]'
+    : 'text-white/70 hover:text-white';
+
+  const activeColor = scrolled ? 'text-[#231f20]' : 'text-white';
+  const borderColor = scrolled ? 'border-[#231f20]' : 'border-white';
+  const hamburgerColor = scrolled ? 'bg-[#231f20]' : 'bg-white';
 
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-          scrolled ? 'bg-surface/80 backdrop-blur-md shadow-sm' : 'bg-surface'
-        } border-b border-border px-5 py-4 lg:bg-transparent lg:border-none lg:shadow-none lg:pt-6`}
+          scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
+        } px-5 py-4 lg:pt-6`}
       >
-        <div className="max-w-[1100px] mx-auto flex items-center justify-between lg:glass lg:rounded-full lg:px-8 lg:py-3 lg:shadow-xl lg:shadow-black/5">
-          <Link href="/" className="font-display text-[1rem] tracking-[0.18em] font-medium text-text uppercase">
-            WOOL CUP
+        <div className="max-w-[1100px] mx-auto flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex flex-col leading-none">
+            <span className={`font-display text-[1rem] tracking-[0.2em] font-medium uppercase transition-colors duration-300 ${textColor}`}>
+              WOOL CUP
+            </span>
+            <span className={`font-ui text-[0.55rem] tracking-[0.22em] uppercase transition-colors duration-300 ${scrolled ? 'text-[#231f20]/40' : 'text-white/50'}`}>
+              URBAN CAFÉ &amp; BISTRO
+            </span>
           </Link>
 
+          {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-10">
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-ui text-[0.8rem] tracking-[0.1em] font-medium uppercase text-text/70 hover:text-dark transition-colors"
+                className={`font-ui text-[0.8rem] tracking-[0.1em] font-medium uppercase transition-colors duration-300 ${
+                  isActive(link.href) ? activeColor : linkColor
+                } relative group`}
               >
                 {link.name}
+                {isActive(link.href) && (
+                  <span className={`absolute -bottom-1 left-0 right-0 h-px ${scrolled ? 'bg-[#231f20]' : 'bg-white'}`} />
+                )}
               </Link>
             ))}
           </div>
 
-          <Link
-            href="#locations"
-            className="hidden lg:block border border-dark text-dark font-ui text-[0.8rem] tracking-[0.12em] font-medium uppercase px-5 py-2 rounded-full hover:bg-dark hover:text-white transition-all duration-300"
+          {/* Reserve CTA */}
+          <a
+            href="https://www.instagram.com/woolcup/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`hidden lg:block border font-ui text-[0.8rem] tracking-[0.12em] font-medium uppercase px-5 py-2 rounded-full transition-all duration-300 ${
+              scrolled
+                ? 'border-[#231f20] text-[#231f20] hover:bg-[#231f20] hover:text-white'
+                : 'border-white text-white hover:bg-white hover:text-[#231f20]'
+            }`}
           >
             Reserve
-          </Link>
+          </a>
 
+          {/* Hamburger */}
           <button
             onClick={() => setIsOpen(true)}
-            className="lg:hidden flex flex-col gap-[6px] w-[22px] group"
+            className="lg:hidden flex flex-col gap-[6px] w-[22px]"
             aria-label="Open menu"
           >
-            <span className="w-full h-[1.5px] bg-text" />
-            <span className="w-full h-[1.5px] bg-text" />
+            <span className={`w-full h-[1.5px] transition-colors duration-300 ${hamburgerColor}`} />
+            <span className={`w-full h-[1.5px] transition-colors duration-300 ${hamburgerColor}`} />
           </button>
         </div>
       </nav>
 
+      {/* Mobile overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[200] bg-bg flex flex-col items-center justify-center"
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[200] bg-[#231f20] flex flex-col items-center justify-center"
           >
             <button
               onClick={() => setIsOpen(false)}
@@ -82,29 +119,55 @@ export function Navbar() {
               aria-label="Close menu"
             >
               <div className="relative w-6 h-6">
-                <span className="absolute top-1/2 left-0 w-full h-[1.5px] bg-text rotate-45" />
-                <span className="absolute top-1/2 left-0 w-full h-[1.5px] bg-text -rotate-45" />
+                <span className="absolute top-1/2 left-0 w-full h-[1.5px] bg-white rotate-45" />
+                <span className="absolute top-1/2 left-0 w-full h-[1.5px] bg-white -rotate-45" />
               </div>
             </button>
 
-            <div className="flex flex-col items-center gap-8">
-              {navLinks.map((link, i) => (
+            <div className="flex flex-col items-center gap-8 mb-12">
+              {NAV_LINKS.map((link, i) => (
                 <motion.div
                   key={link.name}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.06, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ delay: 0.08 + i * 0.06, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="font-display text-[2rem] text-text hover:text-dark transition-colors"
+                    className={`font-display text-[2rem] transition-colors ${
+                      isActive(link.href) ? 'text-[#ead8b5]' : 'text-white hover:text-[#ead8b5]'
+                    }`}
                   >
                     {link.name}
                   </Link>
                 </motion.div>
               ))}
             </div>
+
+            {/* Mobile footer links */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.45, duration: 0.5 }}
+              className="flex items-center gap-6"
+            >
+              <a
+                href="https://instagram.com/woolcup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-ui text-xs uppercase tracking-[0.15em] text-white/40 hover:text-white/80 transition-colors"
+              >
+                Instagram
+              </a>
+              <span className="text-white/20">·</span>
+              <a
+                href="tel:+917292944244"
+                className="font-ui text-xs uppercase tracking-[0.15em] text-white/40 hover:text-white/80 transition-colors"
+              >
+                +91 72929 44244
+              </a>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
