@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const IMAGES = [
   { src: '/images/new/exterior-wide.jpg', alt: 'Wool Cup café exterior' },
@@ -13,89 +13,68 @@ const IMAGES = [
 ];
 
 export function Ambience() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start'],
-  });
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    const handleScroll = () => {
+      const progress = el.scrollLeft / (el.scrollWidth - el.clientWidth);
+      setScrollProgress(progress || 0);
+    };
+    el.addEventListener('scroll', handleScroll);
+    return () => el.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <section 
+    <section
       id="ambience"
-      ref={containerRef} 
-      className="py-section overflow-hidden bg-bg-dark"
+      className="py-24 bg-bg-secondary overflow-hidden"
       aria-label="Cafe Ambience"
     >
-      <motion.div style={{ y }} className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="mb-20">
-          <motion.span 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="block font-sans font-medium text-[11px] tracking-[0.4em] text-gold uppercase mb-6"
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="font-display font-[300] text-[56px] text-text-primary text-center"
+        >
+          The Space.
+        </motion.h2>
+      </div>
+
+      <div
+        ref={scrollContainerRef}
+        className="flex gap-6 px-[8vw] overflow-x-auto scrollbar-hide scroll-snap-x mandatory pb-12 cursor-grab active:cursor-grabbing"
+      >
+        {IMAGES.map((img, i) => (
+          <div
+            key={i}
+            className="min-w-[85vw] md:min-w-[45vw] aspect-[4/3] rounded-2xl overflow-hidden scroll-snap-start relative group"
           >
-            THE SPACE
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif font-medium text-display-xl text-text-light"
-          >
-            Ambience.
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif italic text-[20px] text-text-muted mt-6"
-          >
-            Designed for slow mornings and quiet conversations.
-          </motion.p>
+            <motion.img
+              initial={{ scale: 1.1, opacity: 0.3 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="flex justify-center mt-12">
+        <div className="relative w-[200px] h-[2px] bg-border">
+          <motion.div
+            className="absolute top-0 left-0 h-full bg-cream"
+            style={{ width: `${scrollProgress * 100}%` }}
+          />
         </div>
-
-        {/* CSS Grid Masonry Collage */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[350px]">
-          {IMAGES.map((img, i) => {
-            let spanClass = '';
-            if (i === 0) spanClass = 'col-span-1 row-span-2'; // Tall
-            else if (i === 1) spanClass = 'col-span-1 row-span-1';
-            else if (i === 2) spanClass = 'col-span-1 row-span-1 hidden md:block';
-            else if (i === 3) spanClass = 'col-span-1 row-span-1';
-            else if (i === 4) spanClass = 'col-span-1 row-span-1';
-            else if (i === 5) spanClass = 'col-span-2 md:col-span-2 row-span-1'; // Wide
-
-            if (!spanClass) spanClass = 'col-span-1 row-span-1';
-
-            return (
-              <motion.div 
-                key={i} 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ amount: 0.1, once: true }}
-                transition={{ duration: 1.2, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className={`relative overflow-hidden rounded-lg bg-bg-footer ${spanClass} group shadow-lg`}
-              >
-                <img 
-                  src={img.src} 
-                  alt={img.alt} 
-                  className="w-full h-full object-cover transition-all duration-[800ms] ease-out group-hover:scale-[1.05] group-hover:brightness-110"
-                  loading="lazy"
-                />
-                {/* Subtle vignette on each image */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-              </motion.div>
-            );
-          })}
-        </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
-

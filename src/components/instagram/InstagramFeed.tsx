@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { staggerContainer, fadeUp } from '@/lib/motion';
 import { InstagramTile } from './InstagramTile';
-import { GhostButton } from '@/components/ui/GhostButton';
 
 const placeholders = [
   "/images/new/cake-slice.jpg",
@@ -17,16 +16,27 @@ const placeholders = [
 
 export function InstagramFeed() {
   return (
-    <Section className="bg-bg-cream">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-6">
-          <div>
-            <h2 className="font-serif text-[clamp(2.5rem,5vw,4rem)] text-text-dark mb-4">Community.</h2>
-            <p className="font-sans text-[16px] text-text-muted">@woolcupcafe</p>
-          </div>
-          <a href="https://instagram.com/woolcup" target="_blank" rel="noopener noreferrer" className="border border-gold text-gold px-8 py-3 rounded-full font-sans font-medium text-[14px] hover:bg-gold hover:text-bg-dark transition-all duration-300">
-            Follow Us
-          </a>
+    <Section className="bg-bg-secondary py-24">
+      <div className="max-w-[1000px] mx-auto px-[5vw]">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display font-light text-[56px] text-text-primary"
+          >
+            Community.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="font-ui text-[14px] text-text-tertiary tracking-[0.15em] mt-2"
+          >
+            @woolcupcafe
+          </motion.p>
         </div>
 
         <motion.div
@@ -34,7 +44,7 @@ export function InstagramFeed() {
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.1, once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 gap-6"
+          className="grid grid-cols-2 md:grid-cols-3 gap-3"
         >
           {placeholders.map((src, i) => (
             <motion.div key={i} variants={fadeUp}>
@@ -42,6 +52,21 @@ export function InstagramFeed() {
             </motion.div>
           ))}
         </motion.div>
+
+        <div className="flex justify-center mt-12">
+          <motion.a
+            href="https://instagram.com/woolcup"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="border border-dark text-dark px-10 py-3 rounded-full font-ui font-medium text-[13px] uppercase tracking-[0.15em] hover:bg-dark hover:text-white transition-all duration-300"
+          >
+            Follow Us
+          </motion.a>
+        </div>
       </div>
     </Section>
   );

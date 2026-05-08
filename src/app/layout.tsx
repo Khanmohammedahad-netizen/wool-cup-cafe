@@ -1,30 +1,27 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Playfair_Display, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, Libre_Baskerville, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/lib/lenis-provider";
-import { CustomCursor } from "@/components/ui/CustomCursor";
-import { ScrollProgress } from "@/components/ui/ScrollProgress";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const dmsans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dmsans",
-  weight: ["400", "500"],
-  display: "swap",
-});
+import { LoadingScreen } from "@/components/ui/LoadingScreen";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-cormorant",
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-ui",
   display: "swap",
 });
 
@@ -51,11 +48,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmsans.variable} ${cormorant.variable}`}>
-      <body className="antialiased font-sans">
-        <ScrollProgress />
-        <CustomCursor />
-        <LenisProvider>{children}</LenisProvider>
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${libreBaskerville.variable} ${dmSans.variable}`}
+    >
+      <body className="antialiased bg-bg text-text selection:bg-cream selection:text-dark">
+        <LenisProvider>
+          <LoadingScreen />
+          {children}
+        </LenisProvider>
       </body>
     </html>
   );

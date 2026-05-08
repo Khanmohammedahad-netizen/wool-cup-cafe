@@ -1,93 +1,110 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { GhostButton } from '@/components/ui/GhostButton';
-import { MobileNavSheet } from './MobileNavSheet';
-
-const navLinks = [
-  { name: 'Story', href: '#story' },
-  { name: 'Menu', href: '#menu' },
-  { name: 'Ambience', href: '#ambience' },
-  { name: 'Visit', href: '#visit' },
-];
 
 export function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const { scrollY } = useScroll();
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const bg = useTransform(
-    scrollY,
-    [0, 60],
-    ['rgba(10,10,10,0)', 'rgba(10,10,10,0.85)']
-  );
-  const blur = useTransform(
-    scrollY,
-    [0, 60],
-    ['blur(0px)', 'blur(12px)']
-  );
-  const borderOpacity = useTransform(scrollY, [0, 60], [0, 1]);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'Philosophy', href: '#philosophy' },
+    { name: 'Origin', href: '#origin' },
+    { name: 'Offerings', href: '#offerings' },
+    { name: 'Space', href: '#space' },
+    { name: 'Visit', href: '#visit' },
+  ];
 
   return (
     <>
-      <motion.nav
-        aria-label="Primary"
-        style={{ backgroundColor: bg, backdropFilter: blur, WebkitBackdropFilter: blur }}
-        className="fixed top-0 left-0 right-0 z-50 h-[52px] md:h-[56px]"
+      <nav
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+          scrolled ? 'bg-surface/80 backdrop-blur-md shadow-sm' : 'bg-surface'
+        } border-b border-border px-5 py-4 lg:bg-transparent lg:border-none lg:shadow-none lg:pt-6`}
       >
-        {/* Bottom border */}
-        <motion.div
-          style={{ opacity: borderOpacity }}
-          className="absolute bottom-0 left-0 right-0 h-px bg-white/10"
-        />
-
-        <div className="h-full max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="font-serif text-[20px] font-normal tracking-[0.25em] text-text-light transition-all duration-300"
-          >
+        <div className="max-w-[1100px] mx-auto flex items-center justify-between lg:glass lg:rounded-full lg:px-8 lg:py-3 lg:shadow-xl lg:shadow-black/5">
+          <Link href="/" className="font-display text-[1rem] tracking-[0.18em] font-medium text-text uppercase">
             WOOL CUP
           </Link>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
-                className="font-sans text-[14px] font-normal tracking-[0.08em] text-text-light/70 hover:text-gold transition-all duration-300 ease-in-out"
+                className="font-ui text-[0.8rem] tracking-[0.1em] font-medium uppercase text-text/70 hover:text-dark transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-          </nav>
-
-          {/* Right: CTA + Hamburger */}
-          <div className="flex items-center gap-4">
-            <button className="hidden md:inline-flex border border-gold text-gold rounded-full px-6 py-2 text-sm font-sans font-medium transition-all duration-400 ease-in-out hover:bg-gold hover:text-bg-dark">
-              Reserve
-            </button>
-
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setMobileOpen(true)}
-              className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px]"
-              aria-label="Open menu"
-            >
-              <span className="block w-5 h-[1px] bg-text-light" />
-              <span className="block w-5 h-[1px] bg-text-light" />
-            </button>
           </div>
-        </div>
-      </motion.nav>
 
-      <MobileNavSheet
-        open={mobileOpen}
-        onClose={() => setMobileOpen(false)}
-        links={navLinks}
-      />
+          <Link
+            href="#visit"
+            className="hidden lg:block border border-dark text-dark font-ui text-[0.8rem] tracking-[0.12em] font-medium uppercase px-5 py-2 rounded-full hover:bg-dark hover:text-white transition-all duration-300"
+          >
+            Reserve
+          </Link>
+
+          <button
+            onClick={() => setIsOpen(true)}
+            className="lg:hidden flex flex-col gap-[6px] w-[22px] group"
+            aria-label="Open menu"
+          >
+            <span className="w-full h-[1.5px] bg-text" />
+            <span className="w-full h-[1.5px] bg-text" />
+          </button>
+        </div>
+      </nav>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[200] bg-bg flex flex-col items-center justify-center"
+          >
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center"
+              aria-label="Close menu"
+            >
+              <div className="relative w-6 h-6">
+                <span className="absolute top-1/2 left-0 w-full h-[1.5px] bg-text rotate-45" />
+                <span className="absolute top-1/2 left-0 w-full h-[1.5px] bg-text -rotate-45" />
+              </div>
+            </button>
+
+            <div className="flex flex-col items-center gap-8">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.06, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="font-display text-[2rem] text-text hover:text-dark transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

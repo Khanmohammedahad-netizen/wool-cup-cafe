@@ -1,36 +1,38 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export function Manifesto() {
-  const text = "Every cup is a pause. We make pauses worth keeping.";
-  
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    gsap.fromTo(textRef.current,
+      { opacity: 0, y: 25 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: containerRef.current, start: 'top 85%' },
+      }
+    );
+  }, []);
+
   return (
-    <section
-      aria-label="Manifesto"
-      className="py-20 bg-bg-dark border-y border-border-dark overflow-hidden flex items-center justify-center relative"
-    >
-      <div className="flex whitespace-nowrap">
-        {[...Array(4)].map((_, i) => (
-          <motion.div
-            key={i}
-            initial={{ x: 0 }}
-            animate={{ x: "-100%" }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="flex items-center gap-12 px-6"
-          >
-            <span className="font-serif text-[clamp(2rem,6vw,4rem)] uppercase tracking-[0.3em] text-gold py-4">
-              {text}
-            </span>
-            <span className="text-gold text-2xl">•</span>
-          </motion.div>
-        ))}
+    <section id="philosophy" ref={containerRef} className="bg-bg py-16 px-6 lg:py-24">
+      <div className="max-w-[680px] mx-auto text-center">
+        <p
+          ref={textRef}
+          className="font-display text-[1.25rem] md:text-[1.65rem] text-text leading-[1.6] lg:leading-[1.7]"
+        >
+          We don't rush coffee. We don't rush mornings. Every cup is slowed down, stripped back, and made to be remembered.
+        </p>
       </div>
     </section>
   );
 }
-

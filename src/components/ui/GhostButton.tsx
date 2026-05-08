@@ -19,11 +19,11 @@ export function GhostButton({
 }: GhostButtonProps) {
   const baseClasses = cn(
     'inline-flex items-center justify-center',
-    'border border-brew text-brew',
-    'font-sans font-medium tracking-wide',
+    'border border-dark text-dark',
+    'font-ui font-medium tracking-wide',
     'transition-colors duration-300',
-    'hover:bg-brew hover:text-white',
-    'focus-visible:outline-1 focus-visible:outline-brew focus-visible:outline-offset-2',
+    'hover:bg-dark hover:text-white',
+    'focus-visible:outline-1 focus-visible:outline-dark focus-visible:outline-offset-2',
     size === 'sm' ? 'text-[13px] px-5 py-2' : 'text-sm px-8 py-3',
     className
   );

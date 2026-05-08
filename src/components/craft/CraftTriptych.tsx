@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
-import { fadeUp, staggerContainer } from '@/lib/motion';
 
 const stats = [
   { label: 'Cups Served', value: 12000, suffix: '+' },
@@ -36,11 +35,11 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
 
   return (
     <div className="text-center">
-      <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-serif text-gold mb-2">
+      <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-display text-cream mb-2">
         {value % 1 === 0 ? Math.floor(count).toLocaleString() : count.toFixed(1)}
         {suffix}
       </div>
-      <div className="text-eyebrow text-text-muted text-[10px] tracking-[0.2em]">
+      <div className="font-ui text-text-muted text-[10px] tracking-[0.2em] uppercase">
         {label}
       </div>
     </div>
@@ -50,57 +49,43 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
 const craftItems = [
   {
     title: 'Sourcing',
-    desc: 'Direct trade with shade-grown estates. We pay premiums for lots that score 86+ points.',
+    desc: 'Direct trade with shade-grown estates. We pay premiums for lots that score 86+ points, ensuring sustainability and quality in every bean.',
   },
   {
     title: 'Roasting',
-    desc: 'Light-to-medium profiles that honor the origin character, roasted weekly in small batches.',
+    desc: 'Light-to-medium profiles that honor the origin character. Each batch is roasted weekly in our small-lot facility to preserve delicate aromatics.',
   },
   {
     title: 'Serving',
-    desc: 'Dialed in daily. Served in warm ceramic. No artificial syrups, no compromises.',
+    desc: 'Dialed in daily. Served in warm ceramic. We believe in the ritual of coffee—no artificial syrups, no shortcuts, just pure intention.',
   },
 ];
 
 export function CraftTriptych() {
   return (
-    <Section id="story" className="bg-bg-cream">
-      <div className="max-w-[1400px] mx-auto">
-        {/* Stats Row */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32"
-        >
-          {stats.map((stat, i) => (
-            <StatCounter key={i} {...stat} />
-          ))}
-        </motion.div>
-
-        {/* Craft Cards */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.2, once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-16"
-        >
+    <Section className="bg-bg-primary py-24">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 lg:gap-20">
           {craftItems.map((item, i) => (
-            <motion.div 
-              key={i} 
-              variants={fadeUp} 
-              className="flex flex-col bg-bg-latte border border-border-light border-t-4 border-t-gold px-10 py-12 shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-[500ms] ease-out group"
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: i * 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col"
             >
-              <h3 className="font-serif text-[28px] text-text-dark mb-6 group-hover:text-gold transition-colors">{item.title}</h3>
-              <p className="font-sans text-[16px] text-text-muted leading-relaxed">
+              <h3 className="font-display text-[24px] font-medium text-text-primary">
+                {item.title}
+              </h3>
+              <div className="w-10 h-px bg-border my-5" />
+              <p className="font-body text-[16px] text-text-secondary leading-[1.7]">
                 {item.desc}
               </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </Section>
   );
 }
-

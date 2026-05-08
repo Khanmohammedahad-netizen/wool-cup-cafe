@@ -1,159 +1,149 @@
 @import "tailwindcss";
 
-/* ─── V4 ESPRESSO & GOLD DESIGN TOKENS ─── */
-:root {
-  /* Palette */
-  --color-bg-dark: #0A0A0A;
-  --color-bg-footer: #050505;
-  --color-bg-cream: #F5F0E8;
-  --color-bg-latte: #E8DFD0;
-  --color-gold: #C9A84C;
-  --color-gold-hover: #E8C97A;
-  --color-text-light: #FAF7F2;
-  --color-text-dark: #1A1A1A;
-  --color-text-muted: #8A8478;
-  --color-border-dark: rgba(255, 255, 255, 0.1);
-  --color-border-light: #D4CFC5;
-
-  /* Font stacks */
-  --font-serif: var(--font-cormorant), var(--font-playfair), Georgia, serif;
-  --font-sans: var(--font-dmsans), system-ui, sans-serif;
-  --font-accent: var(--font-cormorant), Georgia, serif;
-
-  /* Section spacing */
-  --section-y: clamp(6rem, 10vw, 10rem);
-}
-
 @theme {
-  --color-bg-dark: var(--color-bg-dark);
-  --color-bg-footer: var(--color-bg-footer);
-  --color-bg-cream: var(--color-bg-cream);
-  --color-bg-latte: var(--color-bg-latte);
-  --color-gold: var(--color-gold);
-  --color-gold-hover: var(--color-gold-hover);
-  --color-text-light: var(--color-text-light);
-  --color-text-dark: var(--color-text-dark);
-  --color-text-muted: var(--color-text-muted);
-  --color-border-dark: var(--color-border-dark);
-  --color-border-light: var(--color-border-light);
+  /* ── Brand palette ── */
+  --color-white: #FFFFFF;
+  --color-dark: #231f20;
+  --color-cream: #ead8b5;
 
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
-  --font-accent: var(--font-accent);
+  /* ── Background tokens ── */
+  --color-bg: #FDFAF5;
+  --color-bg-alt: #ead8b5;
+  --color-bg-primary: #FDFAF5;
+  --color-bg-secondary: #ead8b5;
+  --color-surface: #FFFFFF;
+
+  /* ── Text tokens ── */
+  --color-text: #231f20;
+  --color-text-mid: #57504e;
+  --color-text-soft: #9a9390;
+  --color-text-primary: #231f20;
+  --color-text-secondary: #57504e;
+  --color-text-tertiary: #9a9390;
+  --color-text-muted: #9a9390;
+
+  /* ── Accent tokens (gold mapped → cream) ── */
+  --color-gold: #ead8b5;
+  --color-gold-hover: #d4bc8e;
+  --color-accent: #ead8b5;
+  --color-brew: #ead8b5;
+
+  /* ── Border/line tokens ── */
+  --color-line: rgba(35, 31, 32, 0.12);
+  --color-border: rgba(35, 31, 32, 0.12);
+  --color-border-light: rgba(35, 31, 32, 0.06);
+
+  /* ── Font tokens (values injected by Next.js font classes on <html>) ── */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-ui: var(--font-ui);
 }
 
-
-/* ─── RESET ─── */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  /* Typography scale */
+  --display-xl: clamp(2.5rem, 6vw, 5rem);
+  --display-lg: clamp(2rem, 4.5vw, 3.25rem);
+  --display-md: clamp(1.25rem, 2.5vw, 1.5rem);
+  --body: clamp(0.95rem, 1.8vw, 1.05rem);
+  --label: 0.75rem;
+  --section-y: clamp(4rem, 8vw, 8rem);
 }
 
-/* ─── LENIS ─── */
-html { scroll-behavior: smooth; }
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply antialiased;
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-bg text-text font-body;
+    line-height: 1.75;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-text;
+    line-height: 1.1;
+  }
+}
+
+/* Lenis smooth scroll */
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
 .lenis.lenis-scrolling iframe { pointer-events: none; }
 
-/* ─── BASE ─── */
-body {
-  background: var(--color-bg-dark);
-  color: var(--color-text-light);
-  font-family: var(--font-sans);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer utilities {
+  .text-display-xl { font-size: var(--display-xl); line-height: 1.05; letter-spacing: -0.02em; }
+  .text-display-lg { font-size: var(--display-lg); line-height: 1.1; }
+  .text-display-md { font-size: var(--display-md); line-height: 1.3; }
+  .text-body       { font-size: var(--body); line-height: 1.75; color: var(--color-text-mid); }
+  .text-label      { font-size: var(--label); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-soft); font-family: var(--font-ui); }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .glass {
+    @apply backdrop-blur-md bg-white/75 border border-border;
+  }
+
+  /* Section spacing — used by Section.tsx */
+  .py-section {
+    padding-top: var(--section-y);
+    padding-bottom: var(--section-y);
+  }
+
+  /* Noise texture overlay — used by page.tsx */
+  .noise-overlay::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E") repeat;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 9998;
+    mix-blend-mode: overlay;
+  }
+
+  /* Entrance animations — used by page.tsx */
+  .fade-up-enter {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .fade-up-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1000ms cubic-bezier(0.22, 1, 0.36, 1), transform 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Dotted leader line */
+  .dotted-leader {
+    flex-grow: 1;
+    border-bottom: 2px dotted var(--color-border);
+    margin: 0 16px;
+    position: relative;
+    top: -8px;
+    opacity: 0.3;
+  }
+
+  /* Eyebrow label — used by CraftTriptych.tsx */
+  .text-eyebrow {
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-family: var(--font-ui);
+  }
+
+  /* Backward-compat font aliases — remove after component sweep in Task 4 */
+  .font-serif { font-family: var(--font-display); }
+  .font-sans { font-family: var(--font-ui); }
 }
 
-/* ─── TEXTURES & EFFECTS ─── */
-.noise-overlay::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E") repeat;
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: overlay;
-}
-
-.dotted-leader {
-  flex-grow: 1;
-  border-bottom: 2px dotted var(--color-border-dark);
-  margin: 0 16px;
-  position: relative;
-  top: -8px;
-  opacity: 0.3;
-}
-
-/* ─── GLOBAL MOTION UTILITIES ─── */
-.fade-up-enter {
-  opacity: 0;
-  transform: translateY(30px);
-}
-.fade-up-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1000ms cubic-bezier(0.22, 1, 0.36, 1), transform 1000ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-
-/* ─── TYPOGRAPHY SCALE ─── */
-.text-display-xl {
-  font-size: clamp(3.5rem, 8vw, 7.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-}
-
-.text-display-lg {
-  font-size: clamp(2.75rem, 5.5vw, 5rem);
-  line-height: 1.02;
-  letter-spacing: -0.015em;
-}
-
-.text-display-md {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-}
-
-.text-eyebrow {
-  font-size: 11px;
-  line-height: 1;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-
-/* ─── FONT UTILITIES ─── */
-.font-serif { font-family: var(--font-serif); }
-.font-sans { font-family: var(--font-sans); }
-
-/* ─── FOCUS RINGS ─── */
-:focus-visible {
-  outline: 1px solid var(--color-brew);
-  outline-offset: 2px;
-}
-
-/* ─── SELECTION ─── */
-::selection {
-  background: var(--color-brew);
-  color: white;
-}
-
-/* ─── SCROLLBAR HIDE ─── */
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-/* ─── SECTION SPACING ─── */
-.py-section {
-  padding-top: var(--section-y);
-  padding-bottom: var(--section-y);
-}
-
-/* ─── REDUCED MOTION ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
