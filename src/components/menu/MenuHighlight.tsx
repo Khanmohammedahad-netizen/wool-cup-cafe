@@ -65,6 +65,15 @@ export function MenuHighlight() {
             </motion.div>
           ))}
         </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="/menu"
+            className="font-ui text-sm uppercase tracking-wide text-dark relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-dark hover:after:w-full after:transition-all after:duration-500"
+          >
+            View Full Menu →
+          </a>
+        </div>
       </div>
     </Section>
   );
