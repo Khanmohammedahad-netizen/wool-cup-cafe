@@ -17,6 +17,7 @@ export function Navbar() {
   const navLinks = [
     { name: 'Story', href: '/about' },
     { name: 'Menu', href: '/menu' },
+    { name: 'Cakes', href: '/cakes' },
     { name: 'Philosophy', href: '#philosophy' },
     { name: 'Origin', href: '#origin' },
     { name: 'Offerings', href: '#offerings' },

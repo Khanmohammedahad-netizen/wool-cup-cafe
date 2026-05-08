@@ -137,6 +137,17 @@ export function Locations() {
                     {loc.hours}
                   </p>
                   <p className="font-body text-sm text-dark/70">{loc.phone}</p>
+                  <p className="font-body text-sm italic text-dark/60 mt-2">
+                    Planning something special?{' '}
+                    <a
+                      href="https://wa.me/917292944244?text=Hi%20Wool%20Cup!%20I'd%20like%20to%20inquire%20about%20a%20special%20event."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 hover:text-dark transition-colors"
+                    >
+                      Inquire →
+                    </a>
+                  </p>
                 </div>
                 <a
                   href={loc.ctaHref}
