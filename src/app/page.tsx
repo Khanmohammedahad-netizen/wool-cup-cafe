@@ -3,12 +3,13 @@ import { HeroFilm } from '@/components/hero/HeroFilm';
 import { FoundersPreview } from '@/components/founders/FoundersPreview';
 import { GlimpseGrid } from '@/components/glimpse/GlimpseGrid';
 import { Manifesto } from '@/components/manifesto/Manifesto';
+import { SocialProof } from '@/components/social-proof/SocialProof';
 import { CupSequence } from '@/components/cup-sequence/CupSequence';
 import { CraftTriptych } from '@/components/craft/CraftTriptych';
 import { Ambience } from '@/components/ambience/Ambience';
 import { MenuHighlight } from '@/components/menu/MenuHighlight';
 import { InstagramFeed } from '@/components/instagram/InstagramFeed';
-import { Visit } from '@/components/visit/Visit';
+import { Locations } from '@/components/locations/Locations';
 import { Footer } from '@/components/footer/Footer';
 
 export default function Home() {
@@ -19,12 +20,13 @@ export default function Home() {
       <FoundersPreview />
       <GlimpseGrid />
       <Manifesto />
+      <SocialProof />
       <CupSequence />
       <CraftTriptych />
       <Ambience />
       <MenuHighlight />
       <InstagramFeed />
-      <Visit />
+      <Locations />
       <Footer />
     </main>
   );
