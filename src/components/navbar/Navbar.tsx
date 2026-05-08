@@ -15,11 +15,12 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: 'Story', href: '/about' },
     { name: 'Philosophy', href: '#philosophy' },
     { name: 'Origin', href: '#origin' },
     { name: 'Offerings', href: '#offerings' },
     { name: 'Space', href: '#space' },
-    { name: 'Visit', href: '#visit' },
+    { name: 'Visit', href: '#locations' },
   ];
 
   return (
@@ -47,7 +48,7 @@ export function Navbar() {
           </div>
 
           <Link
-            href="#visit"
+            href="#locations"
             className="hidden lg:block border border-dark text-dark font-ui text-[0.8rem] tracking-[0.12em] font-medium uppercase px-5 py-2 rounded-full hover:bg-dark hover:text-white transition-all duration-300"
           >
             Reserve
