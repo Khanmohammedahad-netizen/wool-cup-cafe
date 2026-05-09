@@ -9,19 +9,19 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const MUST_TRY_ITEMS = [
   {
-    name: 'Vanilla Bean Latte',
-    description: 'House-made Madagascar vanilla syrup, silky microfoam.',
+    name: 'OG Cold Brew',
+    description: 'Straight-up, smooth, and slow-brewed. The one that keeps regulars coming back.',
+    price: '₹290',
+  },
+  {
+    name: 'Spanish Latte',
+    description: 'Sweetened condensed milk meets bold espresso for a rich, velvety finish. Hot or iced.',
     price: '₹340',
   },
   {
-    name: 'Chocolate Strawberries',
-    description: "Belgian couverture, fresh strawberries. Hyderabad's favourite.",
-    price: '₹380',
-  },
-  {
-    name: 'Cold Brew Reserve',
-    description: '24-hour steep. Bold, sweet, zero bitterness.',
-    price: '₹290',
+    name: 'Biscoff French Toast',
+    description: 'Our most-requested brunch item — buttery brioche, Lotus Biscoff, warm and golden.',
+    price: '₹445',
   },
 ];
 
@@ -71,7 +71,7 @@ export function MenuMustTries() {
           The Must-Tries
         </h2>
         <p className="font-body text-base text-[#231f20]/70 mt-4 max-w-xl mx-auto">
-          The dishes that keep Hyderabad coming back. Updated fortnightly.
+          The ones Hyderabad keeps coming back for.
         </p>
       </div>
 

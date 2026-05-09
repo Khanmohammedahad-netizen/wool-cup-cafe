@@ -9,14 +9,14 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const SEASONAL_ITEMS = [
   {
-    name: 'Mango Cold Brew',
-    description: 'Alphonso mango cold brew. Natural sweetness, zero sugar added.',
-    price: '₹320',
+    name: 'Yuzu Cold Brew',
+    description: 'Zesty Japanese yuzu meets our slow-brewed cold brew. Bright, citrusy, and utterly refreshing.',
+    price: '₹380',
   },
   {
-    name: 'Summer Berry Tart',
-    description: 'Seasonal berries, vanilla custard, almond crust. Limited daily.',
-    price: '₹360',
+    name: 'Lavender Sea Salt Matcha',
+    description: 'Ceremonial matcha layered with lavender and a whisper of sea salt. Floral, calm, complex.',
+    price: '₹430',
   },
 ];
 
@@ -63,10 +63,10 @@ export function MenuSeasonalSpecials() {
     >
       <div ref={headerRef} className="max-w-3xl mx-auto px-6 text-center mb-12">
         <h2 className="font-display text-3xl md:text-4xl text-[#231f20]">
-          What's in Season
+          Right Now
         </h2>
         <p className="font-body text-base text-[#231f20]/70 mt-4 max-w-xl mx-auto">
-          Our kitchen follows the calendar. These dishes celebrate the best ingredients of the moment and rotate with the seasons.
+          Two drinks worth making the trip for. Always rotating.
         </p>
       </div>
 
@@ -82,7 +82,7 @@ export function MenuSeasonalSpecials() {
             </div>
             <div className="p-6">
               <span className="font-ui text-[10px] uppercase tracking-widest bg-[#ead8b5] text-[#231f20] px-3 py-1 rounded-full inline-block mb-3">
-                Seasonal
+                Right Now
               </span>
               <h3 className="font-display text-2xl text-[#231f20]">{item.name}</h3>
               <p className="font-body text-sm italic text-[#231f20]/70 mt-1">{item.description}</p>

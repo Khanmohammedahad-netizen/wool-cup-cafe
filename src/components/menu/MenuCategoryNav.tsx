@@ -1,15 +1,15 @@
 'use client';
 
 export const CATEGORIES = [
-  { id: 'espresso', label: 'Espresso Bar' },
-  { id: 'pour-over', label: 'Pour Over' },
-  { id: 'cold-brew', label: 'Cold Brews' },
-  { id: 'signature', label: 'Signature' },
+  { id: 'classics',  label: 'Classics' },
+  { id: 'cold',      label: 'Cold Brews' },
+  { id: 'lattes',    label: 'Lattes' },
+  { id: 'frappes',   label: 'Frappes' },
+  { id: 'matcha',    label: 'Matcha & Tea' },
+  { id: 'food',      label: 'Bites & Burgers' },
+  { id: 'mains',     label: 'Mains & Pizzas' },
   { id: 'breakfast', label: 'Breakfast' },
-  { id: 'light-bites', label: 'Light Bites' },
-  { id: 'mains', label: 'Mains' },
-  { id: 'desserts', label: 'Desserts' },
-  { id: 'beverages', label: 'Beverages' },
+  { id: 'desserts',  label: 'Desserts' },
 ] as const;
 
 interface MenuCategoryNavProps {
