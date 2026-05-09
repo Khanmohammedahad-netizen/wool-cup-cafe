@@ -44,7 +44,7 @@ export function Footer() {
             {/* Brand column */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center mb-5 w-fit">
-                <WoolcupLogo variant="light" width={100} height={70} />
+                <WoolcupLogo variant="light" width={130} height={90} />
               </Link>
               <p className="font-body text-sm text-white/50 leading-relaxed max-w-[220px]">
                 Coffee, quieted. A place for slow mornings and honest meals.
