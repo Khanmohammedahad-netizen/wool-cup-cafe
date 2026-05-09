@@ -17,6 +17,7 @@ const LOCATIONS = [
     phone: '+91 72929 44244',
     ctaLabel: 'Get Directions →',
     ctaHref: 'https://www.google.com/maps?q=17.4137993,78.4062934',
+    mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.037130635467!2d78.40618067606774!3d17.41113060237905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb96bc72e8211b%3A0xc3c5d6e2467d022b!2sFilm%20Nagar%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
   },
   {
     image: '/images/financial-district/fd-02.webp',
@@ -27,6 +28,7 @@ const LOCATIONS = [
     phone: '+91 72929 44244',
     ctaLabel: 'Get Directions →',
     ctaHref: 'https://www.google.com/maps/search/Ground+Floor+Survey+88AA+My+Space+Properties+ADP+Blvd+Financial+District+Hyderabad+Telangana+500032',
+    mapSrc: 'https://maps.google.com/maps?q=ADP+Blvd+Financial+District+Hyderabad+Telangana+500032&output=embed',
   },
 ];
 
@@ -162,18 +164,28 @@ export function Locations() {
           ))}
         </div>
 
-        {/* Embedded map */}
-        <div className="mt-12 rounded-2xl overflow-hidden h-[300px] md:h-[400px] w-full border border-[#ead8b5] group">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.037130635467!2d78.40618067606774!3d17.41113060237905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb96bc72e8211b%3A0xc3c5d6e2467d022b!2sFilm%20Nagar%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            className="[filter:grayscale(100%)_contrast(0.9)_brightness(1.1)] group-hover:[filter:none] transition-all duration-[600ms]"
-            allowFullScreen={false}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+        {/* Embedded maps — one per location */}
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {LOCATIONS.map((loc) => (
+            <div key={`map-${loc.name}`} className="flex flex-col gap-3">
+              <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-dark/50">
+                {loc.name}
+              </p>
+              <div className="rounded-2xl overflow-hidden h-[280px] md:h-[340px] border border-[#ead8b5] group">
+                <iframe
+                  src={loc.mapSrc}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  className="[filter:grayscale(100%)_contrast(0.9)_brightness(1.1)] group-hover:[filter:none] transition-all duration-[600ms]"
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Map — Wool Cup ${loc.name}`}
+                />
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>
