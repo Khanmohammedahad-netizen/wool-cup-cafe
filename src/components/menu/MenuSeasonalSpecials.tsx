@@ -7,7 +7,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const SEASONAL_ITEMS = [
+interface SeasonalItem {
+  name: string;
+  description: string;
+  price: string;
+  image?: string;
+  video?: string;
+}
+
+const SEASONAL_ITEMS: SeasonalItem[] = [
   {
     name: 'Mango Season Special',
     description: 'It\'s mango season — and we\'re making the most of it. Ask us what\'s on today.',
