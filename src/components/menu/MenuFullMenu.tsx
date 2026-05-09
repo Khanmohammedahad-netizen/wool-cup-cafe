@@ -331,7 +331,7 @@ export function MenuFullMenu() {
   return (
     <section id="full-menu" ref={containerRef} className="bg-white">
       {/* Mobile sticky pills */}
-      <div className="lg:hidden sticky top-[57px] z-50 bg-[#ead8b5]/95 backdrop-blur-sm py-3 px-4">
+      <div className="lg:hidden sticky top-[136px] z-50 bg-[#ead8b5]/95 backdrop-blur-sm py-3 px-4">
         <MenuCategoryNav
           activeCategory={activeCategory}
           onCategoryClick={handleCategoryClick}
@@ -355,7 +355,7 @@ export function MenuFullMenu() {
               key={category.id}
               id={category.id}
               ref={(el) => { sectionRefs.current[i] = el; }}
-              className="mb-20 scroll-mt-28"
+              className="mb-20 scroll-mt-[190px] lg:scroll-mt-28"
             >
               <div className="flex items-center gap-4 mb-8">
                 <h2 className="font-display text-2xl md:text-3xl text-[#231f20] shrink-0">

@@ -24,7 +24,7 @@ export function InstagramFeed() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display font-light text-[56px] text-text-primary"
+            className="font-display font-light text-[32px] sm:text-[40px] md:text-[56px] text-text-primary"
           >
             Community.
           </motion.h2>

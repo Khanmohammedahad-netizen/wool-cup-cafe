@@ -22,9 +22,9 @@ interface GlimpseCardProps {
 }
 
 const SIZE_CLASSES: Record<CardSize, string> = {
-  standard: 'min-h-[300px]',
-  large: 'min-h-[400px]',
-  tall: 'min-h-[500px]',
+  standard: 'min-h-[200px] md:min-h-[300px]',
+  large: 'min-h-[240px] md:min-h-[400px]',
+  tall: 'min-h-[260px] md:min-h-[500px]',
 };
 
 function GlimpseCard({ image, label, title, description, href, size, className }: GlimpseCardProps) {

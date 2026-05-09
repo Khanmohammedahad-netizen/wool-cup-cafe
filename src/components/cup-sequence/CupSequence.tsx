@@ -54,7 +54,7 @@ export function CupSequence() {
           <div
             key={item.num}
             ref={(el) => { cardRefs.current[i] = el; }}
-            className={`px-6 py-10 lg:px-8 lg:py-14 bg-bg hover:bg-bg-alt transition-colors duration-400 group
+            className={`px-4 py-8 md:px-6 md:py-10 lg:px-8 lg:py-14 bg-bg hover:bg-bg-alt transition-colors duration-400 group
               ${i !== 0 ? 'border-t lg:border-t-0 lg:border-l' : ''} border-border`}
           >
             <span className="block font-ui text-[0.7rem] font-medium tracking-[0.1em] text-text-soft uppercase mb-5">

@@ -91,7 +91,7 @@ export function MenuSeasonalSpecials() {
             ref={(el) => { cardRefs.current[i] = el; }}
             className="bg-[#ead8b5]/20 border border-[#ead8b5] rounded-2xl overflow-hidden"
           >
-            <div className="h-[220px] relative overflow-hidden bg-[#ead8b5]/30">
+            <div className="h-[180px] md:h-[220px] relative overflow-hidden bg-[#ead8b5]/30">
               {'video' in item && item.video ? (
                 <video
                   src={item.video}

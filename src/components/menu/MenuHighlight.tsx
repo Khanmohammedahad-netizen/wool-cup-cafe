@@ -20,7 +20,7 @@ export function MenuHighlight() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display font-light text-4xl md:text-[56px] text-text-primary"
+            className="font-display font-light text-[28px] sm:text-[40px] md:text-[56px] text-text-primary"
           >
             Offerings.
           </motion.h2>
@@ -52,7 +52,7 @@ export function MenuHighlight() {
               `}
             >
               <div className="flex justify-between items-baseline mb-3">
-                <h3 className="font-display text-[26px] font-medium text-text-primary">
+                <h3 className="font-display text-[18px] sm:text-[22px] md:text-[26px] font-medium text-text-primary">
                   {item.name}
                 </h3>
                 <span className="font-ui font-medium text-[18px] text-dark">

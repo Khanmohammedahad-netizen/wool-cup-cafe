@@ -56,8 +56,8 @@ export function Navbar() {
           <Link href="/" className="flex items-center">
             <WoolcupLogo
               variant={scrolled ? 'dark' : 'light'}
-              width={120}
-              height={82}
+              width={150}
+              height={104}
             />
           </Link>
 
