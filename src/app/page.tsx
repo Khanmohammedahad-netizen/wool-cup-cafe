@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Navbar } from '@/components/navbar/Navbar';
 import { HeroFilm } from '@/components/hero/HeroFilm';
 import { FoundersPreview } from '@/components/founders/FoundersPreview';
 import { GlimpseGrid } from '@/components/glimpse/GlimpseGrid';
@@ -26,7 +25,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="relative flex flex-col bg-bg-primary min-h-screen noise-overlay fade-up-enter fade-up-enter-active">
-      <Navbar />
       <HeroFilm />
       <FoundersPreview />
       <GlimpseGrid />

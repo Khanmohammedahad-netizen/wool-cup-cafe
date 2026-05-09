@@ -2,25 +2,32 @@
 
 export function HeroVideo() {
   return (
-    <div className="relative w-full aspect-[9/16] md:aspect-video overflow-hidden">
+    <>
+      <style>{`
+        @keyframes kenBurns {
+          0% { transform: scale(1); }
+          100% { transform: scale(1.08); }
+        }
+        .animate-hero-poster {
+          animation: kenBurns 20s ease-in-out infinite alternate;
+        }
+      `}</style>
       <video
         autoPlay
         muted
         loop
         playsInline
-        poster="/images/cup-poster.jpg"
-        className="w-full h-full object-cover"
+        preload="metadata"
+        poster="/images/new/exterior-night.jpg"
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover animate-hero-poster brightness-[0.7]"
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
-      
-      {/* Subtle bottom gradient for text readability */}
-      <div 
-        className="absolute bottom-0 left-0 right-0 h-[40%] pointer-events-none"
-        style={{
-          background: 'linear-gradient(to top, rgba(28,28,28,0.7) 0%, transparent 100%)'
-        }}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'linear-gradient(to top, rgba(28,28,28,0.75) 0%, transparent 60%)' }}
       />
-    </div>
+    </>
   );
 }

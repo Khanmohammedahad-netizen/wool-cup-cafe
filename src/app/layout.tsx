@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Libre_Baskerville, DM_Sans } from "next/font/google
 import "./globals.css";
 import { LenisProvider } from "@/lib/lenis-provider";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
+import { Navbar } from "@/components/navbar/Navbar";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body className="antialiased bg-bg text-text selection:bg-cream selection:text-dark">
         <LenisProvider>
           <LoadingScreen />
+          <Navbar />
           {children}
         </LenisProvider>
       </body>

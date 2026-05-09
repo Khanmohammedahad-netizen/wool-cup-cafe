@@ -21,33 +21,36 @@ export function HeroFilm() {
   }, []);
 
   return (
-    <section className="relative w-full">
-      <HeroVideo />
+    <section className="relative w-full flex flex-col">
+      {/* Video + text overlay share this relative container */}
+      <div className="relative w-full aspect-[9/16] md:aspect-video overflow-hidden">
+        <HeroVideo />
 
-      {/* Text Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-16">
-        <div className="max-w-[1100px] mx-auto">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="block text-label text-white/70 mb-2 md:mb-4"
-          >
-            Specialty Coffee · Hyderabad
-          </motion.span>
+        {/* Text Overlay — inside the video container */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-16 z-10">
+          <div className="max-w-[1100px] mx-auto">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="block text-label text-white/70 mb-2 md:mb-4"
+            >
+              Specialty Coffee · Hyderabad
+            </motion.span>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-white text-display-xl max-w-[850px]"
-          >
-            Where every cup is a quiet ritual.
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="text-white text-display-xl max-w-[850px]"
+            >
+              Where every cup is a quiet ritual.
+            </motion.h1>
+          </div>
         </div>
       </div>
 
-      {/* Scroll Cue */}
+      {/* Scroll Cue — below the video */}
       <div className="flex flex-col items-center justify-center pt-8 pb-12">
         <div className="text-text-soft">
           <svg

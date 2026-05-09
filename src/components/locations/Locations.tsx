@@ -19,14 +19,14 @@ const LOCATIONS = [
     ctaHref: 'https://www.google.com/maps?q=17.4137993,78.4062934',
   },
   {
-    image: '/images/woolcup/interior-01.jpg',
+    image: '/images/financial-district/fd-02.webp',
     badge: 'New',
     name: 'Financial District',
-    address: 'Coming Soon — Financial District, Hyderabad',
-    hours: 'Opening hours to be announced',
+    address: 'Ground Floor Survey 88AA, My Space Properties, ADP Blvd, Financial District, Hyderabad, Makthakousarali, Telangana 500032',
+    hours: 'Mon — Sun · 8:00 AM — 11:30 PM',
     phone: '+91 72929 44244',
-    ctaLabel: 'Follow for updates →',
-    ctaHref: 'https://www.instagram.com/woolcupcafe',
+    ctaLabel: 'Get Directions →',
+    ctaHref: 'https://www.google.com/maps/search/Ground+Floor+Survey+88AA+My+Space+Properties+ADP+Blvd+Financial+District+Hyderabad+Telangana+500032',
   },
 ];
 
