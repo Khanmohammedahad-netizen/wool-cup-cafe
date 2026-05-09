@@ -12,7 +12,7 @@ const SEASONAL_ITEMS = [
     name: 'Mango Season Special',
     description: 'It\'s mango season — and we\'re making the most of it. Ask us what\'s on today.',
     price: '—',
-    video: '/images/woolcup/mango.mp4',
+    image: '/images/woolcup/mango-dish.jpg',
   },
   {
     name: 'Yuzu Cold Brew',
@@ -84,7 +84,13 @@ export function MenuSeasonalSpecials() {
             className="bg-[#ead8b5]/20 border border-[#ead8b5] rounded-2xl overflow-hidden"
           >
             <div className="h-[220px] relative overflow-hidden bg-[#ead8b5]/30">
-              {'video' in item && item.video ? (
+              {'image' in item && item.image ? (
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : 'video' in item && item.video ? (
                 <video
                   src={item.video}
                   autoPlay
