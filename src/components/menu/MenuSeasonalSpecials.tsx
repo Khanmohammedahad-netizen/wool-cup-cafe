@@ -12,7 +12,6 @@ const SEASONAL_ITEMS = [
     name: 'Mango Season Special',
     description: 'It\'s mango season — and we\'re making the most of it. Ask us what\'s on today.',
     price: '—',
-    video: '/images/woolcup/mango.mp4',
     image: '/images/woolcup/mango-dish.jpg',
   },
   {
