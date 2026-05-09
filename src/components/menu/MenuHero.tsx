@@ -53,9 +53,22 @@ export function MenuHero() {
 
       <section
         ref={sectionRef}
-        className="menu-grain-overlay bg-[#ead8b5] min-h-[60vh] flex flex-col items-center justify-center text-center px-6"
+        className="menu-grain-overlay relative min-h-[60vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden"
       >
-        <div ref={iconRef} className="text-[#231f20]/25 mb-6">
+        {/* Background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/images/woolcup/mango.mp4"
+        />
+        {/* Overlay so text stays readable */}
+        <div className="absolute inset-0 bg-[#ead8b5]/70 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#231f20]/10 via-transparent to-[#ead8b5]/40" />
+
+        <div ref={iconRef} className="relative z-10 text-[#231f20]/40 mb-6">
           <svg
             width="40"
             height="40"
@@ -74,19 +87,19 @@ export function MenuHero() {
 
         <h1
           ref={headlineRef}
-          className="font-display text-5xl md:text-6xl lg:text-7xl text-[#231f20]"
+          className="relative z-10 font-display text-5xl md:text-6xl lg:text-7xl text-[#231f20]"
         >
           The Menu
         </h1>
 
         <p
           ref={subtitleRef}
-          className="font-display text-xl md:text-2xl text-[#231f20] italic mt-3"
+          className="relative z-10 font-display text-xl md:text-2xl text-[#231f20] italic mt-3"
         >
           Coffees & Comfort
         </p>
 
-        <div ref={flourishRef} className="mt-6 w-[100px] h-px bg-[#231f20]/20" />
+        <div ref={flourishRef} className="relative z-10 mt-6 w-[100px] h-px bg-[#231f20]/40" />
       </section>
     </>
   );

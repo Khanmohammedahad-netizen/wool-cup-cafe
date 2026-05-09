@@ -39,7 +39,7 @@ export function Ambience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display font-[300] text-[56px] text-text-primary text-center"
+          className="font-display font-[300] text-4xl md:text-[56px] text-text-primary text-center"
         >
           The Space.
         </motion.h2>

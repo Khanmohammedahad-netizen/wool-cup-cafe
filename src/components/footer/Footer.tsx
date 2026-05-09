@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { WoolcupLogo } from '@/components/ui/WoolcupLogo';
 
 const NAV_LINKS = [
+  { name: 'Home', href: '/' },
   { name: 'Story', href: '/about' },
   { name: 'Menu', href: '/menu' },
   { name: 'Cakes', href: '/cakes' },

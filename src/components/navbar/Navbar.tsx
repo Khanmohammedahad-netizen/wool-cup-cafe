@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { WoolcupLogo } from '@/components/ui/WoolcupLogo';
 
 const NAV_LINKS = [
+  { name: 'Home', href: '/' },
   { name: 'Story', href: '/about' },
   { name: 'Menu', href: '/menu' },
   { name: 'Cakes', href: '/cakes' },
@@ -27,6 +28,7 @@ export function Navbar() {
 
   const isActive = (href: string) => {
     if (href.startsWith('/#')) return false;
+    if (href === '/') return pathname === '/';
     return pathname === href;
   };
 

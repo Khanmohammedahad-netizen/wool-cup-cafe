@@ -20,7 +20,7 @@ export function MenuHighlight() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display font-light text-[56px] text-text-primary"
+            className="font-display font-light text-4xl md:text-[56px] text-text-primary"
           >
             Offerings.
           </motion.h2>
@@ -44,7 +44,7 @@ export function MenuHighlight() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className={`
-                px-10 py-12 flex flex-col justify-center
+                px-6 py-8 md:px-10 md:py-12 flex flex-col justify-center
                 border-b border-border transition-colors duration-500 hover:bg-cream/5
                 ${i % 2 === 0 ? 'md:border-r' : ''}
                 ${i >= menuItems.length - 2 ? 'md:border-b-0' : ''}
