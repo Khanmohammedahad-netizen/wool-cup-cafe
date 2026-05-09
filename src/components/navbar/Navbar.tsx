@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { WoolcupLogo } from '@/components/ui/WoolcupLogo';
 
 const NAV_LINKS = [
   { name: 'Story', href: '/about' },
@@ -50,13 +51,12 @@ export function Navbar() {
       >
         <div className="max-w-[1100px] mx-auto flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none">
-            <span className={`font-display text-[1rem] tracking-[0.2em] font-medium uppercase transition-colors duration-300 ${textColor}`}>
-              WOOL CUP
-            </span>
-            <span className={`font-ui text-[0.55rem] tracking-[0.22em] uppercase transition-colors duration-300 ${scrolled ? 'text-[#231f20]/40' : 'text-white/50'}`}>
-              URBAN CAFÉ &amp; BISTRO
-            </span>
+          <Link href="/" className="flex items-center">
+            <WoolcupLogo
+              variant={scrolled ? 'dark' : 'light'}
+              width={90}
+              height={62}
+            />
           </Link>
 
           {/* Desktop links */}

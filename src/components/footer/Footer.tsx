@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { WoolcupLogo } from '@/components/ui/WoolcupLogo';
 
 const NAV_LINKS = [
   { name: 'Story', href: '/about' },
@@ -41,13 +42,8 @@ export function Footer() {
 
             {/* Brand column */}
             <div className="lg:col-span-1">
-              <Link href="/" className="flex flex-col leading-none mb-5 w-fit">
-                <span className="font-display text-[1rem] tracking-[0.2em] font-medium uppercase text-white">
-                  WOOL CUP
-                </span>
-                <span className="font-ui text-[0.55rem] tracking-[0.22em] uppercase text-white/40">
-                  URBAN CAFÉ &amp; BISTRO
-                </span>
+              <Link href="/" className="flex items-center mb-5 w-fit">
+                <WoolcupLogo variant="light" width={100} height={70} />
               </Link>
               <p className="font-body text-sm text-white/50 leading-relaxed max-w-[220px]">
                 Coffee, quieted. A place for slow mornings and honest meals.

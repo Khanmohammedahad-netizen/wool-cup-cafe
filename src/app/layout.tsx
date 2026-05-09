@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Libre_Baskerville, DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
+import { Libre_Baskerville, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/lib/lenis-provider";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { Navbar } from "@/components/navbar/Navbar";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+const edhanMartine = localFont({
+  src: "../fonts/edhan-martine.ttf",
   variable: "--font-display",
   display: "swap",
+  weight: "400",
 });
 
 const libreBaskerville = Libre_Baskerville({
@@ -51,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${libreBaskerville.variable} ${dmSans.variable}`}
+      className={`${edhanMartine.variable} ${libreBaskerville.variable} ${dmSans.variable}`}
     >
       <body className="antialiased bg-bg text-text selection:bg-cream selection:text-dark">
         <LenisProvider>
