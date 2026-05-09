@@ -61,6 +61,9 @@ export function MenuHero() {
           muted
           loop
           playsInline
+          preload="auto"
+          disablePictureInPicture
+          disableRemotePlayback
           className="absolute inset-0 w-full h-full object-cover"
           src="/images/woolcup/mango.mp4"
         />
