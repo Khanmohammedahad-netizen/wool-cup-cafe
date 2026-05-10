@@ -27,93 +27,30 @@ export default async function Image() {
         style={{
           width: '100%',
           height: '100%',
+          background: '#ead8b5',
           display: 'flex',
-          background: '#ffffff',
-          fontFamily: 'serif',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '32px',
         }}
       >
-        {/* Left panel — cream, mascot centred */}
-        <div
-          style={{
-            width: '42%',
-            height: '100%',
-            background: '#ead8b5',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={toDataUrl(mascotSrc)}
-            width={220}
-            height={256}
-            alt=""
-            style={{ objectFit: 'contain' }}
-          />
-        </div>
-
-        {/* Right panel — white, logo + brand details */}
-        <div
-          style={{
-            flex: 1,
-            height: '100%',
-            background: '#ffffff',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            padding: '60px 64px',
-            gap: '20px',
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={toDataUrl(logoSrc)}
-            width={160}
-            height={110}
-            alt="Wool Cup logo"
-            style={{ objectFit: 'contain' }}
-          />
-
-          <div
-            style={{
-              fontSize: 52,
-              color: '#231f20',
-              letterSpacing: '-0.01em',
-              lineHeight: 1.1,
-              marginTop: 8,
-            }}
-          >
-            Wool Cup
-          </div>
-
-          <div
-            style={{
-              fontSize: 22,
-              color: '#231f20',
-              opacity: 0.6,
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-            }}
-          >
-            Urban Café &amp; Bistro
-          </div>
-
-          {/* Divider */}
-          <div style={{ width: 48, height: 2, background: '#ead8b5', marginTop: 4 }} />
-
-          <div
-            style={{
-              fontSize: 18,
-              color: '#231f20',
-              opacity: 0.45,
-              letterSpacing: '0.04em',
-            }}
-          >
-            Film Nagar · Financial District · Hyderabad
-          </div>
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={toDataUrl(logoSrc)}
+          width={200}
+          height={138}
+          alt="Wool Cup logo"
+          style={{ objectFit: 'contain' }}
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={toDataUrl(mascotSrc)}
+          width={240}
+          height={280}
+          alt=""
+          style={{ objectFit: 'contain' }}
+        />
       </div>
     ),
     { ...size }
