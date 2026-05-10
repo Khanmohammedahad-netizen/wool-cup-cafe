@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { name: 'Story', href: '/about' },
   { name: 'Menu', href: '/menu' },
   { name: 'Cakes', href: '/cakes' },
-  { name: 'Space', href: '/#ambience' },
   { name: 'Visit', href: '/#locations' },
 ];
 
