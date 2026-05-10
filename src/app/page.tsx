@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Wool Cup Urban Café & Bistro',
     description: 'Honest coffee. Handcrafted food. Hyderabad.',
-    images: ['/images/new/hero-espresso.jpg'],
   },
 };
 
