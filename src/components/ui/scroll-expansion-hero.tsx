@@ -59,6 +59,7 @@ const ScrollExpandMedia = ({
   const dateLabelRef = useRef<HTMLParagraphElement>(null);
   const scrollCueRef = useRef<HTMLParagraphElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
 
   const isMobileRef = useRef(false);
 
@@ -109,6 +110,9 @@ const ScrollExpandMedia = ({
         }
         if (overlayRef.current) {
           overlayRef.current.style.opacity = String(0.5 - p * 0.3);
+        }
+        if (scrollIndicatorRef.current) {
+          scrollIndicatorRef.current.style.opacity = String(Math.max(0, 1 - p * 10));
         }
 
         // Threshold checks — update React state only on crossing boundaries
@@ -200,6 +204,17 @@ const ScrollExpandMedia = ({
 
   return (
     <div className="overflow-x-hidden">
+      <style href="scroll-indicator" precedence="default">{`
+        @keyframes scroll-wheel {
+          0%   { transform: translateY(0);   opacity: 1; }
+          60%  { transform: translateY(8px); opacity: 0; }
+          61%  { transform: translateY(0);   opacity: 0; }
+          100% { transform: translateY(0);   opacity: 1; }
+        }
+        .scroll-wheel-dot {
+          animation: scroll-wheel 1.6s ease-in-out infinite;
+        }
+      `}</style>
       <section className="relative flex flex-col items-center justify-start min-h-[100dvh]">
         <div className="relative w-full flex flex-col items-center min-h-[100dvh]">
 
@@ -311,6 +326,25 @@ const ScrollExpandMedia = ({
                 >
                   {restOfTitle}
                 </h2>
+              </div>
+              {/* Scroll indicator — fades out immediately on first scroll */}
+              <div
+                ref={scrollIndicatorRef}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none select-none"
+              >
+                <span className="font-ui text-[10px] uppercase tracking-[0.3em] text-[#ead8b5]/70">Scroll</span>
+                <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="1" width="20" height="32" rx="10" stroke="rgba(234,216,181,0.45)" strokeWidth="1.5"/>
+                  <rect
+                    x="9.5"
+                    y="6"
+                    width="3"
+                    height="6"
+                    rx="1.5"
+                    fill="rgba(234,216,181,0.85)"
+                    className="scroll-wheel-dot"
+                  />
+                </svg>
               </div>
             </div>
 
