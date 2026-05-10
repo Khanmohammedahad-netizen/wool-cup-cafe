@@ -101,6 +101,15 @@ export function FoundersPreview() {
             >
               Read our full story →
             </a>
+            <img
+              src="/images/mascot.png"
+              alt=""
+              aria-hidden="true"
+              width={90}
+              height={105}
+              className="w-[70px] md:w-[90px] mt-2 pointer-events-none select-none opacity-80"
+              style={{ mixBlendMode: 'multiply' }}
+            />
           </div>
 
         </div>

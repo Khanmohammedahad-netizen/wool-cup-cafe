@@ -110,7 +110,7 @@ export function SocialProof() {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           {/* Header */}
-          <div ref={headerRef} className="text-center mb-16">
+          <div ref={headerRef} className="text-center mb-16 relative">
             <p
               ref={eyebrowRef}
               className="font-ui uppercase tracking-[0.3em] text-xs text-dark/50 mb-4"
@@ -123,6 +123,16 @@ export function SocialProof() {
             >
               Loved by <em>Hyderabad.</em>
             </h2>
+            {/* Mascot — right of headline on desktop, hidden on smallest phones */}
+            <img
+              src="/images/mascot.png"
+              alt=""
+              aria-hidden="true"
+              width={80}
+              height={93}
+              className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 w-[70px] md:w-[85px] pointer-events-none select-none opacity-85"
+              style={{ mixBlendMode: 'multiply' }}
+            />
           </div>
 
           {/* Review cards */}

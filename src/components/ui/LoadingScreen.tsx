@@ -99,10 +99,19 @@ export function LoadingScreen() {
       ref={overlayRef}
       className="fixed inset-0 z-[9999] bg-cream flex items-center justify-center"
     >
-      <div ref={containerRef} className="flex flex-col items-center gap-6" style={{ opacity: 0 }}>
+      <div ref={containerRef} className="flex flex-col items-center gap-4" style={{ opacity: 0 }}>
+        {/* Mascot */}
+        <img
+          src="/images/mascot.png"
+          alt="Wool Cup mascot"
+          width={120}
+          height={140}
+          className="w-[90px] md:w-[120px] pointer-events-none select-none"
+          style={{ mixBlendMode: 'multiply' }}
+        />
         <div
           ref={brandNameRef}
-          className="font-display text-[72px] leading-none tracking-[0.15em] text-dark lowercase"
+          className="font-display text-[56px] md:text-[72px] leading-none tracking-[0.15em] text-dark lowercase"
           style={{ clipPath: 'inset(0 100% 0 0)' }}
         >
           wool cup
