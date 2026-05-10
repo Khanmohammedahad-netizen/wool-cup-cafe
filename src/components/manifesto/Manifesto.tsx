@@ -24,7 +24,7 @@ export function Manifesto() {
   }, []);
 
   return (
-    <section id="philosophy" ref={containerRef} className="bg-bg py-16 px-6 lg:py-24">
+    <section id="philosophy" ref={containerRef} className="relative bg-bg py-16 px-6 lg:py-24 overflow-hidden">
       <div className="max-w-[680px] mx-auto text-center">
         <p
           ref={textRef}
@@ -32,6 +32,18 @@ export function Manifesto() {
         >
           We don't rush coffee. We don't rush mornings. Every cup is slowed down, stripped back, and made to be remembered.
         </p>
+      </div>
+
+      {/* Mascot — floats right on desktop, centered below on mobile */}
+      <div className="flex justify-center mt-10 lg:mt-0 lg:absolute lg:right-[6vw] lg:top-1/2 lg:-translate-y-1/2 pointer-events-none select-none">
+        <img
+          src="/images/mascot.png"
+          alt="Wool Cup mascot"
+          width={110}
+          height={128}
+          className="opacity-90 w-[90px] md:w-[110px]"
+          style={{ mixBlendMode: 'multiply' }}
+        />
       </div>
     </section>
   );

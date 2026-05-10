@@ -49,6 +49,15 @@ export function Footer() {
               <p className="font-body text-sm text-white/50 leading-relaxed max-w-[220px]">
                 Coffee, quieted. A place for slow mornings and honest meals.
               </p>
+              <img
+                src="/images/mascot.png"
+                alt=""
+                aria-hidden="true"
+                width={80}
+                height={93}
+                className="mt-5 opacity-60 select-none pointer-events-none"
+                style={{ filter: 'invert(1)', mixBlendMode: 'screen' }}
+              />
             </div>
 
             {/* Navigate */}

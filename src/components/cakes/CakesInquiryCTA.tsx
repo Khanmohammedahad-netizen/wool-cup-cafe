@@ -29,8 +29,18 @@ export function CakesInquiryCTA() {
   );
 
   return (
-    <section ref={containerRef} className="bg-[#231f20] py-20 md:py-28">
-      <div ref={contentRef} className="max-w-2xl mx-auto px-6 text-center">
+    <section ref={containerRef} className="relative bg-[#231f20] py-20 md:py-28 overflow-hidden">
+      {/* Mascot watermark */}
+      <img
+        src="/images/mascot.png"
+        alt=""
+        aria-hidden="true"
+        width={160}
+        height={186}
+        className="absolute bottom-0 right-4 md:right-12 opacity-10 pointer-events-none select-none"
+        style={{ filter: 'invert(1)', mixBlendMode: 'screen' }}
+      />
+      <div ref={contentRef} className="relative z-10 max-w-2xl mx-auto px-6 text-center">
         <h2 className="font-display text-4xl text-white mb-4">
           Let's create something <em>beautiful.</em>
         </h2>
