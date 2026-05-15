@@ -30,7 +30,7 @@ export function AboutCTA() {
   );
 
   return (
-    <section ref={containerRef} className="bg-[#231f20] py-24 md:py-32">
+    <section ref={containerRef} className="bg-[#7B4A2E] py-24 md:py-32">
       <div className="max-w-3xl mx-auto px-6 text-center relative overflow-hidden">
         <span
           aria-hidden="true"

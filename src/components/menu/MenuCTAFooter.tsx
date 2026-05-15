@@ -30,12 +30,12 @@ export function MenuCTAFooter() {
   );
 
   return (
-    <section ref={containerRef} className="bg-[#231f20] py-24 md:py-32">
+    <section ref={containerRef} className="bg-[#7B4A2E] py-24 md:py-32">
       <div ref={contentRef} className="max-w-2xl mx-auto px-6 text-center">
         <h2 className="font-display text-3xl md:text-4xl text-white mb-4">
           Can't decide? Visit us.
         </h2>
-        <p className="font-body text-lg text-[#ead8b5]/70 mb-10">
+        <p className="font-body text-lg text-white/60 mb-10">
           Our team will guide you to your perfect cup.
         </p>
         <Link
