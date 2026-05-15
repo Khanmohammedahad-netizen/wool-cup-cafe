@@ -277,6 +277,7 @@ const ScrollExpandMedia = ({
                       ref={cardVideoRef}
                       src={mediaSrc}
                       poster={posterSrc ?? bgImageSrc}
+                      autoPlay
                       muted
                       loop
                       playsInline
