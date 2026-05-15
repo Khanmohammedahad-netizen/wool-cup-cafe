@@ -15,9 +15,6 @@ const NAV_LINKS = [
 export function Footer() {
   return (
     <footer className="bg-[#7B4A2E]">
-      {/* Gradient bridge: page → beige → brown */}
-      <div className="h-20 bg-gradient-to-b from-white via-[#ead8b5]/60 to-[#7B4A2E]" />
-
       {/* For Special Moments CTA */}
       <div className="border-b border-white/10 px-6 md:px-12 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
