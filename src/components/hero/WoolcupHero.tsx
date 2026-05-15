@@ -1,49 +1,40 @@
 'use client';
 
-import { useEffect, useCallback } from 'react';
-import { useLenis } from '@studio-freight/react-lenis';
-import ScrollExpandMedia from '@/components/ui/scroll-expansion-hero';
-
 export function WoolcupHero() {
-  const lenis = useLenis(undefined);
-
-  // Stop Lenis on mount — hero controls scroll until fully expanded
-  useEffect(() => {
-    lenis?.stop();
-  }, [lenis]);
-
-  const handleExpansionChange = useCallback(
-    (expanded: boolean) => {
-      if (expanded) {
-        lenis?.start();
-      } else {
-        lenis?.stop();
-      }
-    },
-    [lenis]
-  );
-
   return (
-    <ScrollExpandMedia
-      mediaType="video"
-      mediaSrc="/hero.mp4"
-      posterSrc="/images/new/interior-sofa.jpg"
-      bgImageSrc="/images/new/interior-wide-cloud.jpg"
-      title="Quiet Ritual"
-      date="Specialty Coffee · Hyderabad"
-      scrollToExpand="Scroll to explore"
-      textBlend
-      textColorClass="text-[#ead8b5]"
-      onExpansionChange={handleExpansionChange}
-    >
-      <div className="max-w-2xl mx-auto text-center py-4">
-        <p className="font-display text-2xl md:text-3xl text-dark/80 italic leading-relaxed">
+    <section className="relative min-h-[100dvh] flex items-end overflow-hidden">
+      {/* Fullscreen video background */}
+      <video
+        src="/hero.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/images/new/interior-wide-cloud.jpg"
+        className="absolute inset-0 w-full h-full object-cover"
+        disablePictureInPicture
+        disableRemotePlayback
+      />
+
+      {/* Gradient overlay — lighter at top, heavier at bottom */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/60" />
+
+      {/* Text — anchored bottom-left */}
+      <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-20 max-w-3xl">
+        <p className="font-ui text-[10px] uppercase tracking-[0.35em] text-[#ead8b5]/60 mb-4">
+          Specialty Coffee · Hyderabad
+        </p>
+        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-[#ead8b5] leading-[1.05]">
+          Coffee,<br />Quieted.
+        </h1>
+        <p className="font-body text-base md:text-lg italic text-[#ead8b5]/70 mt-5 max-w-md leading-relaxed">
           Where every cup is a quiet ritual.
         </p>
-        <p className="font-ui text-sm uppercase tracking-[0.2em] text-dark/50 mt-4">
-          Film Nagar · Financial District · Hyderabad
+        <p className="font-ui text-xs uppercase tracking-[0.2em] text-[#ead8b5]/50 mt-6">
+          Film Nagar · Financial District
         </p>
       </div>
-    </ScrollExpandMedia>
+    </section>
   );
 }
