@@ -5,6 +5,7 @@ import { AboutPhilosophy } from '@/components/about/AboutPhilosophy'
 import { AboutSpace } from '@/components/about/AboutSpace'
 import { AboutPeople } from '@/components/about/AboutPeople'
 import { AboutCTA } from '@/components/about/AboutCTA'
+import { Footer } from '@/components/footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Our Story — Wool Cup Urban Café & Bistro',
@@ -20,6 +21,7 @@ export default function AboutPage() {
       <AboutSpace />
       <AboutPeople />
       <AboutCTA />
+      <Footer />
     </main>
   )
 }

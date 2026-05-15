@@ -3,6 +3,7 @@ import { CakesHero } from '@/components/cakes/CakesHero'
 import { CakesGallery } from '@/components/cakes/CakesGallery'
 import { CakesHowItWorks } from '@/components/cakes/CakesHowItWorks'
 import { CakesInquiryCTA } from '@/components/cakes/CakesInquiryCTA'
+import { Footer } from '@/components/footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Custom Cakes — Wool Cup Urban Café & Bistro',
@@ -16,6 +17,7 @@ export default function CakesPage() {
       <CakesGallery />
       <CakesHowItWorks />
       <CakesInquiryCTA />
+      <Footer />
     </main>
   )
 }

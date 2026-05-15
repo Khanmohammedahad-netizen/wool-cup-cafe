@@ -5,6 +5,7 @@ import { MenuMustTries } from '@/components/menu/MenuMustTries'
 import { MenuFullMenu } from '@/components/menu/MenuFullMenu'
 import { MenuDietary } from '@/components/menu/MenuDietary'
 import { MenuCTAFooter } from '@/components/menu/MenuCTAFooter'
+import { Footer } from '@/components/footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Menu — Wool Cup Urban Café & Bistro',
@@ -20,6 +21,7 @@ export default function MenuPage() {
       <MenuFullMenu />
       <MenuDietary />
       <MenuCTAFooter />
+      <Footer />
     </main>
   )
 }
