@@ -22,6 +22,8 @@ export function GalleryTeaser() {
               src="/images/new/interior-wide-cloud.jpg"
               alt="Wool Cup interior"
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              fetchPriority="low"
             />
           </div>
           <div className="relative overflow-hidden rounded-2xl">
@@ -29,6 +31,8 @@ export function GalleryTeaser() {
               src="/images/new/barista-pour.jpg"
               alt="Barista at work"
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              fetchPriority="low"
             />
           </div>
           <div className="relative overflow-hidden rounded-2xl">
@@ -36,6 +40,8 @@ export function GalleryTeaser() {
               src="/images/woolcup/food-01.jpg"
               alt="Seasonal dish"
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              fetchPriority="low"
             />
           </div>
         </div>

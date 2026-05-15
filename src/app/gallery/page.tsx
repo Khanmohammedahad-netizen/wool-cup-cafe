@@ -16,7 +16,7 @@ export default function GalleryPage() {
           Photos
         </p>
         <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-dark leading-none">
-          A glimpse inside.
+          Our Gallery
         </h1>
         <p className="font-body text-base text-dark/50 mt-4 max-w-md">
           Spaces, coffee, and quiet moments from both our locations in Hyderabad.

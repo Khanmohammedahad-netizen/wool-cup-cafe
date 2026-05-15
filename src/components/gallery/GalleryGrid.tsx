@@ -88,6 +88,7 @@ export function GalleryGrid() {
           <button
             key={tab.value}
             onClick={() => setActive(tab.value)}
+            aria-pressed={active === tab.value}
             className={`font-ui text-[11px] uppercase tracking-[0.18em] px-4 py-2 rounded-full border transition-all duration-300 ${
               active === tab.value
                 ? 'bg-dark text-white border-dark'
