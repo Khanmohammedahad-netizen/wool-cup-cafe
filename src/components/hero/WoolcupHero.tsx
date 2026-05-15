@@ -27,7 +27,7 @@ export function WoolcupHero() {
       mediaType="video"
       mediaSrc="/hero.mp4"
       posterSrc="/images/new/interior-sofa.jpg"
-      bgImageSrc="/images/new/exterior-wide.jpg"
+      bgImageSrc="/images/exterior-night-new.jpg"
       title="Quiet Ritual"
       date="Specialty Coffee · Hyderabad"
       scrollToExpand="Scroll to explore"

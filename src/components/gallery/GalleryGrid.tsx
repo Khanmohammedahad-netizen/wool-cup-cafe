@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+
+const PAGE_SIZE = 12;
 
 type Category = 'all' | 'ambience' | 'food';
 
@@ -77,9 +79,20 @@ const TABS: { label: string; value: Category }[] = [
 
 export function GalleryGrid() {
   const [active, setActive] = useState<Category>('all');
+  const [visible, setVisible] = useState(PAGE_SIZE);
 
-  const filtered =
-    active === 'all' ? IMAGES : IMAGES.filter((img) => img.category === active);
+  const filtered = useMemo(
+    () => active === 'all' ? IMAGES : IMAGES.filter((img) => img.category === active),
+    [active]
+  );
+
+  const shown = filtered.slice(0, visible);
+  const hasMore = visible < filtered.length;
+
+  const handleTabChange = (val: Category) => {
+    setActive(val);
+    setVisible(PAGE_SIZE);
+  };
 
   return (
     <section aria-label="Photo gallery" className="px-6 md:px-12 py-12 max-w-7xl mx-auto">
@@ -88,7 +101,7 @@ export function GalleryGrid() {
         {TABS.map((tab) => (
           <button
             key={tab.value}
-            onClick={() => setActive(tab.value)}
+            onClick={() => handleTabChange(tab.value)}
             aria-pressed={active === tab.value}
             className={`font-ui text-[11px] uppercase tracking-[0.18em] px-4 py-2 rounded-full border transition-all duration-300 ${
               active === tab.value
@@ -103,7 +116,7 @@ export function GalleryGrid() {
 
       {/* CSS columns masonry */}
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-3">
-        {filtered.map((img) => (
+        {shown.map((img) => (
           <div key={img.src} className="break-inside-avoid mb-3">
             <img
               src={img.src}
@@ -115,6 +128,18 @@ export function GalleryGrid() {
           </div>
         ))}
       </div>
+
+      {/* Load more */}
+      {hasMore && (
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={() => setVisible((v) => v + PAGE_SIZE)}
+            className="font-ui text-[11px] uppercase tracking-[0.18em] px-8 py-3 rounded-full border border-dark/20 text-dark/60 hover:border-dark/50 hover:text-dark transition-all duration-300"
+          >
+            Load more ({filtered.length - visible} remaining)
+          </button>
+        </div>
+      )}
     </section>
   );
 }
