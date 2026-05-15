@@ -276,7 +276,6 @@ const ScrollExpandMedia = ({
                     <video
                       ref={cardVideoRef}
                       src={mediaSrc}
-                      poster={posterSrc}
                       muted
                       loop
                       playsInline
@@ -287,8 +286,8 @@ const ScrollExpandMedia = ({
                     />
                     <div
                       ref={overlayRef}
-                      className="absolute inset-0 bg-black/50 rounded-xl"
-                      style={{ opacity: 0.5 }}
+                      className="absolute inset-0 bg-black/20 rounded-xl"
+                      style={{ opacity: 0.2 }}
                     />
                   </div>
                 ) : (
@@ -339,14 +338,14 @@ const ScrollExpandMedia = ({
               >
                 <h2
                   ref={word1Ref}
-                  className={`text-4xl md:text-5xl lg:text-6xl font-bold ${textColorClass}`}
+                  className={`font-display text-5xl md:text-6xl lg:text-7xl italic ${textColorClass}`}
                   style={{ transform: 'translateX(0vw)' }}
                 >
                   {firstWord}
                 </h2>
                 <h2
                   ref={word2Ref}
-                  className={`text-4xl md:text-5xl lg:text-6xl font-bold text-center ${textColorClass}`}
+                  className={`font-display text-5xl md:text-6xl lg:text-7xl italic text-center ${textColorClass}`}
                   style={{ transform: 'translateX(0vw)' }}
                 >
                   {restOfTitle}
