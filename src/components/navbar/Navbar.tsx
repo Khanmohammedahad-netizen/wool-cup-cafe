@@ -32,30 +32,28 @@ export function Navbar() {
     return pathname === href;
   };
 
-  const textColor = scrolled
-    ? 'text-[#231f20]'
-    : 'text-white';
+  const dark = pathname !== '/' || scrolled;
 
-  const linkColor = scrolled
+  const textColor = dark ? 'text-[#231f20]' : 'text-white';
+  const linkColor = dark
     ? 'text-[#231f20]/70 hover:text-[#231f20]'
     : 'text-white/70 hover:text-white';
-
-  const activeColor = scrolled ? 'text-[#231f20]' : 'text-white';
-  const borderColor = scrolled ? 'border-[#231f20]' : 'border-white';
-  const hamburgerColor = scrolled ? 'bg-[#231f20]' : 'bg-white';
+  const activeColor = dark ? 'text-[#231f20]' : 'text-white';
+  const borderColor = dark ? 'border-[#231f20]' : 'border-white';
+  const hamburgerColor = dark ? 'bg-[#231f20]' : 'bg-white';
 
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-          scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
+          dark ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
         } px-5 py-4 lg:pt-6`}
       >
         <div className="max-w-[1100px] mx-auto flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <WoolcupLogo
-              variant={scrolled ? 'dark' : 'light'}
+              variant={dark ? 'dark' : 'light'}
               width={150}
               height={104}
             />
@@ -73,7 +71,7 @@ export function Navbar() {
               >
                 {link.name}
                 {isActive(link.href) && (
-                  <span className={`absolute -bottom-1 left-0 right-0 h-px ${scrolled ? 'bg-[#231f20]' : 'bg-white'}`} />
+                  <span className={`absolute -bottom-1 left-0 right-0 h-px ${dark ? 'bg-[#231f20]' : 'bg-white'}`} />
                 )}
               </Link>
             ))}
@@ -85,7 +83,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className={`hidden lg:block border font-ui text-[0.8rem] tracking-[0.12em] font-medium uppercase px-5 py-2 rounded-full transition-all duration-300 ${
-              scrolled
+              dark
                 ? 'border-[#231f20] text-[#231f20] hover:bg-[#231f20] hover:text-white'
                 : 'border-white text-white hover:bg-white hover:text-[#231f20]'
             }`}
