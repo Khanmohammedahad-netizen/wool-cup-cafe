@@ -14,6 +14,7 @@ interface ScrollExpandMediaProps {
   mediaSrc: string;
   posterSrc?: string;
   bgImageSrc: string;
+  bgVideoSrc?: string;
   title?: string;
   date?: string;
   scrollToExpand?: string;
@@ -32,6 +33,7 @@ const ScrollExpandMedia = ({
   mediaSrc,
   posterSrc,
   bgImageSrc,
+  bgVideoSrc,
   title,
   date,
   scrollToExpand,
@@ -44,14 +46,12 @@ const ScrollExpandMedia = ({
   const [mediaFullyExpanded, setMediaFullyExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Refs for smooth animation — never cause re-renders
   const targetRef = useRef(0);
   const currentRef = useRef(0);
   const rafRef = useRef<number>(0);
   const expandedRef = useRef(false);
   const touchStartYRef = useRef(0);
 
-  // DOM refs for direct style updates
   const mediaBoxRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const word1Ref = useRef<HTMLHeadingElement>(null);
@@ -60,6 +60,7 @@ const ScrollExpandMedia = ({
   const scrollCueRef = useRef<HTMLParagraphElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+  const cardVideoRef = useRef<HTMLVideoElement>(null);
 
   const isMobileRef = useRef(false);
 
@@ -74,13 +75,11 @@ const ScrollExpandMedia = ({
     return () => window.removeEventListener('resize', check);
   }, []);
 
-  // RAF loop — lerp current toward target, apply styles directly
   useEffect(() => {
     const tick = () => {
       const prev = currentRef.current;
       currentRef.current = lerp(currentRef.current, targetRef.current, 0.04);
 
-      // Skip DOM work if barely moving
       if (Math.abs(currentRef.current - prev) > 0.0002) {
         const p = currentRef.current;
         const mobile = isMobileRef.current;
@@ -115,7 +114,16 @@ const ScrollExpandMedia = ({
           scrollIndicatorRef.current.style.opacity = String(Math.max(0, 1 - p * 10));
         }
 
-        // Threshold checks — update React state only on crossing boundaries
+        // Play card video as it expands, pause when collapsed
+        if (cardVideoRef.current) {
+          if (p >= 0.5 && cardVideoRef.current.paused) {
+            cardVideoRef.current.play().catch(() => {});
+          } else if (p < 0.3 && !cardVideoRef.current.paused) {
+            cardVideoRef.current.pause();
+            cardVideoRef.current.currentTime = 0;
+          }
+        }
+
         const wasExpanded = expandedRef.current;
         if (p >= 0.98 && !wasExpanded) {
           expandedRef.current = true;
@@ -137,7 +145,6 @@ const ScrollExpandMedia = ({
     return () => cancelAnimationFrame(rafRef.current);
   }, [onExpansionChange]);
 
-  // Wheel handler — just updates target, no React state
   useEffect(() => {
     const onWheel = (e: WheelEvent) => {
       if (expandedRef.current && e.deltaY < 0 && window.scrollY <= 5) {
@@ -166,7 +173,6 @@ const ScrollExpandMedia = ({
     };
   }, []);
 
-  // Touch handler
   useEffect(() => {
     const onTouchStart = (e: TouchEvent) => {
       touchStartYRef.current = e.touches[0].clientY;
@@ -218,17 +224,36 @@ const ScrollExpandMedia = ({
       <section className="relative flex flex-col items-center justify-start min-h-[100dvh]">
         <div className="relative w-full flex flex-col items-center min-h-[100dvh]">
 
-          {/* Background image — fades as video expands */}
+          {/* Background — video or image, fades as card expands */}
           <div ref={bgRef} className="absolute inset-0 z-0 h-full">
-            <Image
-              src={bgImageSrc}
-              alt="Background"
-              width={1920}
-              height={1080}
-              className="w-screen h-screen object-cover object-center"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/30" />
+            {bgVideoSrc ? (
+              <>
+                <video
+                  src={bgVideoSrc}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover"
+                  disablePictureInPicture
+                  disableRemotePlayback
+                />
+                <div className="absolute inset-0 bg-black/30" />
+              </>
+            ) : (
+              <>
+                <Image
+                  src={bgImageSrc}
+                  alt="Background"
+                  width={1920}
+                  height={1080}
+                  className="w-screen h-screen object-cover object-center"
+                  priority
+                />
+                <div className="absolute inset-0 bg-black/30" />
+              </>
+            )}
           </div>
 
           <div className="container mx-auto flex flex-col items-center justify-start relative z-10">
@@ -249,9 +274,9 @@ const ScrollExpandMedia = ({
                 {mediaType === 'video' ? (
                   <div className="relative w-full h-full pointer-events-none">
                     <video
+                      ref={cardVideoRef}
                       src={mediaSrc}
                       poster={posterSrc}
-                      autoPlay
                       muted
                       loop
                       playsInline
@@ -327,7 +352,8 @@ const ScrollExpandMedia = ({
                   {restOfTitle}
                 </h2>
               </div>
-              {/* Scroll indicator — fades out immediately on first scroll */}
+
+              {/* Scroll indicator */}
               <div
                 ref={scrollIndicatorRef}
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none select-none"
