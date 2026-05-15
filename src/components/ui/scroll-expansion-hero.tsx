@@ -225,7 +225,7 @@ const ScrollExpandMedia = ({
         <div className="relative w-full flex flex-col items-center min-h-[100dvh]">
 
           {/* Background — video or image, fades as card expands */}
-          <div ref={bgRef} className="absolute inset-0 z-0 h-full">
+          <div ref={bgRef} className="absolute inset-0 z-0 h-full bg-[#120d08]">
             {bgVideoSrc ? (
               <>
                 <video
@@ -248,7 +248,7 @@ const ScrollExpandMedia = ({
                   alt="Background"
                   width={1920}
                   height={1080}
-                  className="w-screen h-screen object-cover object-center"
+                  className="w-screen h-screen object-cover object-center md:object-contain"
                   priority
                 />
                 <div className="absolute inset-0 bg-black/30" />
