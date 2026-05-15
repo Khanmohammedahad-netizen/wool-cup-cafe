@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { CakesHero } from '@/components/cakes/CakesHero'
 import { CakesGallery } from '@/components/cakes/CakesGallery'
 import { CakesHowItWorks } from '@/components/cakes/CakesHowItWorks'
-import { CakesInquiryCTA } from '@/components/cakes/CakesInquiryCTA'
 import { Footer } from '@/components/footer/Footer'
 
 export const metadata: Metadata = {
@@ -16,7 +15,6 @@ export default function CakesPage() {
       <CakesHero />
       <CakesGallery />
       <CakesHowItWorks />
-      <CakesInquiryCTA />
       <Footer />
     </main>
   )

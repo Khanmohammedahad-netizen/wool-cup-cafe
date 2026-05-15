@@ -4,7 +4,6 @@ import { AboutOrigin } from '@/components/about/AboutOrigin'
 import { AboutPhilosophy } from '@/components/about/AboutPhilosophy'
 import { AboutSpace } from '@/components/about/AboutSpace'
 import { AboutPeople } from '@/components/about/AboutPeople'
-import { AboutCTA } from '@/components/about/AboutCTA'
 import { Footer } from '@/components/footer/Footer'
 
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ export default function AboutPage() {
       <AboutPhilosophy />
       <AboutSpace />
       <AboutPeople />
-      <AboutCTA />
       <Footer />
     </main>
   )

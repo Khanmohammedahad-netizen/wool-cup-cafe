@@ -4,7 +4,6 @@ import { MenuSeasonalSpecials } from '@/components/menu/MenuSeasonalSpecials'
 import { MenuMustTries } from '@/components/menu/MenuMustTries'
 import { MenuFullMenu } from '@/components/menu/MenuFullMenu'
 import { MenuDietary } from '@/components/menu/MenuDietary'
-import { MenuCTAFooter } from '@/components/menu/MenuCTAFooter'
 import { Footer } from '@/components/footer/Footer'
 
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ export default function MenuPage() {
       <MenuMustTries />
       <MenuFullMenu />
       <MenuDietary />
-      <MenuCTAFooter />
       <Footer />
     </main>
   )
