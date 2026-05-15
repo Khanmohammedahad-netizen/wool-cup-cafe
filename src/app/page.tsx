@@ -3,7 +3,6 @@ import { WoolcupHero } from '@/components/hero/WoolcupHero';
 import { Manifesto } from '@/components/manifesto/Manifesto';
 import { FoundersPreview } from '@/components/founders/FoundersPreview';
 import { SocialProof } from '@/components/social-proof/SocialProof';
-import { MenuHighlight } from '@/components/menu/MenuHighlight';
 import { GalleryTeaser } from '@/components/gallery/GalleryTeaser';
 import { Locations } from '@/components/locations/Locations';
 import { Footer } from '@/components/footer/Footer';
@@ -24,7 +23,6 @@ export default function Home() {
       <Manifesto />
       <FoundersPreview />
       <SocialProof />
-      <MenuHighlight />
       <GalleryTeaser />
       <Locations />
       <Footer />
