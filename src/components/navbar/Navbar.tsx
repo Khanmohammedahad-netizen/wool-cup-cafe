@@ -111,7 +111,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[200] bg-[#231f20] flex flex-col items-center justify-center"
+            className="fixed inset-0 z-[200] bg-[#7B4A2E] flex flex-col items-center justify-center"
           >
             <button
               onClick={() => setIsOpen(false)}
