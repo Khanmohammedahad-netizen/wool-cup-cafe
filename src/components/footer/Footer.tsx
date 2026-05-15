@@ -8,18 +8,19 @@ const NAV_LINKS = [
   { name: 'Story', href: '/about' },
   { name: 'Menu', href: '/menu' },
   { name: 'Cakes', href: '/cakes' },
+  { name: 'Gallery', href: '/gallery' },
   { name: 'Visit', href: '/#locations' },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-[#231f20]">
+    <footer className="bg-[#c4a87a]">
       {/* For Special Moments CTA */}
-      <div className="border-b border-white/10 px-6 md:px-12 py-8">
+      <div className="border-b border-dark/15 px-6 md:px-12 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
-            <h4 className="font-display text-lg text-white mb-1">For Special Moments</h4>
-            <p className="font-body text-sm text-white/50 max-w-md">
+            <h4 className="font-display text-lg text-dark mb-1">For Special Moments</h4>
+            <p className="font-body text-sm text-dark/55 max-w-md">
               Dessert platters, celebration cakes, curated spreads — crafted for your gatherings and events.
             </p>
           </div>
@@ -27,7 +28,7 @@ export function Footer() {
             href="https://wa.me/917292944244?text=Hi%20Wool%20Cup!%20I'd%20like%20to%20inquire%20about%20ordering%20for%20a%20special%20event."
             target="_blank"
             rel="noopener noreferrer"
-            className="font-ui text-xs uppercase tracking-wide text-[#ead8b5]/70 hover:text-[#ead8b5] transition-colors shrink-0"
+            className="font-ui text-xs uppercase tracking-wide text-dark/70 hover:text-dark transition-colors shrink-0"
           >
             Inquire →
           </a>
@@ -38,27 +39,27 @@ export function Footer() {
       <div className="px-6 md:px-12 pt-16 pb-8">
         <div className="max-w-[1200px] mx-auto">
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-dark/15">
 
             {/* Brand column */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center mb-5 w-fit">
-                <WoolcupLogo variant="light" width={160} height={111} />
+                <WoolcupLogo variant="dark" width={160} height={111} />
               </Link>
-              <p className="font-body text-sm text-white/50 leading-relaxed max-w-[220px]">
+              <p className="font-body text-sm text-dark/55 leading-relaxed max-w-[220px]">
                 Coffee, quieted. A place for slow mornings and honest meals.
               </p>
             </div>
 
             {/* Navigate */}
             <div>
-              <h4 className="font-ui text-[10px] uppercase tracking-[0.25em] text-white/30 mb-5">Navigate</h4>
+              <h4 className="font-ui text-[10px] uppercase tracking-[0.25em] text-dark/40 mb-5">Navigate</h4>
               <div className="flex flex-col gap-3">
                 {NAV_LINKS.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="font-body text-sm text-white/60 hover:text-white transition-colors"
+                    className="font-body text-sm text-dark/60 hover:text-dark transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -68,26 +69,26 @@ export function Footer() {
 
             {/* Find Us + Hours */}
             <div>
-              <h4 className="font-ui text-[10px] uppercase tracking-[0.25em] text-white/30 mb-5">Find Us</h4>
-              <address className="not-italic font-body text-sm text-white/60 leading-relaxed mb-5">
+              <h4 className="font-ui text-[10px] uppercase tracking-[0.25em] text-dark/40 mb-5">Find Us</h4>
+              <address className="not-italic font-body text-sm text-dark/60 leading-relaxed mb-5">
                 Film Nagar, Hyderabad<br />
                 Financial District, Hyderabad<br />
                 Telangana, India
               </address>
-              <h4 className="font-ui text-[10px] uppercase tracking-[0.25em] text-white/30 mb-3">Hours</h4>
-              <p className="font-body text-sm text-white/60">Mon–Fri: 8am – 9pm</p>
-              <p className="font-body text-sm text-white/60">Sat–Sun: 9am – 10pm</p>
+              <h4 className="font-ui text-[10px] uppercase tracking-[0.25em] text-dark/40 mb-3">Hours</h4>
+              <p className="font-body text-sm text-dark/60">Mon–Fri: 8am – 9pm</p>
+              <p className="font-body text-sm text-dark/60">Sat–Sun: 9am – 10pm</p>
             </div>
 
             {/* Social */}
             <div>
-              <h4 className="font-ui text-[10px] uppercase tracking-[0.25em] text-white/30 mb-5">Connect</h4>
+              <h4 className="font-ui text-[10px] uppercase tracking-[0.25em] text-dark/40 mb-5">Connect</h4>
               <div className="flex flex-col gap-3">
                 <a
                   href="https://instagram.com/woolcup"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-sm text-white/60 hover:text-white transition-colors"
+                  className="font-body text-sm text-dark/60 hover:text-dark transition-colors"
                 >
                   Instagram
                 </a>
@@ -95,7 +96,7 @@ export function Footer() {
                   href="https://www.facebook.com/woolcup"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-sm text-white/60 hover:text-white transition-colors"
+                  className="font-body text-sm text-dark/60 hover:text-dark transition-colors"
                 >
                   Facebook
                 </a>
@@ -103,7 +104,7 @@ export function Footer() {
                   href="https://wa.me/917292944244"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-sm text-white/60 hover:text-white transition-colors"
+                  className="font-body text-sm text-dark/60 hover:text-dark transition-colors"
                 >
                   WhatsApp
                 </a>
@@ -113,10 +114,10 @@ export function Footer() {
 
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 pt-8">
-            <p className="font-ui text-[11px] text-white/25 tracking-wide">
+            <p className="font-ui text-[11px] text-dark/40 tracking-wide">
               © 2026 Wool Cup Urban Café &amp; Bistro. All rights reserved.
             </p>
-            <p className="font-ui text-[11px] text-white/25 tracking-wide">
+            <p className="font-ui text-[11px] text-dark/40 tracking-wide">
               Designed in Hyderabad · Film Nagar
             </p>
           </div>

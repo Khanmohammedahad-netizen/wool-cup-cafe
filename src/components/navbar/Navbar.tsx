@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { name: 'Story', href: '/about' },
   { name: 'Menu', href: '/menu' },
   { name: 'Cakes', href: '/cakes' },
+  { name: 'Gallery', href: '/gallery' },
   { name: 'Visit', href: '/#locations' },
 ];
 
