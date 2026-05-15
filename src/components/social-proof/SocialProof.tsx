@@ -95,10 +95,15 @@ export function SocialProof() {
           to   { transform: translateX(-50%); }
         }
         .wool-marquee-track {
-          animation: wool-marquee 40s linear infinite;
+          animation: wool-marquee 18s linear infinite;
         }
         .wool-marquee-track:hover {
           animation-play-state: paused;
+        }
+        @media (min-width: 768px) {
+          .wool-marquee-track {
+            animation-duration: 30s;
+          }
         }
       `}</style>
 

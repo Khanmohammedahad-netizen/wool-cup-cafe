@@ -27,8 +27,8 @@ export function WoolcupHero() {
     <ScrollExpandMedia
       mediaType="video"
       mediaSrc="/hero.mp4"
-      posterSrc="/images/new/exterior-night.jpg"
-      bgImageSrc="/images/new/exterior-wide.jpg"
+      posterSrc="/images/new/interior-sofa.jpg"
+      bgImageSrc="/images/new/interior-wide-cloud.jpg"
       title="Quiet Ritual"
       date="Specialty Coffee · Hyderabad"
       scrollToExpand="Scroll to explore"
