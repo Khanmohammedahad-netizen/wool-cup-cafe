@@ -84,8 +84,8 @@ const ScrollExpandMedia = ({
         const p = currentRef.current;
         const mobile = isMobileRef.current;
 
-        const w = 300 + p * (mobile ? 650 : 1250);
-        const h = 400 + p * (mobile ? 200 : 400);
+        const w = (mobile ? 180 : 300) + p * (mobile ? 720 : 1250);
+        const h = (mobile ? 240 : 400) + p * (mobile ? 380 : 400);
         const tx = p * (mobile ? 180 : 150);
 
         if (mediaBoxRef.current) {
@@ -209,7 +209,7 @@ const ScrollExpandMedia = ({
   const restOfTitle = title ? title.split(' ').slice(1).join(' ') : '';
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-hidden">
       <style href="scroll-indicator" precedence="default">{`
         @keyframes scroll-wheel {
           0%   { transform: translateY(0);   opacity: 1; }
@@ -264,8 +264,8 @@ const ScrollExpandMedia = ({
                 ref={mediaBoxRef}
                 className="absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl overflow-hidden"
                 style={{
-                  width: '300px',
-                  height: '400px',
+                  width: '180px',
+                  height: '240px',
                   maxWidth: '95vw',
                   maxHeight: '85vh',
                   boxShadow: '0px 0px 50px rgba(0,0,0,0.3)',
@@ -333,11 +333,7 @@ const ScrollExpandMedia = ({
               </div>
 
               {/* Title words — slide apart as video expands */}
-              <div
-                className={`flex items-center justify-center text-center gap-4 w-full relative z-10 flex-col ${
-                  textBlend ? 'mix-blend-difference' : ''
-                }`}
-              >
+              <div className="flex items-center justify-center text-center gap-4 w-full relative z-10 flex-col">
                 <h2
                   ref={word1Ref}
                   className={`font-display text-5xl md:text-6xl lg:text-7xl italic ${textColorClass}`}

@@ -27,10 +27,10 @@ export function WoolcupHero() {
       mediaType="video"
       mediaSrc="/hero.mp4"
       bgImageSrc="/images/hero-bg.jpg"
+      bgVideoSrc="/hero.mp4"
       title="Quiet Ritual"
       date="Specialty Coffee · Hyderabad"
       scrollToExpand="Scroll to explore"
-      textBlend
       textColorClass="text-[#ead8b5]"
       onExpansionChange={handleExpansionChange}
     >
