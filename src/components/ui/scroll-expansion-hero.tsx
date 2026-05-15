@@ -78,7 +78,7 @@ const ScrollExpandMedia = ({
   useEffect(() => {
     const tick = () => {
       const prev = currentRef.current;
-      currentRef.current = lerp(currentRef.current, targetRef.current, 0.07);
+      currentRef.current = lerp(currentRef.current, targetRef.current, 0.04);
 
       // Skip DOM work if barely moving
       if (Math.abs(currentRef.current - prev) > 0.0002) {
