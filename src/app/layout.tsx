@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/lib/lenis-provider";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { Navbar } from "@/components/navbar/Navbar";
 
-const edhanMartine = localFont({
-  src: "../fonts/edhan-martine.ttf",
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
-  weight: "400",
 });
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${edhanMartine.variable} ${cormorantGaramond.variable} ${dmSans.variable}`}
+      className={`${playfairDisplay.variable} ${cormorantGaramond.variable} ${dmSans.variable}`}
     >
       <body className="antialiased bg-bg text-text selection:bg-cream selection:text-dark">
         <LenisProvider>
