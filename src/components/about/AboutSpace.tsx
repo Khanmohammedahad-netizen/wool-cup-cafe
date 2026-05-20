@@ -61,7 +61,7 @@ export function AboutSpace() {
           </div>
         </div>
 
-        <div ref={cell4Ref} className="mt-4 rounded-2xl overflow-hidden h-[300px] w-full">
+        <div ref={cell4Ref} className="mt-4 rounded-2xl overflow-hidden h-screen w-full">
           <img
             src="/images/new/barista-pour.jpg"
             alt="Barista pouring coffee"
