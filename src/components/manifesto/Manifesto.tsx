@@ -37,7 +37,7 @@ export function Manifesto() {
       {/* Mascot — floats right on desktop, centered below on mobile */}
       <div className="flex justify-center mt-10 lg:mt-0 lg:absolute lg:right-[6vw] lg:top-1/2 lg:-translate-y-1/2 pointer-events-none select-none">
         <img
-          src="/images/mascot.svg"
+          src="/images/caricature-girl.svg"
           alt="Wool Cup mascot"
           width={110}
           height={128}

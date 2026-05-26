@@ -60,7 +60,7 @@ export default function RootLayout({
         <svg aria-hidden="true" style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
           <defs>
             <filter id="logo-brown" colorInterpolationFilters="sRGB">
-              <feColorMatrix type="matrix" values="-1 0 0 0 0.424  0 -1 0 0 0.231  0 0 -1 0 0.067  -1 0 0 0 1"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0.424  0 0 0 0 0.231  0 0 0 0 0.067  0 0 0 1 0"/>
             </filter>
           </defs>
         </svg>

@@ -102,7 +102,7 @@ export function FoundersPreview() {
               Read our full story →
             </a>
             <img
-              src="/images/mascot.svg"
+              src="/images/caricature-girl.svg"
               alt=""
               aria-hidden="true"
               width={90}
