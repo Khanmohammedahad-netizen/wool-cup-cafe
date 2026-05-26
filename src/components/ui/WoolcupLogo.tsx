@@ -3,8 +3,8 @@
 import Image from 'next/image';
 
 interface WoolcupLogoProps {
-  /** 'dark' = logo on light bg (multiply blend), 'light' = logo on dark bg (invert+screen) */
-  variant: 'dark' | 'light';
+  /** 'dark' = black on light bg, 'light' = white on dark bg, 'brown' = brand brown #6c3b11 on light bg */
+  variant: 'dark' | 'light' | 'brown';
   width?: number;
   height?: number;
   className?: string;
@@ -14,6 +14,8 @@ export function WoolcupLogo({ variant, width = 110, height = 76, className = '' 
   const style =
     variant === 'light'
       ? { filter: 'invert(1)', mixBlendMode: 'screen' as const }
+      : variant === 'brown'
+      ? { filter: 'url(#logo-brown)' }
       : { mixBlendMode: 'multiply' as const };
 
   return (

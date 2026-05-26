@@ -53,7 +53,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <WoolcupLogo
-              variant={dark ? 'dark' : 'light'}
+              variant={dark ? 'brown' : 'light'}
               width={150}
               height={104}
             />

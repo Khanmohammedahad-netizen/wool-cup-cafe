@@ -56,6 +56,14 @@ export default function RootLayout({
       className={`${playfairDisplay.variable} ${cormorantGaramond.variable} ${dmSans.variable}`}
     >
       <body className="antialiased bg-bg text-text selection:bg-cream selection:text-dark">
+        {/* SVG filter defs — converts black logo pixels to brand brown #6c3b11 */}
+        <svg aria-hidden="true" style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
+          <defs>
+            <filter id="logo-brown" colorInterpolationFilters="sRGB">
+              <feColorMatrix type="matrix" values="-1 0 0 0 0.424  0 -1 0 0 0.231  0 0 -1 0 0.067  -1 0 0 0 1"/>
+            </filter>
+          </defs>
+        </svg>
         <LenisProvider>
           <LoadingScreen />
           <Navbar />

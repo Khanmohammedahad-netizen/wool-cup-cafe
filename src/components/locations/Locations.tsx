@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -39,6 +39,7 @@ export function Locations() {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [expandedMap, setExpandedMap] = useState<string | null>(null);
 
   useGSAP(
     () => {
@@ -159,13 +160,44 @@ export function Locations() {
                 >
                   {loc.ctaLabel}
                 </a>
+
+                {/* Mobile map toggle — hidden on lg where the full map grid shows */}
+                <div className="lg:hidden mt-5">
+                  <button
+                    onClick={() => setExpandedMap(expandedMap === loc.name ? null : loc.name)}
+                    className="flex items-center gap-2 font-ui text-xs uppercase tracking-[0.15em] text-dark/50 hover:text-dark transition-colors"
+                  >
+                    <span>{expandedMap === loc.name ? 'Hide Map' : 'View Map'}</span>
+                    <span
+                      className="inline-block transition-transform duration-300"
+                      style={{ transform: expandedMap === loc.name ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    >
+                      ↓
+                    </span>
+                  </button>
+                  {expandedMap === loc.name && (
+                    <div className="mt-3 rounded-xl overflow-hidden border border-[#ead8b5]" style={{ height: 220 }}>
+                      <iframe
+                        src={loc.mapSrc}
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        className="[filter:grayscale(100%)_contrast(0.9)_brightness(1.1)]"
+                        allowFullScreen={false}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title={`Map — Wool Cup ${loc.name}`}
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Embedded maps — one per location */}
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Embedded maps — shown only on lg+ (mobile uses per-card toggle above) */}
+        <div className="mt-12 hidden lg:grid lg:grid-cols-2 gap-8">
           {LOCATIONS.map((loc) => (
             <div key={`map-${loc.name}`} className="flex flex-col gap-3">
               <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-dark/50">

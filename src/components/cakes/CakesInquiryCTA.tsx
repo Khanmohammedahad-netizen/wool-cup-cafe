@@ -32,7 +32,7 @@ export function CakesInquiryCTA() {
     <section ref={containerRef} className="relative bg-[#7B4A2E] py-20 md:py-28 overflow-hidden">
       {/* Mascot watermark */}
       <img
-        src="/images/mascot.png"
+        src="/images/mascot.svg"
         alt=""
         aria-hidden="true"
         width={160}

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 155 190" fill="none">
+
+  <!-- Coffee Bean -->
+  <g transform="translate(98,108) rotate(26)">
+    <ellipse cx="0" cy="0" rx="50" ry="78" fill="#6c3b11"/>
+    <!-- Bean crease S-curve -->
+    <path d="M -50,0 C -22,-28 22,28 50,0" stroke="#9a5520" stroke-width="5" fill="none" opacity="0.45"/>
+    <!-- Sheen highlights -->
+    <ellipse cx="-8" cy="-28" rx="8" ry="14" fill="#8a4d1f" opacity="0.28" transform="rotate(-10)"/>
+    <ellipse cx="8" cy="28" rx="8" ry="14" fill="#8a4d1f" opacity="0.28" transform="rotate(-10)"/>
+  </g>
+
+  <!-- Hair (back layer) -->
+  <path d="M 32,65 Q 28,46 52,42 Q 76,42 72,65 Q 72,80 66,92 L 62,92 Q 68,77 67,62 Q 67,48 52,48 Q 37,48 37,62 Q 37,77 42,92 L 38,92 Z" fill="#6c3b11"/>
+
+  <!-- Hair left side flow -->
+  <path d="M 33,68 Q 26,82 29,98 Q 31,107 36,112" fill="#6c3b11"/>
+
+  <!-- Hair right side flow -->
+  <path d="M 71,68 Q 79,84 77,100 Q 75,109 70,115" fill="#6c3b11"/>
+
+  <!-- Dress / body -->
+  <path d="M 37,113 Q 30,138 32,168 Q 36,178 45,180 Q 52,182 59,180 Q 68,178 72,168 Q 74,138 67,113 Q 62,106 52,104 Q 42,106 37,113 Z" fill="#fff3d9" stroke="#d4ba88" stroke-width="1.5"/>
+
+  <!-- Collar detail -->
+  <path d="M 44,110 Q 52,118 60,110" stroke="#d4ba88" stroke-width="1.2" fill="none"/>
+
+  <!-- Neck -->
+  <rect x="47" y="96" width="10" height="14" rx="4" fill="#dea074"/>
+
+  <!-- Head -->
+  <ellipse cx="52" cy="75" rx="20" ry="22" fill="#dea074"/>
+
+  <!-- Eyes -->
+  <ellipse cx="44" cy="73" rx="2.8" ry="3.2" fill="#231005"/>
+  <ellipse cx="60" cy="73" rx="2.8" ry="3.2" fill="#231005"/>
+  <!-- Eye highlights -->
+  <circle cx="45.5" cy="71.5" r="1.1" fill="white"/>
+  <circle cx="61.5" cy="71.5" r="1.1" fill="white"/>
+
+  <!-- Eyebrows -->
+  <path d="M 40,67 Q 44,64 48,67" stroke="#6c3b11" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <path d="M 56,67 Q 60,64 64,67" stroke="#6c3b11" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M 52,80 Q 55,84 52,86 Q 49,84 52,80" fill="#c07848" opacity="0.4"/>
+
+  <!-- Smile -->
+  <path d="M 46,87 Q 52,93 58,87" stroke="#8a4822" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Left arm -->
+  <path d="M 36,120 Q 28,136 30,152 Q 32,160 36,162" stroke="#dea074" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Right arm wrapping around bean -->
+  <path d="M 68,122 Q 90,114 108,122 Q 132,134 135,152" stroke="#dea074" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Left foot -->
+  <ellipse cx="43" cy="181" rx="11" ry="5.5" fill="#dea074"/>
+  <!-- Right foot -->
+  <ellipse cx="59" cy="182" rx="11" ry="5.5" fill="#dea074"/>
+
+</svg>

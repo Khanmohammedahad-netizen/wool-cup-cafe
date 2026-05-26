@@ -102,7 +102,7 @@ export function LoadingScreen() {
       <div ref={containerRef} className="flex flex-col items-center gap-4" style={{ opacity: 0 }}>
         {/* Mascot */}
         <img
-          src="/images/mascot.png"
+          src="/images/mascot.svg"
           alt="Wool Cup mascot"
           width={120}
           height={140}

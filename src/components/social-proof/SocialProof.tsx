@@ -130,7 +130,7 @@ export function SocialProof() {
             </h2>
             {/* Mascot — right of headline on desktop, hidden on smallest phones */}
             <img
-              src="/images/mascot.png"
+              src="/images/mascot.svg"
               alt=""
               aria-hidden="true"
               width={80}
