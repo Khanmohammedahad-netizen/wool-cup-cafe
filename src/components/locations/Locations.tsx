@@ -107,7 +107,7 @@ export function Locations() {
         </div>
 
         {/* Location cards */}
-        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {LOCATIONS.map((loc, i) => (
             <div
               key={loc.name}
