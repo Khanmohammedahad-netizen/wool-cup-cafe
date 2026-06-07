@@ -80,7 +80,7 @@ export function MenuMustTries() {
           <div
             key={item.name}
             ref={(el) => { cardRefs.current[i] = el; }}
-            className="bg-white border border-[#ead8b5] rounded-2xl overflow-hidden"
+            className="bg-ivory border border-[#ead8b5] rounded-2xl overflow-hidden"
           >
             <div className="h-[220px] flex items-center justify-center bg-[#ead8b5]/20">
               <p className="font-body italic text-[#231f20]/40 text-sm">Photograph coming soon</p>

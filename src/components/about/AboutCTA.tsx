@@ -49,7 +49,7 @@ export function AboutCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#locations"
-              className="bg-[#ead8b5] text-dark font-ui text-sm uppercase tracking-wide px-8 py-3 rounded-full hover:bg-white transition-colors duration-300"
+              className="bg-[#ead8b5] text-dark font-ui text-sm uppercase tracking-wide px-8 py-3 rounded-full hover:bg-ivory transition-colors duration-300"
             >
               Visit Us →
             </Link>

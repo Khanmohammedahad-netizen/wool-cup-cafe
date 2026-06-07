@@ -38,7 +38,7 @@ export function AboutOrigin() {
   );
 
   return (
-    <section ref={containerRef} className="bg-white py-24 md:py-32">
+    <section ref={containerRef} className="bg-ivory py-24 md:py-32">
       <div className="grid grid-cols-1 lg:grid-cols-[60fr_40fr] gap-12 lg:gap-20 items-center max-w-7xl mx-auto px-6 md:px-12">
         <div>
           <p

@@ -40,7 +40,7 @@ export function MenuCTAFooter() {
         </p>
         <Link
           href="/#locations"
-          className="bg-[#ead8b5] text-[#231f20] font-ui text-sm uppercase tracking-wide px-8 py-3 rounded-full hover:bg-white transition-colors duration-300"
+          className="bg-[#ead8b5] text-[#231f20] font-ui text-sm uppercase tracking-wide px-8 py-3 rounded-full hover:bg-ivory transition-colors duration-300"
         >
           Find Us →
         </Link>

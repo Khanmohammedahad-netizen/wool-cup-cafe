@@ -52,7 +52,7 @@ export function CakesInquiryCTA() {
           href="https://wa.me/917292944244?text=Hi%20Wool%20Cup!%20I'd%20like%20to%20inquire%20about%20a%20custom%20cake."
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-[#ead8b5] text-[#231f20] font-ui text-sm uppercase tracking-wide px-8 py-3 rounded-full hover:bg-white hover:scale-[1.02] hover:shadow-lg transition-all duration-300"
+          className="inline-block bg-[#ead8b5] text-[#231f20] font-ui text-sm uppercase tracking-wide px-8 py-3 rounded-full hover:bg-ivory hover:scale-[1.02] hover:shadow-lg transition-all duration-300"
         >
           Start a Conversation →
         </a>

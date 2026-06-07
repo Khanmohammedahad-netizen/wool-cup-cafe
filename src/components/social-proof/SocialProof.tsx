@@ -52,8 +52,7 @@ export function SocialProof() {
   const headerRef = useRef<HTMLDivElement>(null);
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -71,15 +70,14 @@ export function SocialProof() {
       );
 
       gsap.fromTo(
-        cardRefs.current.filter((r): r is HTMLDivElement => r !== null),
+        carouselRef.current,
         { opacity: 0, y: 40 },
         {
           opacity: 1,
           y: 0,
           duration: 0.8,
           ease: 'power2.out',
-          stagger: 0.1,
-          scrollTrigger: { trigger: gridRef.current, start: 'top 80%' },
+          scrollTrigger: { trigger: carouselRef.current, start: 'top 85%' },
         }
       );
     },
@@ -103,6 +101,17 @@ export function SocialProof() {
         @media (min-width: 768px) {
           .wool-marquee-track {
             animation-duration: 30s;
+          }
+        }
+        .wool-reviews-track {
+          animation: wool-marquee 36s linear infinite;
+        }
+        .wool-reviews-track:hover {
+          animation-play-state: paused;
+        }
+        @media (min-width: 768px) {
+          .wool-reviews-track {
+            animation-duration: 50s;
           }
         }
       `}</style>
@@ -139,17 +148,15 @@ export function SocialProof() {
               style={{ mixBlendMode: 'multiply' }}
             />
           </div>
+        </div>
 
-          {/* Review cards */}
-          <div
-            ref={gridRef}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          >
-            {REVIEWS.map((review, i) => (
+        {/* Reviews carousel — rotates horizontally, pauses on hover */}
+        <div ref={carouselRef} className="overflow-hidden">
+          <div className="wool-reviews-track flex gap-6 w-max pl-6 md:pl-12">
+            {[...REVIEWS, ...REVIEWS].map((review, i) => (
               <div
-                key={review.name}
-                ref={(el) => { cardRefs.current[i] = el; }}
-                className="bg-white border border-[#ead8b5] rounded-xl p-6 md:p-8 relative overflow-hidden"
+                key={`${review.name}-${i}`}
+                className="bg-ivory border border-[#ead8b5] rounded-xl p-6 md:p-8 relative overflow-hidden w-[300px] md:w-[380px] flex-shrink-0"
               >
                 {/* Decorative quote mark */}
                 <span
@@ -177,7 +184,7 @@ export function SocialProof() {
         </div>
 
         {/* Photo marquee strip */}
-        <div className="overflow-hidden bg-white py-8 mt-16">
+        <div className="overflow-hidden bg-ivory py-8 mt-16">
           <div className="wool-marquee-track flex gap-4">
             {[...MARQUEE_IMAGES, ...MARQUEE_IMAGES].map((src, i) => (
               <img

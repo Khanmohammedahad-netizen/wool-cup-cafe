@@ -73,7 +73,7 @@ export function MenuSeasonalSpecials() {
     <section
       id="seasonal"
       ref={containerRef}
-      className="bg-white py-20 md:py-28 border-t border-[#ead8b5]"
+      className="bg-ivory py-20 md:py-28 border-t border-[#ead8b5]"
     >
       <div ref={headerRef} className="max-w-3xl mx-auto px-6 text-center mb-12">
         <h2 className="font-display text-3xl md:text-4xl text-[#231f20]">

@@ -329,7 +329,7 @@ export function MenuFullMenu() {
   );
 
   return (
-    <section id="full-menu" ref={containerRef} className="bg-white">
+    <section id="full-menu" ref={containerRef} className="bg-ivory">
       {/* Mobile sticky pills */}
       <div className="lg:hidden sticky top-[136px] z-50 bg-[#ead8b5]/95 backdrop-blur-sm py-3 px-4">
         <MenuCategoryNav

@@ -178,7 +178,7 @@ export function GlimpseGrid() {
   );
 
   return (
-    <section id="explore" className="bg-white py-24 md:py-32" ref={containerRef}>
+    <section id="explore" className="bg-ivory py-24 md:py-32" ref={containerRef}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* Section header */}

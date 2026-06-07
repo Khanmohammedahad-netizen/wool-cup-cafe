@@ -46,7 +46,7 @@ export function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-          dark ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
+          dark ? 'bg-ivory/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
         } px-5 py-4 lg:pt-6`}
       >
         <div className="max-w-[1100px] mx-auto flex items-center justify-between">

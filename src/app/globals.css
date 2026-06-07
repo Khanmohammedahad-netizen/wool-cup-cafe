@@ -5,13 +5,15 @@
   --color-white: #FFFFFF;
   --color-dark: #231f20;
   --color-cream: #ead8b5;
+  /* Universal page tone — sits between white and cream, replaces white everywhere */
+  --color-ivory: #f9f3e9;
 
   /* ── Background tokens ── */
-  --color-bg: #FFFFFF;
+  --color-bg: #f9f3e9;
   --color-bg-alt: #ead8b5;
-  --color-bg-primary: #FFFFFF;
+  --color-bg-primary: #f9f3e9;
   --color-bg-secondary: #ead8b5;
-  --color-surface: #FFFFFF;
+  --color-surface: #f9f3e9;
 
   /* ── Text tokens ── */
   --color-text: #231f20;
@@ -88,7 +90,7 @@ html.lenis { height: auto; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
   .glass {
-    @apply backdrop-blur-md bg-white/75 border border-border;
+    @apply backdrop-blur-md bg-ivory/75 border border-border;
   }
 
   /* Section spacing — used by Section.tsx */

@@ -9,7 +9,7 @@ export function MenuDietary() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="bg-white py-12 max-w-2xl mx-auto px-6 text-center"
+      className="bg-ivory py-12 max-w-2xl mx-auto px-6 text-center"
     >
       <div className="w-full h-px bg-[#231f20]/10 mb-6" />
       <p className="font-body text-sm italic text-[#231f20]/50">

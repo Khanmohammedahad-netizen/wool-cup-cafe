@@ -33,7 +33,7 @@ export function AboutSpace() {
   );
 
   return (
-    <section ref={containerRef} className="bg-white py-24 md:py-32">
+    <section ref={containerRef} className="bg-ivory py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div ref={cell1Ref} className="md:row-span-2 rounded-2xl overflow-hidden min-h-[400px]">

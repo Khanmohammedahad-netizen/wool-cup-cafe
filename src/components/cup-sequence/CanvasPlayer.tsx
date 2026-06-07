@@ -59,8 +59,8 @@ export function CanvasPlayer({ scrollProgress }: CanvasPlayerProps) {
   });
 
   return (
-    <div className="absolute inset-0 bg-white" role="img" aria-label="Wool Cup coffee cup rotating animation">
-      <canvas ref={canvasRef} className="w-full h-full block" style={{ background: '#FFFFFF' }} />
+    <div className="absolute inset-0 bg-ivory" role="img" aria-label="Wool Cup coffee cup rotating animation">
+      <canvas ref={canvasRef} className="w-full h-full block" style={{ background: '#f9f3e9' }} />
       {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-24 h-px bg-rule overflow-hidden">

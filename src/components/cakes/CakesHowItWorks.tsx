@@ -61,7 +61,7 @@ export function CakesHowItWorks() {
   );
 
   return (
-    <section ref={containerRef} className="bg-white py-20 md:py-28">
+    <section ref={containerRef} className="bg-ivory py-20 md:py-28">
       <div ref={headerRef} className="max-w-3xl mx-auto px-6 text-center mb-16">
         <h2 className="font-display text-3xl md:text-4xl text-[#231f20]">
           Made for <em>you.</em>

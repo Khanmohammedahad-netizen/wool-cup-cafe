@@ -76,7 +76,7 @@ export function Locations() {
     <section
       id="locations"
       ref={containerRef}
-      className="relative bg-white py-24 md:py-32 overflow-hidden"
+      className="relative bg-ivory py-24 md:py-32 overflow-hidden"
     >
       {/* Radial cream gradient */}
       <div
@@ -112,7 +112,7 @@ export function Locations() {
             <div
               key={loc.name}
               ref={(el) => { cardRefs.current[i] = el; }}
-              className="rounded-2xl overflow-hidden bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-[400ms]"
+              className="rounded-2xl overflow-hidden bg-ivory shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-[400ms]"
             >
               {/* Image */}
               <div className="relative h-[280px] overflow-hidden">
