@@ -40,7 +40,6 @@ export function Locations() {
   const gridRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [expandedMap, setExpandedMap] = useState<string | null>(null);
-  const [fullscreenMap, setFullscreenMap] = useState<string | null>(null);
 
   useGSAP(
     () => {
@@ -162,13 +161,13 @@ export function Locations() {
                   {loc.ctaLabel}
                 </a>
 
-                {/* Mobile map toggle — hidden on lg where the full map grid shows */}
-                <div className="lg:hidden mt-5">
+                {/* Map toggle — collapsed by default, expands inline on click */}
+                <div className="mt-5">
                   <button
                     onClick={() => setExpandedMap(expandedMap === loc.name ? null : loc.name)}
                     className="flex items-center gap-2 font-ui text-xs uppercase tracking-[0.15em] text-dark/50 hover:text-dark transition-colors"
                   >
-                    <span>{expandedMap === loc.name ? 'Hide Map' : 'View Map'}</span>
+                    <span>{expandedMap === loc.name ? 'Hide Location' : 'View Location'}</span>
                     <span
                       className="inline-block transition-transform duration-300"
                       style={{ transform: expandedMap === loc.name ? 'rotate(180deg)' : 'rotate(0deg)' }}
@@ -177,7 +176,7 @@ export function Locations() {
                     </span>
                   </button>
                   {expandedMap === loc.name && (
-                    <div className="mt-3 rounded-xl overflow-hidden border border-[#ead8b5]" style={{ height: 220 }}>
+                    <div className="mt-3 rounded-xl overflow-hidden border border-[#ead8b5]" style={{ height: 280 }}>
                       <iframe
                         src={loc.mapSrc}
                         width="100%"
@@ -197,73 +196,7 @@ export function Locations() {
           ))}
         </div>
 
-        {/* Embedded maps — shown only on lg+ (mobile uses per-card toggle above) */}
-        <div className="mt-12 hidden lg:grid lg:grid-cols-2 gap-8">
-          {LOCATIONS.map((loc) => (
-            <div key={`map-${loc.name}`} className="flex flex-col gap-3">
-              <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-dark/50">
-                {loc.name}
-              </p>
-              <button
-                type="button"
-                onClick={() => setFullscreenMap(loc.name)}
-                className="relative rounded-2xl overflow-hidden h-[280px] md:h-[340px] border border-[#ead8b5] group cursor-pointer text-left"
-                aria-label={`Expand map for ${loc.name}`}
-              >
-                <iframe
-                  src={loc.mapSrc}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  className="[filter:grayscale(100%)_contrast(0.9)_brightness(1.1)] group-hover:[filter:none] transition-all duration-[600ms] pointer-events-none"
-                  allowFullScreen={false}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Map — Wool Cup ${loc.name}`}
-                />
-                <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/10 transition-colors duration-300 flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-ui text-xs uppercase tracking-[0.2em] text-white bg-dark/70 px-4 py-2 rounded-full">
-                    Click to expand ⤢
-                  </span>
-                </div>
-              </button>
-            </div>
-          ))}
-        </div>
-
       </div>
-
-      {/* Fullscreen map modal */}
-      {fullscreenMap && (
-        <div
-          className="fixed inset-0 z-[200] bg-dark/70 flex items-center justify-center p-4 md:p-10"
-          onClick={() => setFullscreenMap(null)}
-        >
-          <div
-            className="relative bg-white rounded-2xl overflow-hidden w-full max-w-5xl h-[80vh] shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={() => setFullscreenMap(null)}
-              className="absolute top-4 right-4 z-10 font-ui text-xs uppercase tracking-[0.2em] text-dark bg-white/90 hover:bg-white px-4 py-2 rounded-full shadow transition-colors"
-              aria-label="Close map"
-            >
-              Close ✕
-            </button>
-            <iframe
-              src={LOCATIONS.find((l) => l.name === fullscreenMap)?.mapSrc}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title={`Map — Wool Cup ${fullscreenMap} (expanded)`}
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 }
