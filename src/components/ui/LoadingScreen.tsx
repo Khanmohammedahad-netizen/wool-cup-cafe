@@ -111,10 +111,13 @@ export function LoadingScreen() {
         />
         <div
           ref={brandNameRef}
-          className="font-display text-[56px] md:text-[72px] leading-none tracking-[0.15em] text-dark lowercase"
+          className="font-display text-[80px] md:text-[120px] leading-none tracking-[0.08em] text-dark lowercase"
           style={{ clipPath: 'inset(0 100% 0 0)' }}
         >
-          wool cup
+          wool cu<span
+            className="text-[130px] inline-block"
+            style={{ lineHeight: 1.3, verticalAlign: 'top' }}
+          >p</span>
         </div>
         <p
           ref={subtitleRef}
