@@ -28,7 +28,7 @@ export function Footer() {
             href="https://wa.me/917292944244?text=Hi%20Wool%20Cup!%20I'd%20like%20to%20inquire%20about%20ordering%20for%20a%20special%20event."
             target="_blank"
             rel="noopener noreferrer"
-            className="font-ui text-xs uppercase tracking-wide text-white/70 hover:text-white transition-colors shrink-0"
+            className="font-ui text-sm font-semibold uppercase tracking-wide text-white/70 hover:text-white transition-colors shrink-0"
           >
             Inquire →
           </a>
@@ -53,7 +53,7 @@ export function Footer() {
 
             {/* Navigate */}
             <div>
-              <h4 className="font-ui text-xs uppercase tracking-[0.2em] text-white/30 mb-5">Navigate</h4>
+              <h4 className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">Navigate</h4>
               <div className="flex flex-col gap-3">
                 {NAV_LINKS.map((link) => (
                   <Link
@@ -69,20 +69,20 @@ export function Footer() {
 
             {/* Find Us + Hours */}
             <div>
-              <h4 className="font-ui text-xs uppercase tracking-[0.2em] text-white/30 mb-5">Find Us</h4>
+              <h4 className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">Find Us</h4>
               <address className="not-italic font-body text-base text-white/60 leading-relaxed mb-5">
                 Film Nagar, Hyderabad<br />
                 Financial District, Hyderabad<br />
                 Telangana, India
               </address>
-              <h4 className="font-ui text-xs uppercase tracking-[0.2em] text-white/30 mb-3">Hours</h4>
+              <h4 className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-white/40 mb-3">Hours</h4>
               <p className="font-body text-base text-white/60">Mon–Fri: 8am – 9pm</p>
               <p className="font-body text-base text-white/60">Sat–Sun: 9am – 10pm</p>
             </div>
 
             {/* Social */}
             <div>
-              <h4 className="font-ui text-xs uppercase tracking-[0.2em] text-white/30 mb-5">Connect</h4>
+              <h4 className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">Connect</h4>
               <div className="flex flex-col gap-3">
                 <a
                   href="https://instagram.com/woolcup"
@@ -114,10 +114,10 @@ export function Footer() {
 
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 pt-8">
-            <p className="font-ui text-xs text-white/30 tracking-wide">
+            <p className="font-ui text-sm font-medium text-white/40 tracking-wide">
               © 2026 Wool Cup Urban Café &amp; Bistro. All rights reserved.
             </p>
-            <p className="font-ui text-xs text-white/30 tracking-wide">
+            <p className="font-ui text-sm font-medium text-white/40 tracking-wide">
               Designed in Hyderabad · Film Nagar
             </p>
           </div>
