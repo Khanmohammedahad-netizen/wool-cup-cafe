@@ -20,7 +20,7 @@ export function Footer() {
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
             <h4 className="font-display text-xl text-white mb-1">For Special Moments</h4>
-            <p className="font-body text-base text-white/50 max-w-md">
+            <p className="font-body text-lg text-white/50 max-w-md">
               Dessert platters, celebration cakes, curated spreads — crafted for your gatherings and events.
             </p>
           </div>
@@ -46,7 +46,7 @@ export function Footer() {
               <Link href="/" className="flex items-center mb-5 w-fit">
                 <WoolcupLogo variant="light" width={160} height={111} />
               </Link>
-              <p className="font-body text-base text-white/50 leading-relaxed max-w-[220px]">
+              <p className="font-body text-lg text-white/50 leading-relaxed max-w-[220px]">
                 Coffee, quieted. A place for slow mornings and honest meals.
               </p>
             </div>
@@ -59,7 +59,7 @@ export function Footer() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="font-body text-base text-white/60 hover:text-white transition-colors"
+                    className="font-body text-lg text-white/60 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -70,14 +70,14 @@ export function Footer() {
             {/* Find Us + Hours */}
             <div>
               <h4 className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">Find Us</h4>
-              <address className="not-italic font-body text-base text-white/60 leading-relaxed mb-5">
+              <address className="not-italic font-body text-lg text-white/60 leading-relaxed mb-5">
                 Film Nagar, Hyderabad<br />
                 Financial District, Hyderabad<br />
                 Telangana, India
               </address>
               <h4 className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-white/40 mb-3">Hours</h4>
-              <p className="font-body text-base text-white/60">Mon–Fri: 8am – 9pm</p>
-              <p className="font-body text-base text-white/60">Sat–Sun: 9am – 10pm</p>
+              <p className="font-body text-lg text-white/60">Mon–Fri: 8am – 9pm</p>
+              <p className="font-body text-lg text-white/60">Sat–Sun: 9am – 10pm</p>
             </div>
 
             {/* Social */}
@@ -88,7 +88,7 @@ export function Footer() {
                   href="https://instagram.com/woolcup"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-base text-white/60 hover:text-white transition-colors"
+                  className="font-body text-lg text-white/60 hover:text-white transition-colors"
                 >
                   Instagram
                 </a>
@@ -96,7 +96,7 @@ export function Footer() {
                   href="https://www.facebook.com/woolcup"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-base text-white/60 hover:text-white transition-colors"
+                  className="font-body text-lg text-white/60 hover:text-white transition-colors"
                 >
                   Facebook
                 </a>
@@ -104,7 +104,7 @@ export function Footer() {
                   href="https://wa.me/917292944244"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-base text-white/60 hover:text-white transition-colors"
+                  className="font-body text-lg text-white/60 hover:text-white transition-colors"
                 >
                   WhatsApp
                 </a>
