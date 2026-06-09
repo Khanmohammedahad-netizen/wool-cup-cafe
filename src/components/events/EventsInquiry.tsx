@@ -43,7 +43,7 @@ export function EventsInquiry() {
       guestCount ? `Guests: ${guestCount}` : null,
       details ? `Details: ${details}` : null,
     ]
-      .filter(Boolean)
+      .filter((line): line is string => line !== null)
       .join('\n');
 
     window.open(
