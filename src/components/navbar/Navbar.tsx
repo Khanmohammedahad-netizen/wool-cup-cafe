@@ -66,7 +66,7 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`font-ui text-[0.8rem] tracking-[0.1em] font-medium uppercase transition-colors duration-300 ${
+                className={`font-ui text-[0.9rem] tracking-[0.1em] font-medium uppercase transition-colors duration-300 ${
                   isActive(link.href) ? activeColor : linkColor
                 } relative group`}
               >
@@ -83,7 +83,7 @@ export function Navbar() {
             href="https://www.instagram.com/woolcup/"
             target="_blank"
             rel="noopener noreferrer"
-            className={`hidden lg:block border font-ui text-[0.8rem] tracking-[0.12em] font-medium uppercase px-5 py-2 rounded-full transition-all duration-300 ${
+            className={`hidden lg:block border font-ui text-[0.9rem] tracking-[0.12em] font-medium uppercase px-5 py-2 rounded-full transition-all duration-300 ${
               dark
                 ? 'border-[#231f20] text-[#231f20] hover:bg-[#231f20] hover:text-white'
                 : 'border-white text-white hover:bg-white hover:text-[#231f20]'
@@ -136,7 +136,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`font-display text-[2rem] transition-colors ${
+                    className={`font-display text-[2.25rem] transition-colors ${
                       isActive(link.href) ? 'text-[#ead8b5]' : 'text-white hover:text-[#ead8b5]'
                     }`}
                   >

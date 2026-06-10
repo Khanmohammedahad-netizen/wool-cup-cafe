@@ -39,15 +39,28 @@
   --font-display: var(--font-display);
   --font-body: var(--font-body);
   --font-ui: var(--font-ui);
+
+  /* ── Type scale — bumped ~12-15% over Tailwind defaults for readability ── */
+  --text-xs: 0.85rem;
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.275rem;
+  --text-xl: 1.4rem;
+  --text-2xl: 1.7rem;
+  --text-3xl: 2.125rem;
+  --text-4xl: 2.55rem;
+  --text-5xl: 3.4rem;
+  --text-6xl: 4.25rem;
+  --text-7xl: 5.1rem;
 }
 
 :root {
-  /* Typography scale */
-  --display-xl: clamp(2.5rem, 6vw, 5rem);
-  --display-lg: clamp(2rem, 4.5vw, 3.25rem);
-  --display-md: clamp(1.25rem, 2.5vw, 1.5rem);
-  --body: clamp(0.95rem, 1.8vw, 1.05rem);
-  --label: 0.75rem;
+  /* Typography scale — bumped ~12-15% for readability */
+  --display-xl: clamp(2.85rem, 6.75vw, 5.65rem);
+  --display-lg: clamp(2.3rem, 5.1vw, 3.7rem);
+  --display-md: clamp(1.4rem, 2.8vw, 1.7rem);
+  --body: clamp(1.05rem, 2vw, 1.2rem);
+  --label: 0.85rem;
   --section-y: clamp(4rem, 8vw, 8rem);
 }
 
@@ -134,7 +147,7 @@ html.lenis { height: auto; }
 
   /* Eyebrow label — used by CraftTriptych.tsx */
   .text-eyebrow {
-    font-size: 11px;
+    font-size: 12.5px;
     line-height: 1;
     letter-spacing: 0.32em;
     text-transform: uppercase;
