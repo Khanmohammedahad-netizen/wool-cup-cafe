@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const LOCATIONS = [
   {
-    image: '/images/new/film-nagar-exterior.jpeg',
+    image: '/images/film-nagar-exterior.jpg',
     badge: 'Flagship',
     name: 'Film Nagar',
     address: 'CC 55, Road No. 1, Film Nagar, Opposite Papaya, Jubilee Hills, Hyderabad 500033',
@@ -119,7 +119,7 @@ export function Locations() {
                 <img
                   src={loc.image}
                   alt={loc.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/20 to-transparent" />
                 <span className="absolute top-4 right-4 font-ui text-[10px] uppercase tracking-widest bg-[#ead8b5] text-dark px-3 py-1 rounded-full">
