@@ -111,10 +111,14 @@ export function LoadingScreen() {
         />
         <div
           ref={brandNameRef}
-          className="font-body font-light text-[80px] md:text-[120px] leading-[1.15] tracking-[0.08em] text-dark lowercase"
           style={{ clipPath: 'inset(0 100% 0 0)' }}
         >
-          wool cup
+          <img
+            src="/images/logo.png"
+            alt="Wool Cup"
+            className="w-[160px] md:w-[220px] pointer-events-none select-none"
+            style={{ mixBlendMode: 'multiply' }}
+          />
         </div>
         <p
           ref={subtitleRef}
