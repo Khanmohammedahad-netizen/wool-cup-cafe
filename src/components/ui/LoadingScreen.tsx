@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useLenis } from '@studio-freight/react-lenis';
+import { WoolcupLogo } from './WoolcupLogo';
 
 export function LoadingScreen() {
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -113,11 +114,11 @@ export function LoadingScreen() {
           ref={brandNameRef}
           style={{ clipPath: 'inset(0 100% 0 0)' }}
         >
-          <img
-            src="/images/logo.png"
-            alt="Wool Cup"
-            className="w-[160px] md:w-[220px] pointer-events-none select-none"
-            style={{ mixBlendMode: 'multiply' }}
+          <WoolcupLogo
+            variant="brown"
+            width={220}
+            height={152}
+            className="w-[160px] md:w-[220px] h-auto pointer-events-none select-none"
           />
         </div>
         <p
