@@ -12,10 +12,10 @@ export default function GalleryPage() {
     <main className="min-h-screen bg-bg">
       {/* Page hero — pt-28 clears the fixed navbar */}
       <div className="pt-28 pb-4 px-6 md:px-12 max-w-7xl mx-auto">
-        <p className="font-ui uppercase tracking-[0.3em] text-xs text-dark/50 mb-4">
+        <p className="font-ui uppercase tracking-[0.3em] text-xs text-brown/70 mb-4">
           Photos
         </p>
-        <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-dark leading-none">
+        <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-brown leading-none">
           Our Gallery
         </h1>
         <p className="font-body text-base text-dark/50 mt-4 max-w-md">

@@ -127,13 +127,13 @@ export function SocialProof() {
           <div ref={headerRef} className="text-center mb-16 relative">
             <p
               ref={eyebrowRef}
-              className="font-ui uppercase tracking-[0.3em] text-xs text-dark/50 mb-4"
+              className="font-ui uppercase tracking-[0.3em] text-xs text-brown/70 mb-4"
             >
               Guest Voices
             </p>
             <h2
               ref={headlineRef}
-              className="font-display text-4xl md:text-5xl text-dark"
+              className="font-display text-4xl md:text-5xl text-brown"
             >
               Loved by <em>Hyderabad.</em>
             </h2>
