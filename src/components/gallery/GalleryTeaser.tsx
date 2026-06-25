@@ -7,10 +7,10 @@ export function GalleryTeaser() {
 
         {/* Header */}
         <div className="mb-10">
-          <p className="font-ui uppercase tracking-[0.3em] text-xs text-dark/50 mb-3">
+          <p className="font-ui uppercase tracking-[0.3em] text-xs text-brown/70 mb-3">
             The Space
           </p>
-          <h2 className="font-display text-4xl md:text-5xl text-dark">
+          <h2 className="font-display text-4xl md:text-5xl text-brown">
             A glimpse inside.
           </h2>
         </div>

@@ -185,13 +185,13 @@ export function GlimpseGrid() {
         <div ref={headerRef} className="mb-12 md:mb-16">
           <p
             ref={eyebrowRef}
-            className="font-ui uppercase tracking-[0.3em] text-xs text-dark/50 mb-4"
+            className="font-ui uppercase tracking-[0.3em] text-xs text-brown/70 mb-4"
           >
             The Experience
           </p>
           <h2
             ref={headlineRef}
-            className="font-display text-4xl md:text-5xl text-dark"
+            className="font-display text-4xl md:text-5xl text-brown"
           >
             Explore <em>Wool Cup</em>
           </h2>

@@ -74,13 +74,13 @@ export function FoundersPreview() {
           <div ref={textColRef} className="flex flex-col gap-6">
             <p
               ref={eyebrowRef}
-              className="font-ui uppercase tracking-[0.3em] text-xs text-dark/50"
+              className="font-ui uppercase tracking-[0.3em] text-xs text-brown/70"
             >
               Our Story
             </p>
             <h2
               ref={headlineRef}
-              className="font-display text-3xl md:text-4xl lg:text-5xl text-dark"
+              className="font-display text-3xl md:text-4xl lg:text-5xl text-brown"
             >
               Where comfort meets <em>craft.</em>
             </h2>

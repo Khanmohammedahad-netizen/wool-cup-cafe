@@ -33,10 +33,10 @@ export function AboutPeople() {
       <div className="max-w-4xl mx-auto px-6 text-center">
         {/* TODO: Replace with 2-column founder portrait grid once photos are available */}
         <div ref={contentRef}>
-          <p className="font-ui uppercase tracking-[0.3em] text-xs text-dark/50 mb-6">
+          <p className="font-ui uppercase tracking-[0.3em] text-xs text-brown/70 mb-6">
             The People
           </p>
-          <h2 className="font-display text-3xl md:text-4xl text-dark">
+          <h2 className="font-display text-3xl md:text-4xl text-brown">
             The faces behind every cup.
           </h2>
           <p className="font-body text-base text-dark/60 mt-4">

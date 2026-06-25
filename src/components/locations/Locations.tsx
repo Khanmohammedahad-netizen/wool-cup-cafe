@@ -94,13 +94,13 @@ export function Locations() {
         <div ref={headerRef} className="text-center mb-16">
           <p
             ref={eyebrowRef}
-            className="font-ui uppercase tracking-[0.3em] text-xs text-dark/50 mb-4"
+            className="font-ui uppercase tracking-[0.3em] text-xs text-brown/70 mb-4"
           >
             Find Us
           </p>
           <h2
             ref={headlineRef}
-            className="font-display text-4xl md:text-5xl text-dark"
+            className="font-display text-4xl md:text-5xl text-brown"
           >
             Two homes, one <em>soul.</em>
           </h2>

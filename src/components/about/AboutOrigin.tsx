@@ -43,7 +43,7 @@ export function AboutOrigin() {
         <div>
           <p
             ref={eyebrowRef}
-            className="font-ui uppercase tracking-[0.3em] text-xs text-dark/50 mb-6"
+            className="font-ui uppercase tracking-[0.3em] text-xs text-brown/70 mb-6"
           >
             The Beginning
           </p>
