@@ -105,8 +105,8 @@ export function GalleryGrid() {
             aria-pressed={active === tab.value}
             className={`font-ui text-[11px] uppercase tracking-[0.18em] px-4 py-2 rounded-full border transition-all duration-300 ${
               active === tab.value
-                ? 'bg-dark text-white border-dark'
-                : 'bg-transparent text-dark/60 border-dark/20 hover:border-dark/50 hover:text-dark'
+                ? 'bg-brown text-white border-brown'
+                : 'bg-transparent text-dark/60 border-dark/20 hover:border-brown/50 hover:text-brown'
             }`}
           >
             {tab.label}

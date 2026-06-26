@@ -257,21 +257,21 @@ function MenuItem({ name, description, price, note }: MenuItemData) {
   return (
     <div className="py-4 border-b border-[#ead8b5]/50 last:border-0">
       <div className="flex items-baseline gap-1">
-        <span className="font-display text-lg text-[#231f20]">{name}</span>
+        <span className="font-display text-lg text-brown">{name}</span>
         {note && (
-          <span className="font-ui text-[10px] uppercase tracking-widest text-[#231f20]/35 ml-2 shrink-0">
+          <span className="font-ui text-[10px] uppercase tracking-widest text-brown/35 ml-2 shrink-0">
             {note}
           </span>
         )}
-        <div className="flex-1 border-b border-dotted border-[#231f20]/20 mx-3 mb-1 min-w-4" />
+        <div className="flex-1 border-b border-dotted border-brown/20 mx-3 mb-1 min-w-4" />
         {isPriceUnknown ? (
-          <span className="font-ui text-xs text-[#231f20]/40 italic shrink-0">Ask us</span>
+          <span className="font-ui text-xs text-brown/40 italic shrink-0">Ask us</span>
         ) : (
-          <span className="font-ui text-lg text-[#231f20] shrink-0">{price}</span>
+          <span className="font-ui text-lg text-brown shrink-0">{price}</span>
         )}
       </div>
       {description && (
-        <p className="font-body text-sm text-[#231f20]/60 italic mt-1">{description}</p>
+        <p className="font-body text-sm text-brown/60 italic mt-1">{description}</p>
       )}
     </div>
   );
@@ -358,7 +358,7 @@ export function MenuFullMenu() {
               className="mb-20 scroll-mt-[190px] lg:scroll-mt-28"
             >
               <div className="flex items-center gap-4 mb-8">
-                <h2 className="font-display text-2xl md:text-3xl text-[#231f20] shrink-0">
+                <h2 className="font-display text-2xl md:text-3xl text-brown shrink-0">
                   {category.label}
                 </h2>
                 <div className="flex-1 h-px bg-[#ead8b5]" />
@@ -370,7 +370,7 @@ export function MenuFullMenu() {
             </div>
           ))}
 
-          <p className="font-body text-sm text-[#231f20]/40 italic text-center pt-4">
+          <p className="font-body text-sm text-brown/40 italic text-center pt-4">
             Items marked &ldquo;Ask us&rdquo; are available in-store — pricing varies. Ask our team.
           </p>
         </div>
