@@ -36,7 +36,6 @@ const REVIEWS = [
 
 const MARQUEE_IMAGES = [
   '/images/woolcup/interior-01.jpg',
-  '/images/woolcup/food-01.jpg',
   '/images/woolcup/food-02.jpg',
   '/images/new/barista-pour.jpg',
   '/images/new/interior-hand-chairs.jpg',

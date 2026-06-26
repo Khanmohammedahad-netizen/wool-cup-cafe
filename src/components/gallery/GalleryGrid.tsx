@@ -40,7 +40,6 @@ const IMAGES: GalleryImage[] = [
   { src: '/images/financial-district/fd-06.webp', alt: 'Financial District entrance', category: 'ambience' },
   { src: '/images/financial-district/fd-07.webp', alt: 'Financial District ambience', category: 'ambience' },
   // Food — woolcup
-  { src: '/images/woolcup/food-01.jpg', alt: 'Seasonal dish', category: 'food' },
   { src: '/images/woolcup/food-02.jpg', alt: 'Plated food', category: 'food' },
   { src: '/images/woolcup/food-03.jpg', alt: 'Kitchen creation', category: 'food' },
   { src: '/images/woolcup/food-04.jpg', alt: 'Fresh dish', category: 'food' },

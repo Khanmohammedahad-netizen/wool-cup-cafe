@@ -67,7 +67,7 @@ interface CardData {
 
 const CARDS: CardData[] = [
   {
-    image: '/images/woolcup/food-01.jpg',
+    image: '/images/woolcup/food-03.jpg',
     label: 'Seasonal',
     title: 'Seasonal Dishes',
     description: 'Crafted with ingredients at their peak',
