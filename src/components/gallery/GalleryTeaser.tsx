@@ -37,8 +37,8 @@ export function GalleryTeaser() {
           </div>
           <div className="relative overflow-hidden rounded-2xl">
             <img
-              src="/images/woolcup/food-01.jpg"
-              alt="Seasonal dish"
+              src="/images/new/dessert-case.jpg"
+              alt="Dessert display case"
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
               fetchPriority="low"

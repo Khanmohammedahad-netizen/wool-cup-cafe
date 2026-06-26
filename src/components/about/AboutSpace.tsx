@@ -46,7 +46,7 @@ export function AboutSpace() {
 
           <div ref={cell2Ref} className="rounded-2xl overflow-hidden h-[280px]">
             <img
-              src="/images/woolcup/food-01.jpg"
+              src="/images/woolcup/mango-dish.jpg"
               alt="Wool Cup food"
               className="object-cover w-full h-full"
             />
