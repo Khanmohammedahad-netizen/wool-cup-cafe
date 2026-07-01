@@ -11,7 +11,6 @@ const PAST_EVENT_PHOTOS = [
   { src: '/images/shoots/AS_00760.jpg', label: 'Live Music Night', date: 'May 2026' },
   { src: '/images/shoots/AS_00683.jpg', label: "Chef's Table", date: 'Apr 2026' },
   { src: '/images/new/interior-dining.jpg', label: 'Community Night', date: 'Apr 2026' },
-  { src: '/images/shoots/AS_00739.jpg', label: 'Private Gathering', date: 'Mar 2026' },
   { src: '/images/new/interior-sofa.jpg', label: 'Open Mic', date: 'Mar 2026' },
   { src: '/images/shoots/AS_00705.jpg', label: 'Art Evening', date: 'Feb 2026' },
 ];
