@@ -78,6 +78,7 @@ export function Footer() {
               <h4 className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-white/40 mb-3">Hours</h4>
               <p className="font-body text-lg text-white/60">Mon–Thu: 8am – 11pm</p>
               <p className="font-body text-lg text-white/60">Fri–Sun: 8am – 11:30pm</p>
+              <p className="font-body text-lg text-white/60">Breakfast: 8 – 11am</p>
             </div>
 
             {/* Social */}
