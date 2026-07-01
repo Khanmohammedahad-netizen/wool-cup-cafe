@@ -10,15 +10,14 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export function AboutHero() {
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  const eyebrowRef = useRef<HTMLParagraphElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
 
   useGSAP(
     () => {
       gsap.fromTo(
-        [eyebrowRef.current, headlineRef.current],
+        headlineRef.current,
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out', stagger: 0.15 }
+        { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' }
       );
 
       gsap.to(imageRef.current, {
@@ -54,12 +53,6 @@ export function AboutHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#231f20]/60 via-transparent to-transparent" />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-        <p
-          ref={eyebrowRef}
-          className="font-ui uppercase tracking-[0.3em] text-xs text-white/70 mb-4"
-        >
-          Our Story
-        </p>
         <h1
           ref={headlineRef}
           className="font-display text-5xl md:text-6xl lg:text-7xl text-white max-w-4xl leading-tight"
