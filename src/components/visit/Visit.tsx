@@ -32,7 +32,8 @@ export function Visit() {
                 <h4 className="font-ui text-[12px] font-medium uppercase text-text-tertiary tracking-[0.15em] mb-3">HOURS</h4>
                 <p className="font-body text-[17px] text-text-secondary leading-[1.7]">
                   Mon–Thu: 8:00 AM – 11:00 PM<br />
-                  Fri–Sun: 8:00 AM – 11:30 PM
+                  Fri–Sun: 8:00 AM – 11:30 PM<br />
+                  Breakfast: 8:00 AM – 11:00 AM
                 </p>
               </div>
             </div>
