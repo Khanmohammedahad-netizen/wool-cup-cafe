@@ -41,15 +41,15 @@ export function EventsHero() {
         </p>
         <h1
           ref={headlineRef}
-          className="font-display text-5xl md:text-6xl text-white"
+          className="font-display text-4xl md:text-5xl text-white"
         >
-          Gather <em>here.</em>
+          Gather <em>here</em>
         </h1>
         <p
           ref={subtitleRef}
-          className="font-body text-lg text-[#ead8b5]/80 mt-4 max-w-xl"
+          className="font-body text-base text-[#ead8b5]/80 mt-4 max-w-xl"
         >
-          Live music, intimate dinners, community nights — all at Wool Cup.
+          Live music, intimate dinners, community nights — all at Wool Cup
         </p>
       </div>
     </section>

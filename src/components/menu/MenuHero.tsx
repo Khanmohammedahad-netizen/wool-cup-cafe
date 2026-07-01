@@ -90,7 +90,7 @@ export function MenuHero() {
 
         <h1
           ref={headlineRef}
-          className="relative z-10 font-display text-5xl md:text-6xl lg:text-7xl text-[#231f20]"
+          className="relative z-10 font-display text-4xl md:text-5xl lg:text-6xl text-[#231f20]"
         >
           The Menu
         </h1>

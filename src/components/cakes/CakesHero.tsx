@@ -46,15 +46,15 @@ export function CakesHero() {
         </p>
         <h1
           ref={headlineRef}
-          className="font-display text-5xl md:text-6xl text-white"
+          className="font-display text-4xl md:text-5xl text-white"
         >
-          Celebration <em>cakes.</em>
+          Celebration <em>cakes</em>
         </h1>
         <p
           ref={subtitleRef}
-          className="font-body text-lg text-[#ead8b5]/80 mt-4 max-w-xl"
+          className="font-body text-base text-[#ead8b5]/80 mt-4 max-w-xl"
         >
-          Handcrafted with love, designed for your moments.
+          Handcrafted with love, designed for your moments
         </p>
       </div>
     </section>

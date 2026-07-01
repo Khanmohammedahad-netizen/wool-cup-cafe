@@ -55,9 +55,9 @@ export function AboutHero() {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
         <h1
           ref={headlineRef}
-          className="font-display text-5xl md:text-6xl lg:text-7xl text-white max-w-4xl leading-tight"
+          className="font-display text-4xl md:text-5xl lg:text-6xl text-white max-w-4xl leading-tight"
         >
-          Born from a love of <em>slow mornings.</em>
+          Born from a love of <em>slow mornings</em>
         </h1>
       </div>
     </section>
