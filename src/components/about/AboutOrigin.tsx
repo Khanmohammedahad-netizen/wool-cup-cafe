@@ -8,9 +8,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const PARAGRAPHS = [
-  "Every great café begins with a conversation. For us, it started over a cup of coffee that wasn't quite right — too rushed, too impersonal, too forgettable. We knew Hyderabad deserved something different.",
-  "Wool Cup was born in 2024, not as a business plan, but as a promise — to create a space where every cup is pulled with intention, every dish is crafted with care, and every guest feels the warmth of belonging.",
-  "We named it Wool Cup because wool is warm, familiar, comforting. It wraps around you. That's what we wanted our café to feel like — a place that wraps around you like your favourite sweater on a quiet morning.",
+  "Every great story begins with a simple passion. For our founder, Dia Perka, that passion was coffee. What started as countless hours experimenting with a humble home espresso machine soon became an obsession with understanding the craft behind every perfect cup. As her curiosity grew, so did her dream — to build a café where exceptional coffee met genuine human connection. That dream became Wool Cup.",
+  "A defining milestone in our journey was bringing the Sanremo OPERA 2.0, one of the world's most advanced espresso machines and the first of its kind in the city. More than a machine, it represents our unwavering commitment to quality, precision, and innovation in every cup we serve.",
+  "Yet Wool Cup was never created for coffee alone. It was inspired by a quiet moment shared between three generations — Dia, her mother, and her son. In that moment, she realised how rare it had become to find spaces where families, friends, colleagues, and communities could truly come together, slow down, and enjoy each other's company.",
+  "Everything we do is guided by one belief: cafés are not just places to eat and drink — they are places where relationships grow, ideas begin, milestones are celebrated, and everyday moments become lasting memories. At Wool Cup, we don't simply serve coffee. We serve comfort, connection, and moments worth remembering.",
 ];
 
 export function AboutOrigin() {
