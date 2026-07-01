@@ -15,7 +15,7 @@ const FOUNDERS = [
     bio: "Dia founded Wool Cup from a lifelong passion for coffee and a belief in the power of meaningful spaces. What began with a home espresso machine and an obsession with craft evolved into a vision for a café where exceptional coffee, handcrafted food, and genuine human connection come together. Inspired by a quiet moment shared between three generations of her family, she set out to build a place where people could truly slow down, belong, and feel at home.",
   },
   {
-    name: 'Vivek Chow',
+    name: 'Vivek Chowdary',
     title: 'Co-Founder & Head of Operations',
     initials: 'VM',
     bio: "Behind every dream is someone who quietly helps make it possible. As Co-Founder and Head of Operations, Vivek has been the steady force behind Wool Cup, building systems, leading the team, and ensuring that every visit reflects the values the café was founded upon. His strength lies not in seeking the spotlight, but in making sure everything runs seamlessly so the vision can flourish.",
