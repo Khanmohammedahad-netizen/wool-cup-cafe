@@ -76,8 +76,8 @@ export function Footer() {
                 Telangana, India
               </address>
               <h4 className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-white/40 mb-3">Hours</h4>
-              <p className="font-body text-lg text-white/60">Mon–Fri: 8am – 9pm</p>
-              <p className="font-body text-lg text-white/60">Sat–Sun: 9am – 10pm</p>
+              <p className="font-body text-lg text-white/60">Mon–Thu: 8am – 11pm</p>
+              <p className="font-body text-lg text-white/60">Fri–Sun: 8am – 11:30pm</p>
             </div>
 
             {/* Social */}
