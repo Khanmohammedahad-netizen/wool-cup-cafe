@@ -78,7 +78,8 @@ const ScrollExpandMedia = ({
   useEffect(() => {
     const tick = () => {
       const prev = currentRef.current;
-      currentRef.current = lerp(currentRef.current, targetRef.current, 0.04);
+      const lerpFactor = targetRef.current === 0 ? 0.14 : 0.04;
+      currentRef.current = lerp(currentRef.current, targetRef.current, lerpFactor);
 
       if (Math.abs(currentRef.current - prev) > 0.0002) {
         const p = currentRef.current;
@@ -87,6 +88,7 @@ const ScrollExpandMedia = ({
         const w = (mobile ? 180 : 300) + p * (mobile ? 720 : 1250);
         const h = (mobile ? 240 : 400) + p * (mobile ? 380 : 400);
         const tx = p * (mobile ? 180 : 150);
+        const wordOpacity = String(Math.max(0, 1 - p * 10));
 
         if (mediaBoxRef.current) {
           mediaBoxRef.current.style.width = `${w}px`;
@@ -97,15 +99,19 @@ const ScrollExpandMedia = ({
         }
         if (word1Ref.current) {
           word1Ref.current.style.transform = `translateX(-${tx}vw)`;
+          word1Ref.current.style.opacity = wordOpacity;
         }
         if (word2Ref.current) {
           word2Ref.current.style.transform = `translateX(${tx}vw)`;
+          word2Ref.current.style.opacity = wordOpacity;
         }
         if (dateLabelRef.current) {
           dateLabelRef.current.style.transform = `translateX(-${tx}vw)`;
+          dateLabelRef.current.style.opacity = wordOpacity;
         }
         if (scrollCueRef.current) {
           scrollCueRef.current.style.transform = `translateX(${tx}vw)`;
+          scrollCueRef.current.style.opacity = wordOpacity;
         }
         if (overlayRef.current) {
           overlayRef.current.style.opacity = String(0.5 - p * 0.3);
