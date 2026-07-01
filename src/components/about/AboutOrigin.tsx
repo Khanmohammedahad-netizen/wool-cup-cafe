@@ -46,7 +46,7 @@ export function AboutOrigin() {
             ref={eyebrowRef}
             className="font-ui uppercase tracking-[0.3em] text-xs text-brown/70 mb-6"
           >
-            The Beginning
+            Our Story
           </p>
           {PARAGRAPHS.map((text, i) => (
             <p
