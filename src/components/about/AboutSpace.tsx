@@ -39,7 +39,7 @@ export function AboutSpace() {
           <div ref={cell1Ref} className="md:row-span-2 rounded-2xl overflow-hidden min-h-[400px]">
             <img
               src="/images/new/interior-wide-cloud.jpg"
-              alt="Wool Cup interior — wide view with cloud ceiling"
+              alt="Wool Cup interior, wide view with cloud ceiling"
               className="object-cover w-full h-full"
             />
           </div>

@@ -11,7 +11,7 @@ const PILLARS = [
   {
     number: '01',
     title: 'Intentional Sourcing',
-    description: 'Every bean is chosen, not settled for. We work directly with estates in the Chikmagalur hills — shade-grown, single-origin, scoring 86+ on the SCA scale.',
+    description: 'Every bean is chosen, not settled for. We work directly with estates in the Chikmagalur hills, shade-grown, single-origin, scoring 86+ on the SCA scale.',
   },
   {
     number: '02',
@@ -21,7 +21,7 @@ const PILLARS = [
   {
     number: '03',
     title: 'Warm Belonging',
-    description: "Wool Cup isn't just a café — it's a feeling. A place where strangers become regulars and every visit feels like coming home.",
+    description: "Wool Cup isn't just a café. It's a feeling. A place where strangers become regulars and every visit feels like coming home.",
   },
 ];
 
@@ -72,7 +72,7 @@ export function AboutPhilosophy() {
           "We don't just serve coffee. We serve the pause."
         </p>
         <p ref={attributionRef} className="font-ui text-sm text-dark/50 mb-20">
-          — The Founders
+          The Founders
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left mt-16">
