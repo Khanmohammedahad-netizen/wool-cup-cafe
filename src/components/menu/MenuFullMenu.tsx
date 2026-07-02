@@ -13,6 +13,7 @@ interface MenuItemData {
   description?: string;
   price: string;
   note?: string;
+  image?: string;
 }
 
 interface CategoryData {
@@ -123,44 +124,44 @@ const MENU_DATA: CategoryData[] = [
     id: 'food',
     label: 'Bites & Burgers',
     items: [
-      { name: 'Avocado Toast',                    description: '', price: '₹445', note: 'Toast'       },
-      { name: 'Wild Mushroom Crostini',            description: '', price: '₹385', note: 'Toast'       },
-      { name: 'Zucchini Fritters',                description: '', price: '₹345', note: 'Appetiser'   },
-      { name: 'Sesame Chicken Tenders',           description: '', price: '₹475', note: 'Appetiser'   },
-      { name: 'Polenta Fried Fish',               description: '', price: '₹495', note: 'Appetiser'   },
-      { name: 'Parmesan Cheese Croquettes',       description: '', price: '₹415', note: 'Appetiser'   },
-      { name: 'Spinach Corn Rolls',               description: '', price: '₹395', note: 'Appetiser'   },
-      { name: 'Chicken Tikka Roll',               description: '', price: '₹425', note: 'Appetiser'   },
-      { name: 'Spinach & Corn Puffs',             description: '', price: '—',    note: 'Appetiser'   },
-      { name: 'Parmesan Broccoli Arancini',       description: '', price: '—',    note: 'Appetiser'   },
-      { name: 'Loaded Mexican Nachos',            description: '', price: '—',    note: 'Appetiser'   },
-      { name: 'Devilled Fried Eggs',              description: '', price: '—',    note: 'Appetiser'   },
-      { name: 'Sriracha Mango Chicken Tart',      description: '', price: '—',    note: 'Appetiser'   },
-      { name: 'Cajun Chicken Hummus',             description: '', price: '—',    note: 'Appetiser'   },
-      { name: 'Velluli Karam Chicken & Chips',    description: '', price: '—',    note: 'Appetiser'   },
-      { name: 'Chilli Garlic Shrimps',            description: '', price: '—',    note: 'Appetiser'   },
-      { name: 'Crispy Sriracha Prawns',           description: '', price: '—',    note: 'Appetiser'   },
-      { name: 'Peri Peri Prawns & Avo Salsa',     description: '', price: '—',    note: 'Appetiser'   },
-      { name: 'Spiced Cottage Cheeseburger',      description: '', price: '₹465', note: 'Burger'      },
-      { name: 'Italian Chicken Cheeseburger',     description: '', price: '₹515', note: 'Burger'      },
-      { name: 'Chicken Croissant',                description: '', price: '₹515', note: 'Burger'      },
-      { name: 'Desi Kheema Potato Bun',           description: '', price: '₹515', note: 'Burger'      },
-      { name: 'Butter Paneer Ciabatta',           description: '', price: '—',    note: 'Sandwich'    },
-      { name: 'Pesto Focaccia',                   description: '', price: '—',    note: 'Sandwich'    },
-      { name: 'Roasted Chicken Sandwich',         description: '', price: '—',    note: 'Sandwich'    },
-      { name: 'Spicy Chicken Sandwich',           description: '', price: '—',    note: 'Sandwich'    },
-      { name: 'Chettinad Chicken Brioche',        description: '', price: '—',    note: 'Sandwich'    },
-      { name: 'Kheema Brioche',                   description: '', price: '—',    note: 'Sandwich'    },
-      { name: 'Prawn Thermidor Brioche',          description: '', price: '—',    note: 'Sandwich'    },
-      { name: 'Mushroom Cheese Croissant',        description: '', price: '—',    note: 'Sandwich'    },
-      { name: 'Classic Fries',                    description: '', price: '₹245', note: 'Small Bites' },
-      { name: 'Peri Peri Fries',                  description: '', price: '₹275', note: 'Small Bites' },
-      { name: 'Cheese Fries',                     description: '', price: '₹295', note: 'Small Bites' },
-      { name: 'Classic Potato Wedges',            description: '', price: '₹245', note: 'Small Bites' },
-      { name: 'Peri Peri Potato Wedges',          description: '', price: '₹275', note: 'Small Bites' },
-      { name: 'Cheese Potato Wedges',             description: '', price: '₹295', note: 'Small Bites' },
-      { name: 'Cheese Garlic Bread',              description: '', price: '₹345', note: 'Small Bites' },
-      { name: 'Grilled Veggie Medley',            description: '', price: '₹275', note: 'Small Bites' },
+      { name: 'Avocado Toast',                    description: '', price: '₹445', note: 'Toast',       image: '/images/4/Classic Avacado toast.jpg'          },
+      { name: 'Wild Mushroom Crostini',            description: '', price: '₹385', note: 'Toast',       image: '/images/3/Wild Mushroom Crostini.jpg'          },
+      { name: 'Zucchini Fritters',                description: '', price: '₹345', note: 'Appetiser'                                                          },
+      { name: 'Sesame Chicken Tenders',           description: '', price: '₹475', note: 'Appetiser',   image: '/images/2/Sesame Chicken Tenders.jpg'          },
+      { name: 'Polenta Fried Fish',               description: '', price: '₹495', note: 'Appetiser',   image: '/images/4/Polenta Fried fish.jpg'              },
+      { name: 'Parmesan Cheese Croquettes',       description: '', price: '₹415', note: 'Appetiser',   image: '/images/4/Parmesan Cheese croquettes.jpg'      },
+      { name: 'Spinach Corn Rolls',               description: '', price: '₹395', note: 'Appetiser',   image: '/images/3/Spinach corn rolls.jpg'              },
+      { name: 'Chicken Tikka Roll',               description: '', price: '₹425', note: 'Appetiser'                                                          },
+      { name: 'Spinach & Corn Puffs',             description: '', price: '—',    note: 'Appetiser'                                                          },
+      { name: 'Parmesan Broccoli Arancini',       description: '', price: '—',    note: 'Appetiser',   image: '/images/3/PArmesan Broccoli Arancini.jpg'      },
+      { name: 'Loaded Mexican Nachos',            description: '', price: '—',    note: 'Appetiser'                                                          },
+      { name: 'Devilled Fried Eggs',              description: '', price: '—',    note: 'Appetiser'                                                          },
+      { name: 'Sriracha Mango Chicken Tart',      description: '', price: '—',    note: 'Appetiser'                                                          },
+      { name: 'Cajun Chicken Hummus',             description: '', price: '—',    note: 'Appetiser'                                                          },
+      { name: 'Velluli Karam Chicken & Chips',    description: '', price: '—',    note: 'Appetiser'                                                          },
+      { name: 'Chilli Garlic Shrimps',            description: '', price: '—',    note: 'Appetiser',   image: '/images/4/Chilli garlic shrimps.jpg'           },
+      { name: 'Crispy Sriracha Prawns',           description: '', price: '—',    note: 'Appetiser',   image: '/images/3/Crispy srincha prawns.jpg'           },
+      { name: 'Peri Peri Prawns & Avo Salsa',     description: '', price: '—',    note: 'Appetiser'                                                          },
+      { name: 'Spiced Cottage Cheeseburger',      description: '', price: '₹465', note: 'Burger',      image: '/images/4/Spiced Cottage cheese burger.jpg'    },
+      { name: 'Italian Chicken Cheeseburger',     description: '', price: '₹515', note: 'Burger',      image: '/images/4/Italian Chicken cheese burger.jpg'   },
+      { name: 'Chicken Croissant',                description: '', price: '₹515', note: 'Burger',      image: '/images/3/Chicken Crossiant.jpg'               },
+      { name: 'Desi Kheema Potato Bun',           description: '', price: '₹515', note: 'Burger',      image: '/images/4/Desi Keema with potato bun.jpg'      },
+      { name: 'Butter Paneer Ciabatta',           description: '', price: '—',    note: 'Sandwich'                                                          },
+      { name: 'Pesto Focaccia',                   description: '', price: '—',    note: 'Sandwich'                                                          },
+      { name: 'Roasted Chicken Sandwich',         description: '', price: '—',    note: 'Sandwich'                                                          },
+      { name: 'Spicy Chicken Sandwich',           description: '', price: '—',    note: 'Sandwich',    image: '/images/2/Crispy Chicken Sandwich.jpg'         },
+      { name: 'Chettinad Chicken Brioche',        description: '', price: '—',    note: 'Sandwich'                                                          },
+      { name: 'Kheema Brioche',                   description: '', price: '—',    note: 'Sandwich',    image: '/images/2/Kheema Brioche.jpg'                  },
+      { name: 'Prawn Thermidor Brioche',          description: '', price: '—',    note: 'Sandwich'                                                          },
+      { name: 'Mushroom Cheese Croissant',        description: '', price: '—',    note: 'Sandwich',    image: '/images/2/Mushroom Cheese crosaint.jpg'        },
+      { name: 'Classic Fries',                    description: '', price: '₹245', note: 'Small Bites'                                                        },
+      { name: 'Peri Peri Fries',                  description: '', price: '₹275', note: 'Small Bites', image: '/images/4/Peri peri fries.jpg'                },
+      { name: 'Cheese Fries',                     description: '', price: '₹295', note: 'Small Bites'                                                        },
+      { name: 'Classic Potato Wedges',            description: '', price: '₹245', note: 'Small Bites', image: '/images/4/Potato wedges.jpg'                  },
+      { name: 'Peri Peri Potato Wedges',          description: '', price: '₹275', note: 'Small Bites', image: '/images/4/Peri peri potato wedges.jpg'        },
+      { name: 'Cheese Potato Wedges',             description: '', price: '₹295', note: 'Small Bites'                                                        },
+      { name: 'Cheese Garlic Bread',              description: '', price: '₹345', note: 'Small Bites'                                                        },
+      { name: 'Grilled Veggie Medley',            description: '', price: '₹275', note: 'Small Bites'                                                        },
     ],
   },
   {
@@ -176,46 +177,47 @@ const MENU_DATA: CategoryData[] = [
       { name: 'Layer Slayer Lasagna',         description: '',                                                        price: '—',    note: 'Pasta'      },
       { name: 'Margherita Moderna',           description: 'Thin crust or Puff-based (+₹50).',                       price: '₹435', note: 'Pizza'      },
       { name: 'Verdure',                      description: 'Thin crust or Puff-based (+₹50).',                       price: '₹445', note: 'Pizza'      },
-      { name: 'Chicken Tikka Pizza',          description: 'Thin crust or Puff-based (+₹50).',                       price: '₹545', note: 'Pizza'      },
-      { name: 'Wool Cup Mighty Meat',         description: 'Thin crust or Puff-based (+₹50).',                       price: '₹555', note: 'Pizza'      },
-      { name: 'Pesto Paneer Pizza',           description: '',                                                        price: '—',    note: 'Pizza'      },
-      { name: 'Fiery Chicken Pizza',          description: '',                                                        price: '—',    note: 'Pizza'      },
-      { name: 'Peri Peri Pollo',              description: '',                                                        price: '—',    note: 'Pizza'      },
-      { name: 'Paneer Tikka Bowl',            description: '',                                                        price: '₹535', note: 'Rice Bowl'  },
-      { name: 'Desi Egg Bowl',                description: '',                                                        price: '₹545', note: 'Rice Bowl'  },
-      { name: 'Butter Chicken Bowl',          description: '',                                                        price: '₹565', note: 'Rice Bowl'  },
-      { name: 'Crispy Chicken Fried Rice',    description: '',                                                        price: '₹565', note: 'Rice Bowl'  },
-      { name: 'Chicken Burrito Bowl',         description: '',                                                        price: '—',    note: 'Rice Bowl'  },
-      { name: 'Mexican Burrito Rice Bowl',    description: '',                                                        price: '—',    note: 'Rice Bowl'  },
-      { name: 'Charred Broccoli Steak',       description: '',                                                        price: '—',    note: 'Veg Main'   },
-      { name: 'Smoky BBQ Cottage Cheese',     description: '',                                                        price: '—',    note: 'Veg Main'   },
-      { name: 'Baked Malai Avocado & Mash',   description: '',                                                        price: '—',    note: 'Veg Main'   },
-      { name: 'Caribbean Jerk Chicken',       description: '',                                                        price: '—',    note: 'Chicken'    },
-      { name: 'Pistachio Crusted Chicken',    description: '',                                                        price: '—',    note: 'Chicken'    },
-      { name: 'Fried Chicken Piccata',        description: '',                                                        price: '—',    note: 'Chicken'    },
-      { name: 'Thyme Roasted Chicken',        description: '',                                                        price: '—',    note: 'Chicken'    },
-      { name: 'Orange-Chilli Glazed Fish',    description: '',                                                        price: '—',    note: 'Seafood'    },
-      { name: 'Sweet Ginger Kissed Fish',     description: '',                                                        price: '—',    note: 'Seafood'    },
-      { name: 'Steamed Fish & Veggie Stew',   description: '',                                                        price: '—',    note: 'Seafood'    },
-      { name: 'Chipotle Prawns',              description: '',                                                        price: '—',    note: 'Seafood'    },
-      { name: 'Prawn Burrito Bowl',           description: '',                                                        price: '—',    note: 'Seafood'    },
+      { name: 'Chicken Tikka Pizza',          description: 'Thin crust or Puff-based (+₹50).',                       price: '₹545', note: 'Pizza',     image: '/images/3/Chicken tikka puffizza.jpg'    },
+      { name: 'Wool Cup Mighty Meat',         description: 'Thin crust or Puff-based (+₹50).',                       price: '₹555', note: 'Pizza'                                               },
+      { name: 'Pesto Paneer Pizza',           description: '',                                                        price: '—',    note: 'Pizza',     image: '/images/2/Pesto paneer puff pizza.jpg'  },
+      { name: 'Fiery Chicken Pizza',          description: '',                                                        price: '—',    note: 'Pizza'                                               },
+      { name: 'Peri Peri Pollo',              description: '',                                                        price: '—',    note: 'Pizza'                                               },
+      { name: 'Paneer Tikka Bowl',            description: '',                                                        price: '₹535', note: 'Rice Bowl', image: '/images/4/Paneer Tikka Rice Bowl.jpg'    },
+      { name: 'Desi Egg Bowl',                description: '',                                                        price: '₹545', note: 'Rice Bowl'                                           },
+      { name: 'Butter Chicken Bowl',          description: '',                                                        price: '₹565', note: 'Rice Bowl', image: '/images/4/Butter chicken rice bowl.jpg'  },
+      { name: 'Crispy Chicken Fried Rice',    description: '',                                                        price: '₹565', note: 'Rice Bowl'                                           },
+      { name: 'Chicken Burrito Bowl',         description: '',                                                        price: '—',    note: 'Rice Bowl', image: '/images/3/Chicken Burrito.jpg'           },
+      { name: 'Mexican Burrito Rice Bowl',    description: '',                                                        price: '—',    note: 'Rice Bowl', image: '/images/3/Mexican Burrito bowl.jpg'      },
+      { name: 'Charred Broccoli Steak',       description: '',                                                        price: '—',    note: 'Veg Main',  image: '/images/4/Charred broccoli steak.jpg'    },
+      { name: 'Smoky BBQ Cottage Cheese',     description: '',                                                        price: '—',    note: 'Veg Main',  image: '/images/4/Smoky BBQ cottage cheese.jpg'  },
+      { name: 'Baked Malai Avocado & Mash',   description: '',                                                        price: '—',    note: 'Veg Main'                                            },
+      { name: 'Caribbean Jerk Chicken',       description: '',                                                        price: '—',    note: 'Chicken'                                             },
+      { name: 'Pistachio Crusted Chicken',    description: '',                                                        price: '—',    note: 'Chicken'                                             },
+      { name: 'Fried Chicken Piccata',        description: '',                                                        price: '—',    note: 'Chicken'                                             },
+      { name: 'Thyme Roasted Chicken',        description: '',                                                        price: '—',    note: 'Chicken'                                             },
+      { name: 'Chicken Cannelloni',           description: '',                                                        price: '—',    note: 'Pasta',     image: '/images/3/Chicken & Cannelloni.jpg'      },
+      { name: 'Orange-Chilli Glazed Fish',    description: '',                                                        price: '—',    note: 'Seafood'                                             },
+      { name: 'Sweet Ginger Kissed Fish',     description: '',                                                        price: '—',    note: 'Seafood',   image: '/images/4/Sweet ginger kissed fish.jpg'  },
+      { name: 'Steamed Fish & Veggie Stew',   description: '',                                                        price: '—',    note: 'Seafood'                                             },
+      { name: 'Chipotle Prawns',              description: '',                                                        price: '—',    note: 'Seafood'                                             },
+      { name: 'Prawn Burrito Bowl',           description: '',                                                        price: '—',    note: 'Seafood'                                             },
     ],
   },
   {
     id: 'breakfast',
     label: 'Breakfast & Brunch',
     items: [
-      { name: "Farmer's Style Omelette", description: '', price: '₹385', note: 'Omelette'     },
-      { name: 'Cheese Omelette',         description: '', price: '₹395', note: 'Omelette'     },
-      { name: 'Masala Omelette',         description: '', price: '₹375', note: 'Omelette'     },
-      { name: 'Classic Pancakes',        description: '', price: '₹360', note: 'Pancakes'     },
-      { name: 'Nutella Pancakes',        description: '', price: '₹405', note: 'Pancakes'     },
-      { name: 'Classic Waffles',         description: '', price: '₹380', note: 'Waffles'      },
-      { name: 'Nutella Waffles',         description: '', price: '₹430', note: 'Waffles'      },
-      { name: 'Brioche Bliss',           description: '', price: '₹405', note: 'French Toast' },
-      { name: 'Biscoff French Toast',    description: '', price: '₹445', note: 'French Toast' },
-      { name: 'Banana Buzz',             description: '', price: '₹450', note: 'French Toast' },
-      { name: 'Berry Toasted',           description: '', price: '₹470', note: 'French Toast' },
+      { name: "Farmer's Style Omelette", description: '', price: '₹385', note: 'Omelette',     image: '/images/2/Farmer style omlette.jpg'          },
+      { name: 'Cheese Omelette',         description: '', price: '₹395', note: 'Omelette',     image: '/images/3/Cheese omlete.jpg'                  },
+      { name: 'Masala Omelette',         description: '', price: '₹375', note: 'Omelette',     image: '/images/4/Break Fast Masala Omlette.jpg'       },
+      { name: 'Classic Pancakes',        description: '', price: '₹360', note: 'Pancakes',     image: '/images/4/Plain pan cake.jpg'                  },
+      { name: 'Nutella Pancakes',        description: '', price: '₹405', note: 'Pancakes',     image: '/images/4/Choco Chip Pan cake.jpg'             },
+      { name: 'Classic Waffles',         description: '', price: '₹380', note: 'Waffles'                                                              },
+      { name: 'Nutella Waffles',         description: '', price: '₹430', note: 'Waffles',      image: '/images/4/Nuttela Waffle.jpg'                  },
+      { name: 'Brioche Bliss',           description: '', price: '₹405', note: 'French Toast'                                                        },
+      { name: 'Biscoff French Toast',    description: '', price: '₹445', note: 'French Toast', image: '/images/3/Lotus Biscoff French toast.jpg'      },
+      { name: 'Banana Buzz',             description: '', price: '₹450', note: 'French Toast'                                                        },
+      { name: 'Berry Toasted',           description: '', price: '₹470', note: 'French Toast'                                                        },
       { name: 'Herbed Rice',             description: '', price: '—',    note: 'Side'         },
       { name: 'Creamy Mashed Potato',    description: '', price: '—',    note: 'Side'         },
       { name: 'Fruit Salad',             description: '', price: '—',    note: 'Side'         },
@@ -251,28 +253,38 @@ const MENU_DATA: CategoryData[] = [
   },
 ];
 
-function MenuItem({ name, description, price, note }: MenuItemData) {
+function MenuItem({ name, description, price, note, image }: MenuItemData) {
   const isPriceUnknown = price === '—';
 
   return (
-    <div className="py-4 border-b border-[#ead8b5]/50 last:border-0">
-      <div className="flex items-baseline gap-1">
-        <span className="font-display text-lg text-brown">{name}</span>
-        {note && (
-          <span className="font-ui text-[10px] uppercase tracking-widest text-brown/35 ml-2 shrink-0">
-            {note}
-          </span>
-        )}
-        <div className="flex-1 border-b border-dotted border-brown/20 mx-3 mb-1 min-w-4" />
-        {isPriceUnknown ? (
-          <span className="font-ui text-xs text-brown/40 italic shrink-0">Ask us</span>
-        ) : (
-          <span className="font-ui text-lg text-brown shrink-0">{price}</span>
+    <div className="py-4 border-b border-[#ead8b5]/50 last:border-0 flex items-center gap-4">
+      {image && (
+        <img
+          src={encodeURI(image)}
+          alt={name}
+          loading="lazy"
+          className="w-16 h-16 md:w-20 md:h-20 rounded-xl object-cover flex-shrink-0"
+        />
+      )}
+      <div className="flex-1 min-w-0">
+        <div className="flex items-baseline gap-1">
+          <span className="font-display text-lg text-brown">{name}</span>
+          {note && (
+            <span className="font-ui text-[10px] uppercase tracking-widest text-brown/35 ml-2 shrink-0">
+              {note}
+            </span>
+          )}
+          <div className="flex-1 border-b border-dotted border-brown/20 mx-3 mb-1 min-w-4" />
+          {isPriceUnknown ? (
+            <span className="font-ui text-xs text-brown/40 italic shrink-0">Ask us</span>
+          ) : (
+            <span className="font-ui text-lg text-brown shrink-0">{price}</span>
+          )}
+        </div>
+        {description && (
+          <p className="font-body text-sm text-brown/60 italic mt-1">{description}</p>
         )}
       </div>
-      {description && (
-        <p className="font-body text-sm text-brown/60 italic mt-1">{description}</p>
-      )}
     </div>
   );
 }
