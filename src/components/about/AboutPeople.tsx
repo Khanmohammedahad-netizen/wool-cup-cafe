@@ -18,7 +18,7 @@ const FOUNDERS = [
     name: 'Vivek Chowdary',
     title: 'Co-Founder & Head of Operations',
     initials: 'VM',
-    bio: "Behind every dream is someone who quietly helps make it possible. As Co-Founder and Head of Operations, Vivek has been the steady force behind Wool Cup, building systems, leading the team, and ensuring that every visit reflects the values the café was founded upon. His strength lies not in seeking the spotlight, but in making sure everything runs seamlessly so the vision can flourish.",
+    bio: "Behind every dream is someone who quietly helps make it possible. As Co-Founder and Head of Operations, Vivek Chowdary has been the steady force behind Wool Cup, building systems, leading the team, and ensuring that every visit reflects the values the café was founded upon. His strength lies not in seeking the spotlight, but in making sure everything runs seamlessly so the vision can flourish.",
   },
 ];
 
