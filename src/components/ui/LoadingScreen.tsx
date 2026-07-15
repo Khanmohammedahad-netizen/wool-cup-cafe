@@ -3,23 +3,17 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useLenis } from '@studio-freight/react-lenis';
-import { WoolcupLogo } from './WoolcupLogo';
 
 export function LoadingScreen() {
   const overlayRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const brandNameRef = useRef<HTMLDivElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const girlRef = useRef<HTMLImageElement>(null);
   const [done, setDone] = useState(false);
   const lenis = useLenis();
 
-  // Keep Lenis paused while overlay is active
   useEffect(() => {
     if (done || !lenis) return;
     lenis.stop();
-    return () => {
-      lenis.start();
-    };
+    return () => { lenis.start(); };
   }, [lenis, done]);
 
   useEffect(() => {
@@ -36,61 +30,29 @@ export function LoadingScreen() {
       },
     });
 
-    // 1. Fade in + scale (0 → 0.4s)
+    // Fade in + scale up
     tl.fromTo(
-      containerRef.current,
+      girlRef.current,
       { opacity: 0, scale: 0.85 },
-      { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out' },
+      { opacity: 1, scale: 1, duration: 0.5, ease: 'power2.out' },
       0
     );
 
-    // 2. Float ±8px (0.4s → 1.6s)
+    // Gentle float
     tl.to(
-      containerRef.current,
-      { y: -8, duration: 0.6, ease: 'sine.inOut', yoyo: true, repeat: 1 },
-      0.4
+      girlRef.current,
+      { y: -10, duration: 0.7, ease: 'sine.inOut', yoyo: true, repeat: 1 },
+      0.5
     );
 
-    // 3. Warm glow pulse behind wordmark (0.6s → 1.4s)
-    tl.fromTo(
-      brandNameRef.current,
-      { filter: 'drop-shadow(0 0 0px rgba(212,188,142,0))' },
-      {
-        filter: 'drop-shadow(0 0 18px rgba(212,188,142,0.55))',
-        duration: 0.4,
-        ease: 'power2.inOut',
-        yoyo: true,
-        repeat: 1,
-      },
-      0.6
-    );
-
-    // 4. Brand name clip-path reveal left→right (1.0s → 1.6s)
-    tl.fromTo(
-      brandNameRef.current,
-      { clipPath: 'inset(0 100% 0 0)' },
-      { clipPath: 'inset(0 0% 0 0)', duration: 0.6, ease: 'power2.inOut' },
-      1.0
-    );
-
-    // 5. Subtitle fade in (1.2s → 1.8s)
-    tl.fromTo(
-      subtitleRef.current,
-      { opacity: 0 },
-      { opacity: 0.6, duration: 0.6, ease: 'power2.out' },
-      1.2
-    );
-
-    // 6. Exit — slide overlay up (2.0s → 2.6s)
+    // Exit — slide overlay up
     tl.to(
       overlayRef.current,
       { yPercent: -100, duration: 0.6, ease: 'power3.inOut' },
       2.0
     );
 
-    return () => {
-      tl.kill();
-    };
+    return () => { tl.kill(); };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (done) return null;
@@ -100,35 +62,13 @@ export function LoadingScreen() {
       ref={overlayRef}
       className="fixed inset-0 z-[9999] bg-cream flex items-center justify-center"
     >
-      <div ref={containerRef} className="flex flex-col items-center gap-4" style={{ opacity: 0 }}>
-        {/* Mascot */}
-        <img
-          src="/images/caricature-girl.svg"
-          alt="Wool Cup mascot"
-          width={120}
-          height={140}
-          className="w-[90px] md:w-[120px] pointer-events-none select-none"
-          style={{ mixBlendMode: 'multiply' }}
-        />
-        <div
-          ref={brandNameRef}
-          style={{ clipPath: 'inset(0 100% 0 0)' }}
-        >
-          <WoolcupLogo
-            variant="brown"
-            width={220}
-            height={152}
-            className="w-[160px] md:w-[220px] h-auto pointer-events-none select-none"
-          />
-        </div>
-        <p
-          ref={subtitleRef}
-          className="font-ui text-[10px] uppercase tracking-[0.3em] text-dark"
-          style={{ opacity: 0 }}
-        >
-          Urban Café &amp; Bistro
-        </p>
-      </div>
+      <img
+        ref={girlRef}
+        src="/images/caricature-girl.svg"
+        alt="Wool Cup mascot"
+        className="w-[220px] md:w-[300px] pointer-events-none select-none"
+        style={{ opacity: 0, mixBlendMode: 'multiply' }}
+      />
     </div>
   );
 }
