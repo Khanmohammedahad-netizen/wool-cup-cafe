@@ -102,13 +102,13 @@ export function MenuSeasonalSpecials() {
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-bottom"
                 />
               ) : 'image' in item && item.image ? (
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-bottom"
                 />
               ) : (
                 <p className="absolute inset-0 flex items-center justify-center font-body italic text-[#231f20]/40 text-sm">Photograph coming soon</p>
@@ -120,9 +120,9 @@ export function MenuSeasonalSpecials() {
               </span>
               <h3 className="font-display text-2xl text-[#231f20]">{item.name}</h3>
               <p className="font-body text-sm italic text-[#231f20]/70 mt-1">{item.description}</p>
-              <p className="font-ui text-lg text-[#231f20] mt-3">
-                {item.price === '—' ? <span className="italic text-[#231f20]/50 text-base">Ask us</span> : item.price}
-              </p>
+              {item.price !== '—' && (
+                <p className="font-ui text-lg text-[#231f20] mt-3">{item.price}</p>
+              )}
             </div>
           </div>
         ))}

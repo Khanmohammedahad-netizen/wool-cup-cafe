@@ -9,22 +9,22 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const MUST_TRY_ITEMS = [
   {
-    name: 'OG Cold Brew',
-    description: 'Straight-up, smooth, and slow-brewed. The one that keeps regulars coming back.',
-    price: '₹290',
-    image: '/images/beverages/Juices/OG Cold Brew.jpg',
+    name: 'Honey Garlic Shrimps',
+    description: 'Pan-seared shrimp glazed in honey and garlic — sweet, savory, and quick to disappear.',
+    price: '—',
+    image: '/Food/Honey Garlic Shrimps.JPG',
   },
   {
-    name: 'Spanish Latte',
-    description: 'Sweetened condensed milk meets bold espresso for a rich, velvety finish. Hot or iced.',
-    price: '₹340',
-    image: '/images/beverages/Juices/Spanish Latte.jpg',
+    name: 'Spicy Peri Peri Grilled Fish with Quinoa Rice',
+    description: 'Fiery peri peri grilled fish over herbed quinoa rice.',
+    price: '—',
+    image: '/Food/Spicy Peri Peri Grilled Fish with quinoa Rice.JPG',
   },
   {
-    name: 'Biscoff French Toast',
-    description: 'Our most-requested brunch item — buttery brioche, Lotus Biscoff, warm and golden.',
-    price: '₹445',
-    image: '/images/3/Lotus Biscoff French toast.jpg',
+    name: 'Creamy Chicken Toast',
+    description: 'Buttery toast piled high with creamy, savory chicken.',
+    price: '—',
+    image: '/Food/Creamy Chicken Toast.JPG',
   },
 ];
 
@@ -101,7 +101,9 @@ export function MenuMustTries() {
               </span>
               <h3 className="font-display text-2xl text-[#231f20]">{item.name}</h3>
               <p className="font-body text-sm italic text-[#231f20]/70 mt-1">{item.description}</p>
-              <p className="font-ui text-lg text-[#231f20] mt-3">{item.price}</p>
+              {item.price !== '—' && (
+                <p className="font-ui text-lg text-[#231f20] mt-3">{item.price}</p>
+              )}
             </div>
           </div>
         ))}
