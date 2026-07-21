@@ -21,8 +21,8 @@ const MUST_TRY_ITEMS = [
     description: 'Fiery peri peri grilled fish over herbed quinoa rice.',
     price: '—',
     image: '/Food/Spicy Peri Peri Grilled Fish with quinoa Rice.JPG',
-    bgSize: '560px 840px',
-    bgPosition: '-203px -535px',
+    bgSize: '700px 1050px',
+    bgPosition: '-245px -696px',
   },
   {
     name: 'Creamy Chicken Toast',
