@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { MenuHero } from '@/components/menu/MenuHero'
+import { MenuNewAdditions } from '@/components/menu/MenuNewAdditions'
 import { MenuSeasonalSpecials } from '@/components/menu/MenuSeasonalSpecials'
 import { MenuMustTries } from '@/components/menu/MenuMustTries'
 import { MenuFullMenu } from '@/components/menu/MenuFullMenu'
@@ -15,6 +16,7 @@ export default function MenuPage() {
   return (
     <main>
       <MenuHero />
+      <MenuNewAdditions />
       <MenuSeasonalSpecials />
       <MenuMustTries />
       <MenuFullMenu />

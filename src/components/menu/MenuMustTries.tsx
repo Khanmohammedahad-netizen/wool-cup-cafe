@@ -12,16 +12,19 @@ const MUST_TRY_ITEMS = [
     name: 'OG Cold Brew',
     description: 'Straight-up, smooth, and slow-brewed. The one that keeps regulars coming back.',
     price: '₹290',
+    image: '/images/beverages/Juices/OG Cold Brew.jpg',
   },
   {
     name: 'Spanish Latte',
     description: 'Sweetened condensed milk meets bold espresso for a rich, velvety finish. Hot or iced.',
     price: '₹340',
+    image: '/images/beverages/Juices/Spanish Latte.jpg',
   },
   {
     name: 'Biscoff French Toast',
     description: 'Our most-requested brunch item — buttery brioche, Lotus Biscoff, warm and golden.',
     price: '₹445',
+    image: '/images/3/Lotus Biscoff French toast.jpg',
   },
 ];
 
@@ -82,8 +85,15 @@ export function MenuMustTries() {
             ref={(el) => { cardRefs.current[i] = el; }}
             className="bg-ivory border border-[#ead8b5] rounded-2xl overflow-hidden"
           >
-            <div className="h-[220px] flex items-center justify-center bg-[#ead8b5]/20">
-              <p className="font-body italic text-[#231f20]/40 text-sm">Photograph coming soon</p>
+            <div className="h-[220px] overflow-hidden relative bg-[#ead8b5]/20">
+              {item.image && (
+                <img
+                  src={encodeURI(item.image)}
+                  alt={item.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
             <div className="p-6">
               <span className="font-ui text-[10px] uppercase tracking-widest text-[#C9A84C] inline-block mb-3">

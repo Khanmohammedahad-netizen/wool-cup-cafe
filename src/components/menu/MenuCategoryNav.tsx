@@ -8,6 +8,7 @@ export const CATEGORIES = [
   { id: 'matcha',    label: 'Matcha & Tea' },
   { id: 'food',      label: 'Bites & Burgers' },
   { id: 'mains',     label: 'Mains & Pizzas' },
+  { id: 'wellness',  label: 'Wellness Bowls' },
   { id: 'breakfast', label: 'Breakfast' },
   { id: 'desserts',  label: 'Desserts' },
 ] as const;
