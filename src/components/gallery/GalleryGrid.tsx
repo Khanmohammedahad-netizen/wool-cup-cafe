@@ -11,9 +11,6 @@ const IMAGES = [
   { src: '/images/woolcup/interior-03.jpg', alt: 'Interior corner' },
   { src: '/images/woolcup/interior-04.jpg', alt: 'Interior ambience' },
   { src: '/images/woolcup/interior-05.jpg', alt: 'Interior lounge' },
-  { src: '/images/woolcup/interior-06.jpg', alt: 'Interior space' },
-  { src: '/images/woolcup/interior-07.jpg', alt: 'Interior view' },
-  { src: '/images/woolcup/interior-08.jpg', alt: 'Interior atmosphere' },
   { src: '/images/woolcup/interior-10.jpg', alt: 'Interior feature' },
   // Interior — new shots
   { src: '/images/new/interior-sofa.jpg',        alt: 'Sofa seating' },

@@ -17,22 +17,22 @@ interface SeasonalItem {
 
 const SEASONAL_ITEMS: SeasonalItem[] = [
   {
-    name: 'Ube Cloud',
+    name: 'Coco Ube Cloud',
     description: 'Ube-whipped cream cloud floats over our cold brew base. Sweet, nutty, and completely extra.',
-    price: '₹430',
-    image: '/images/flagship/ube-cloud.jpg',
+    price: '—',
+    image: '/Beverages/Coco Ube Cloud.jpg',
   },
   {
-    name: 'Ube Coffee',
+    name: 'Dirty Ube Latte',
     description: 'Taro-ube ombre blended with cold brew. Earthy sweetness that hits different.',
-    price: '₹420',
-    image: '/images/flagship/ube-coffee.jpg',
+    price: '—',
+    image: '/Beverages/Dirty Ube Latte.jpg',
   },
   {
-    name: 'Strawberry Matcha',
-    description: 'Ceremonial matcha layered over fresh strawberry — vibrant, floral, and made to be photographed.',
-    price: '₹430',
-    image: '/images/flagship/strawberry-matcha.jpg',
+    name: 'Raspberry Matcha',
+    description: 'Ceremonial matcha layered over fresh raspberry — vibrant, floral, and made to be photographed.',
+    price: '—',
+    image: '/Beverages/Raspberry Matcha.jpg',
   },
 ];
 
