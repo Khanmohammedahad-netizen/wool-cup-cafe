@@ -17,20 +17,22 @@ interface SeasonalItem {
 
 const SEASONAL_ITEMS: SeasonalItem[] = [
   {
-    name: 'Mango Season Special',
-    description: 'It\'s mango season — and we\'re making the most of it. Ask us what\'s on today.',
-    price: '—',
-    image: '/images/woolcup/mango-dish.jpg',
-  },
-  {
-    name: 'Yuzu Cold Brew',
-    description: 'Zesty Japanese yuzu meets our slow-brewed cold brew. Bright, citrusy, and utterly refreshing.',
-    price: '₹380',
-  },
-  {
-    name: 'Lavender Sea Salt Matcha',
-    description: 'Ceremonial matcha layered with lavender and a whisper of sea salt. Floral, calm, complex.',
+    name: 'Ube Cloud',
+    description: 'Ube-whipped cream cloud floats over our cold brew base. Sweet, nutty, and completely extra.',
     price: '₹430',
+    image: '/images/flagship/ube-cloud.jpg',
+  },
+  {
+    name: 'Ube Coffee',
+    description: 'Taro-ube ombre blended with cold brew. Earthy sweetness that hits different.',
+    price: '₹420',
+    image: '/images/flagship/ube-coffee.jpg',
+  },
+  {
+    name: 'Strawberry Matcha',
+    description: 'Ceremonial matcha layered over fresh strawberry — vibrant, floral, and made to be photographed.',
+    price: '₹430',
+    image: '/images/flagship/strawberry-matcha.jpg',
   },
 ];
 
@@ -80,7 +82,7 @@ export function MenuSeasonalSpecials() {
           Right Now
         </h2>
         <p className="font-body text-base text-[#231f20]/70 mt-4 max-w-xl mx-auto">
-          Two drinks worth making the trip for. Always rotating.
+          Three drinks worth making the trip for. Always rotating.
         </p>
       </div>
 
