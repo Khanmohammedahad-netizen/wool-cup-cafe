@@ -13,6 +13,9 @@ interface SeasonalItem {
   price: string;
   image?: string;
   video?: string;
+  /** Fixed-pixel crop tuned to md (350x220) cards so the cup sits centered. */
+  bgSize?: string;
+  bgPosition?: string;
 }
 
 const SEASONAL_ITEMS: SeasonalItem[] = [
@@ -21,18 +24,24 @@ const SEASONAL_ITEMS: SeasonalItem[] = [
     description: 'Ube-whipped cream cloud floats over our cold brew base. Sweet, nutty, and completely extra.',
     price: '—',
     image: '/Beverages/Coco Ube Cloud.jpg',
+    bgSize: '560px 839px',
+    bgPosition: '-86px -502px',
   },
   {
     name: 'Dirty Ube Latte',
     description: 'Taro-ube ombre blended with cold brew. Earthy sweetness that hits different.',
     price: '—',
     image: '/Beverages/Dirty Ube Latte.jpg',
+    bgSize: '560px 840px',
+    bgPosition: '-73px -524px',
   },
   {
     name: 'Raspberry Matcha',
     description: 'Ceremonial matcha layered over fresh raspberry — vibrant, floral, and made to be photographed.',
     price: '—',
     image: '/Beverages/Raspberry Matcha.jpg',
+    bgSize: '560px 839px',
+    bgPosition: '-119px -471px',
   },
 ];
 
@@ -102,13 +111,18 @@ export function MenuSeasonalSpecials() {
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover object-bottom"
+                  className="w-full h-full object-cover object-[center_78%]"
                 />
-              ) : 'image' in item && item.image ? (
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover object-bottom"
+              ) : item.image ? (
+                <div
+                  role="img"
+                  aria-label={item.name}
+                  className="w-full h-full bg-no-repeat"
+                  style={{
+                    backgroundImage: `url('${encodeURI(item.image)}')`,
+                    backgroundSize: item.bgSize ?? 'cover',
+                    backgroundPosition: item.bgPosition ?? 'center',
+                  }}
                 />
               ) : (
                 <p className="absolute inset-0 flex items-center justify-center font-body italic text-[#231f20]/40 text-sm">Photograph coming soon</p>
