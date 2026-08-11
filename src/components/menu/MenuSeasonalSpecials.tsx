@@ -13,24 +13,35 @@ interface SeasonalItem {
   price: string;
   image?: string;
   video?: string;
+  /** Fixed-pixel crop tuned to md (350x220) cards so the cup sits centered. */
+  bgSize?: string;
+  bgPosition?: string;
 }
 
 const SEASONAL_ITEMS: SeasonalItem[] = [
   {
-    name: 'Mango Season Special',
-    description: 'It\'s mango season — and we\'re making the most of it. Ask us what\'s on today.',
+    name: 'Coco Ube Cloud',
+    description: 'Ube-whipped cream cloud floats over our cold brew base. Sweet, nutty, and completely extra.',
     price: '—',
-    image: '/images/woolcup/mango-dish.jpg',
+    image: '/Beverages/Coco Ube Cloud.jpg',
+    bgSize: '357px 535px',
+    bgPosition: '0px -280px',
   },
   {
-    name: 'Yuzu Cold Brew',
-    description: 'Zesty Japanese yuzu meets our slow-brewed cold brew. Bright, citrusy, and utterly refreshing.',
-    price: '₹380',
+    name: 'Dirty Ube Latte',
+    description: 'Taro-ube ombre blended with cold brew. Earthy sweetness that hits different.',
+    price: '—',
+    image: '/Beverages/Dirty Ube Latte.jpg',
+    bgSize: '417px 625px',
+    bgPosition: '-10px -362px',
   },
   {
-    name: 'Lavender Sea Salt Matcha',
-    description: 'Ceremonial matcha layered with lavender and a whisper of sea salt. Floral, calm, complex.',
-    price: '₹430',
+    name: 'Raspberry Matcha',
+    description: 'Ceremonial matcha layered over fresh raspberry — vibrant, floral, and made to be photographed.',
+    price: '—',
+    image: '/Beverages/Raspberry Matcha.jpg',
+    bgSize: '350px 525px',
+    bgPosition: '0px -253px',
   },
 ];
 
@@ -80,7 +91,7 @@ export function MenuSeasonalSpecials() {
           Right Now
         </h2>
         <p className="font-body text-base text-[#231f20]/70 mt-4 max-w-xl mx-auto">
-          Two drinks worth making the trip for. Always rotating.
+          Three drinks worth making the trip for. Always rotating.
         </p>
       </div>
 
@@ -100,13 +111,18 @@ export function MenuSeasonalSpecials() {
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-[center_78%]"
                 />
-              ) : 'image' in item && item.image ? (
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover"
+              ) : item.image ? (
+                <div
+                  role="img"
+                  aria-label={item.name}
+                  className="w-full h-full bg-no-repeat"
+                  style={{
+                    backgroundImage: `url('${encodeURI(item.image)}')`,
+                    backgroundSize: item.bgSize ?? 'cover',
+                    backgroundPosition: item.bgPosition ?? 'center',
+                  }}
                 />
               ) : (
                 <p className="absolute inset-0 flex items-center justify-center font-body italic text-[#231f20]/40 text-sm">Photograph coming soon</p>
@@ -118,9 +134,9 @@ export function MenuSeasonalSpecials() {
               </span>
               <h3 className="font-display text-2xl text-[#231f20]">{item.name}</h3>
               <p className="font-body text-sm italic text-[#231f20]/70 mt-1">{item.description}</p>
-              <p className="font-ui text-lg text-[#231f20] mt-3">
-                {item.price === '—' ? <span className="italic text-[#231f20]/50 text-base">Ask us</span> : item.price}
-              </p>
+              {item.price !== '—' && (
+                <p className="font-ui text-lg text-[#231f20] mt-3">{item.price}</p>
+              )}
             </div>
           </div>
         ))}

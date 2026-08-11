@@ -55,7 +55,7 @@ export function MenuHero() {
         ref={sectionRef}
         className="menu-grain-overlay relative min-h-[60vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden"
       >
-        {/* Background video */}
+        {/* Background video — swap src to /images/woolcup/menu-hero.mp4 when the new video arrives */}
         <video
           autoPlay
           muted

@@ -124,7 +124,8 @@ const MENU_DATA: CategoryData[] = [
     id: 'food',
     label: 'Bites & Burgers',
     items: [
-      { name: 'Avocado Toast',                    description: '', price: '₹445', note: 'Toast',       image: '/images/4/Classic Avacado toast.jpg'          },
+      { name: 'Mediterranean Avocado Toast',       description: 'Avocado with edible flowers, tomatoes, and olives on sourdough.', price: '₹445', note: 'Toast', image: '/Food/Meditrrainean Avocado Toast.JPG' },
+      { name: 'Creamy Chicken Toast',             description: 'Chicken sloppy toast — rich, messy, and worth it.', price: '₹495', note: 'Toast', image: '/Food/Creamy Chicken Toast.JPG'         },
       { name: 'Wild Mushroom Crostini',            description: '', price: '₹385', note: 'Toast',       image: '/images/3/Wild Mushroom Crostini.jpg'          },
       { name: 'Zucchini Fritters',                description: '', price: '₹345', note: 'Appetiser'                                                          },
       { name: 'Sesame Chicken Tenders',           description: '', price: '₹475', note: 'Appetiser',   image: '/images/2/Sesame Chicken Tenders.jpg'          },
@@ -198,8 +199,18 @@ const MENU_DATA: CategoryData[] = [
       { name: 'Orange-Chilli Glazed Fish',    description: '',                                                        price: '—',    note: 'Seafood',   image: '/images/1/Orange chilli glazed fish.jpg'           },
       { name: 'Sweet Ginger Kissed Fish',     description: '',                                                        price: '—',    note: 'Seafood',   image: '/images/4/Sweet ginger kissed fish.jpg'            },
       { name: 'Steamed Fish & Veggie Stew',   description: '',                                                        price: '—',    note: 'Seafood'                                                                },
-      { name: 'Chipotle Prawns',              description: '',                                                        price: '—',    note: 'Seafood'                                                                },
+      { name: 'Chipotle Prawns',              description: '',                                                        price: '—',    note: 'Seafood', image: '/Food/Honey Garlic Shrimps.JPG'                                        },
       { name: 'Prawn Burrito Bowl',           description: '',                                                        price: '—',    note: 'Seafood'                                                                },
+      { name: 'Spicy Peri Peri Grilled Fish', description: 'Peri peri grilled fish served over quinoa rice.',        price: '—',    note: 'Seafood', image: '/Food/Spicy Peri Peri Grilled Fish with quinoa Rice.JPG'               },
+    ],
+  },
+  {
+    id: 'wellness',
+    label: 'Wellness Bowls',
+    items: [
+      { name: 'Acai Power Bowl',       description: 'Acai base with peanut butter, granola, and fresh berries.',      price: '₹490', image: '/Food/Acai Smoothie Bowl.JPG'  },
+      { name: 'Coconut Granola Bowl',  description: 'Coconut yoghurt, toasted granola, and seasonal fruit.',          price: '₹450', image: '/Food/Cocoa Bowl.JPG'           },
+      { name: 'Green Detox Bowl',      description: 'Kiwi, spinach, matcha, and coconut water blended smooth.',       price: '₹490', image: '/Food/Green Power.JPG'          },
     ],
   },
   {
