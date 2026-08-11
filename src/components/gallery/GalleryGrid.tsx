@@ -2,14 +2,14 @@
 
 const HERO_IMAGES = [
   {
-    src: '/images/financial-district/fd-02.webp',
-    alt: 'Wool Cup Financial District exterior',
-    label: 'Financial District',
-  },
-  {
     src: '/images/film-nagar-exterior.jpg',
     alt: 'Wool Cup Film Nagar exterior',
     label: 'Film Nagar',
+  },
+  {
+    src: '/images/financial-district/fd-exterior.jpg',
+    alt: 'Wool Cup Financial District exterior',
+    label: 'Financial District',
   },
 ];
 
