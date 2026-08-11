@@ -14,6 +14,7 @@ const HERO_IMAGES = [
 ];
 
 const CAROUSEL_IMAGES = [
+  // Interiors
   { src: '/images/woolcup/interior-01.jpg',          alt: 'Interior seating area' },
   { src: '/images/woolcup/interior-02.jpg',          alt: 'Interior detail' },
   { src: '/images/woolcup/interior-03.jpg',          alt: 'Interior corner' },
@@ -37,12 +38,28 @@ const CAROUSEL_IMAGES = [
   { src: '/images/new/dessert-case.jpg',             alt: 'Dessert case' },
   { src: '/images/new/exterior-night.jpg',           alt: 'Exterior at night' },
   { src: '/images/new/exterior-wide.jpg',            alt: 'Exterior wide view' },
+  // Financial District
   { src: '/images/financial-district/fd-01.webp',   alt: 'Financial District branch' },
   { src: '/images/financial-district/fd-03.webp',   alt: 'Financial District detail' },
   { src: '/images/financial-district/fd-04.webp',   alt: 'Financial District view' },
   { src: '/images/financial-district/fd-05.webp',   alt: 'Financial District interior' },
   { src: '/images/financial-district/fd-06.webp',   alt: 'Financial District entrance' },
   { src: '/images/financial-district/fd-07.webp',   alt: 'Financial District ambience' },
+  // New product shots
+  { src: '/Beverages/Banana Cream Latte.jpg',        alt: 'Banana Cream Latte' },
+  { src: '/Beverages/Black Forest mocha.jpg',        alt: 'Black Forest Mocha' },
+  { src: '/Beverages/Blueberry Pancake Latte.jpg',   alt: 'Blueberry Pancake Latte' },
+  { src: '/Beverages/Cheese Mont Blanc.jpg',         alt: 'Cheese Mont Blanc' },
+  { src: '/Beverages/Hazelnut Latte.jpg',            alt: 'Hazelnut Latte' },
+  { src: '/Beverages/Seasalt Vanilla Mont Blanc.jpg',alt: 'Sea Salt Vanilla Mont Blanc' },
+  { src: '/Beverages/Ube Frappe.jpg',                alt: 'Ube Frappe' },
+  { src: '/Beverages/Ube Lemonade.jpg',              alt: 'Ube Lemonade' },
+  { src: '/Food/Acai Smoothie Bowl.JPG',             alt: 'Acai Smoothie Bowl' },
+  { src: '/Food/Cocoa Bowl.JPG',                     alt: 'Cocoa Bowl' },
+  { src: '/Food/Creamy Chicken Toast.JPG',           alt: 'Creamy Chicken Toast' },
+  { src: '/Food/Green Power.JPG',                    alt: 'Green Power Bowl' },
+  { src: '/Food/Honey Garlic Shrimps.JPG',           alt: 'Honey Garlic Shrimps' },
+  { src: '/Food/Meditrrainean Avocado Toast.JPG',    alt: 'Mediterranean Avocado Toast' },
 ];
 
 const LOOPED = [...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES];
@@ -56,7 +73,7 @@ export function GalleryGrid() {
           100% { transform: translateX(-50%); }
         }
         .gallery-strip {
-          animation: gallery-scroll 50s linear infinite;
+          animation: gallery-scroll 60s linear infinite;
         }
         .gallery-strip:hover {
           animation-play-state: paused;
@@ -95,7 +112,7 @@ export function GalleryGrid() {
               className="w-72 h-52 shrink-0 rounded-xl overflow-hidden"
             >
               <img
-                src={img.src}
+                src={encodeURI(img.src)}
                 alt={img.alt}
                 className="w-full h-full object-cover"
                 loading="lazy"
