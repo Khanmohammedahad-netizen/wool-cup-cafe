@@ -72,22 +72,22 @@ export function AboutHero() {
         <div className="mascot-col relative hidden md:flex items-end justify-center self-stretch overflow-hidden">
           <img
             ref={mascotRef}
-            src="/images/mascot.png"
+            src="/images/mascot.svg"
             alt=""
             aria-hidden="true"
             className="max-h-[82%] w-auto max-w-full object-contain object-bottom z-10"
-            style={{ filter: 'drop-shadow(-6px 0 32px rgba(35,31,32,0.05))' }}
+            style={{ mixBlendMode: 'multiply' }}
           />
         </div>
 
         {/* Mascot — mobile only, below text */}
         <div className="relative md:hidden flex justify-center items-end overflow-hidden" style={{ height: '52vw', maxHeight: 320 }}>
           <img
-            src="/images/mascot.png"
+            src="/images/mascot.svg"
             alt=""
             aria-hidden="true"
             className="h-full w-auto object-contain object-bottom"
-            style={{ filter: 'drop-shadow(0 -4px 24px rgba(35,31,32,0.06))' }}
+            style={{ mixBlendMode: 'multiply' }}
           />
         </div>
       </section>
