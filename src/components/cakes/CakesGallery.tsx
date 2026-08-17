@@ -8,12 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const PLACEHOLDER_CARDS = [
-  { aspect: 'aspect-square' },
-  { aspect: 'aspect-[3/4]' },
-  { aspect: 'aspect-square' },
-  { aspect: 'aspect-[3/4]' },
-  { aspect: 'aspect-square' },
-  { aspect: 'aspect-[3/4]' },
+  { aspect: 'aspect-[4/3]' },
 ];
 
 export function CakesGallery() {

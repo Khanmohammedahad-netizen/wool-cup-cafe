@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { EventsHero } from '@/components/events/EventsHero';
 import { EventsUpcoming } from '@/components/events/EventsUpcoming';
-import { EventsPast } from '@/components/events/EventsPast';
 import { EventsInquiry } from '@/components/events/EventsInquiry';
 import { Footer } from '@/components/footer/Footer';
 
@@ -15,7 +14,6 @@ export default function EventsPage() {
     <main>
       <EventsHero />
       <EventsUpcoming />
-      <EventsPast />
       <EventsInquiry />
       <Footer />
     </main>
