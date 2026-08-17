@@ -9,11 +9,11 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const FOUNDERS = [
   {
-    name: 'Diya Perka',
+    name: 'Dia Perka',
     title: 'Founder',
     image: '/images/founders/diya.jpg',
     initials: 'DP',
-    bio: "Diya founded Wool Cup from a lifelong passion for coffee and a belief in the power of meaningful spaces. What began with a home espresso machine and an obsession with craft evolved into a vision for a café where exceptional coffee, handcrafted food, and genuine human connection come together. Inspired by a quiet moment shared between three generations of her family, she set out to build a place where people could truly slow down, belong, and feel at home.",
+    bio: "Dia founded Wool Cup from a lifelong passion for coffee and a belief in the power of meaningful spaces. What began with a home espresso machine and an obsession with craft evolved into a vision for a café where exceptional coffee, handcrafted food, and genuine human connection come together. Inspired by a quiet moment shared between three generations of her family, she set out to build a place where people could truly slow down, belong, and feel at home.",
   },
   {
     name: 'Vivek Chowdary',
