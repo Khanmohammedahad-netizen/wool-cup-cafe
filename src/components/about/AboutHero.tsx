@@ -69,13 +69,13 @@ export function AboutHero() {
         </div>
 
         {/* Right: mascot — desktop side column */}
-        <div className="mascot-col relative hidden md:block self-stretch overflow-hidden">
+        <div className="mascot-col relative hidden md:flex items-end justify-center self-stretch overflow-hidden">
           <img
             ref={mascotRef}
             src="/images/mascot.png"
             alt=""
             aria-hidden="true"
-            className="absolute bottom-0 left-1/2 -translate-x-[40%] h-[78%] w-auto object-contain object-bottom z-10"
+            className="max-h-[82%] w-auto max-w-full object-contain object-bottom z-10"
             style={{ filter: 'drop-shadow(-6px 0 32px rgba(35,31,32,0.05))' }}
           />
         </div>
