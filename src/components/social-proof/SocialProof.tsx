@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const REVIEWS = [
   {
     name: 'Aryan M.',
-    quote: 'Hands down the best coffee in Hyderabad. The pour over is a ritual — clean, bright, and completely unhurried.',
+    quote: 'Hands down the best coffee in Hyderabad. The pour over is a ritual: clean, bright, and completely unhurried.',
   },
   {
     name: 'Sneha R.',
@@ -18,7 +18,7 @@ const REVIEWS = [
   },
   {
     name: 'Rahul K.',
-    quote: 'Everything here is intentional — the music, the light, the coffee temperature. A rare place that gets hospitality right.',
+    quote: 'Everything here is intentional: the music, the light, the coffee temperature. A rare place that gets hospitality right.',
   },
   {
     name: 'Priya S.',
@@ -26,7 +26,7 @@ const REVIEWS = [
   },
   {
     name: 'Vikram A.',
-    quote: "Not just a café — a proper third place. I've written three proposals here. The staff never rush you.",
+    quote: "Not just a café, but a proper third place. I've written three proposals here. The staff never rush you.",
   },
   {
     name: 'Meera T.',
@@ -176,7 +176,7 @@ export function SocialProof() {
                 </p>
 
                 {/* Attribution */}
-                <p className="font-ui text-sm text-dark/60">— {review.name}</p>
+                <p className="font-ui text-sm text-dark/60">{review.name}</p>
               </div>
             ))}
           </div>

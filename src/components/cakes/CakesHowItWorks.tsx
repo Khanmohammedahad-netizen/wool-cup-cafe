@@ -11,7 +11,7 @@ const STEPS = [
   {
     number: '01',
     title: 'Imagine',
-    description: 'Tell us about your celebration — the flavours you love, the colours you envision, the story you want to tell.',
+    description: 'Tell us about your celebration: the flavours you love, the colours you envision, the story you want to tell.',
   },
   {
     number: '02',
@@ -21,7 +21,7 @@ const STEPS = [
   {
     number: '03',
     title: 'Celebrate',
-    description: 'Pick up your creation — or let us deliver it to your doorstep — and make your moment unforgettable.',
+    description: 'Pick up your creation, or let us deliver it to your doorstep, and make your moment unforgettable.',
   },
 ];
 

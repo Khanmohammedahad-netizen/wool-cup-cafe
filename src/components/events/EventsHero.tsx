@@ -49,7 +49,7 @@ export function EventsHero() {
           ref={subtitleRef}
           className="font-body text-base text-[#ead8b5]/80 mt-4 max-w-xl"
         >
-          Live music, intimate dinners, community nights — all at Wool Cup
+          Live music, intimate dinners, community nights. All at Wool Cup
         </p>
       </div>
     </section>

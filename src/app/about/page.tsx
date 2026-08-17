@@ -7,8 +7,8 @@ import { AboutFounderQuote } from '@/components/about/AboutFounderQuote'
 import { Footer } from '@/components/footer/Footer'
 
 export const metadata: Metadata = {
-  title: 'Our Story — Wool Cup Urban Café & Bistro',
-  description: 'The journey behind Wool Cup. Born in Film Nagar, Hyderabad — a sanctuary of comfort, craft, and connection.',
+  title: 'Our Story | Wool Cup Urban Café & Bistro',
+  description: 'The journey behind Wool Cup. Born in Film Nagar, Hyderabad, a sanctuary of comfort, craft, and connection.',
 }
 
 export default function AboutPage() {

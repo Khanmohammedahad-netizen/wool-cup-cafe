@@ -40,7 +40,7 @@ export function AboutFounderQuote() {
           "We don't just serve coffee. We serve the pause."
         </p>
         <p ref={attributionRef} className="font-ui text-sm text-dark/50">
-          — The Founders
+          The Founders
         </p>
       </div>
     </section>

@@ -88,7 +88,7 @@ export function FoundersPreview() {
               ref={bodyRef}
               className="font-body text-base md:text-lg text-dark/80 leading-relaxed"
             >
-              Wool Cup was born from a simple belief — that every cup of coffee
+              Wool Cup was born from a simple belief: that every cup of coffee
               and every bite of food should feel like a warm embrace. Founded in
               the heart of Film Nagar, we set out to create a sanctuary where
               slow mornings, honest conversations, and handcrafted flavours come

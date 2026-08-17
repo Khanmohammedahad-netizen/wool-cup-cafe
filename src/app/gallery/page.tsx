@@ -3,7 +3,7 @@ import { GalleryGrid } from '@/components/gallery/GalleryGrid';
 import { Footer } from '@/components/footer/Footer';
 
 export const metadata: Metadata = {
-  title: 'Gallery — Wool Cup Urban Café',
+  title: 'Gallery | Wool Cup Urban Café',
   description: 'Photos of the space, the coffee, and the quiet moments at Wool Cup, Hyderabad.',
 };
 

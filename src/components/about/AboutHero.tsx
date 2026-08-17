@@ -61,7 +61,7 @@ export function AboutHero() {
             Born from a love of <em>slow mornings</em>
           </h1>
           <p className="font-body text-sm text-[#231f20]/55 leading-relaxed max-w-[34ch] mb-8">
-            A sanctuary of craft, comfort, and connection — built for people who believe in the pause between sips.
+            A sanctuary of craft, comfort, and connection, built for people who believe in the pause between sips.
           </p>
           <span className="inline-flex items-center gap-2 font-ui text-[0.65rem] uppercase tracking-[0.18em] text-[#6c3b11] border border-[#c9a96e] px-5 py-2.5 rounded-full">
             Read the story &nbsp;↓

@@ -6,7 +6,7 @@ import { EventsInquiry } from '@/components/events/EventsInquiry';
 import { Footer } from '@/components/footer/Footer';
 
 export const metadata: Metadata = {
-  title: 'Events — Wool Cup Urban Café & Bistro',
+  title: 'Events | Wool Cup Urban Café & Bistro',
   description: 'Live music, private dining, community nights and more at Wool Cup, Hyderabad. Host your next event with us.',
 };
 

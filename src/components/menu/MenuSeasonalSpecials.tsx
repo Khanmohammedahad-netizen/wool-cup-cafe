@@ -37,7 +37,7 @@ const SEASONAL_ITEMS: SeasonalItem[] = [
   },
   {
     name: 'Raspberry Matcha',
-    description: 'Ceremonial matcha layered over fresh raspberry — vibrant, floral, and made to be photographed.',
+    description: 'Ceremonial matcha layered over fresh raspberry: vibrant, floral, and made to be photographed.',
     price: '—',
     image: '/Beverages/Raspberry Matcha.jpg',
     bgSize: '350px 525px',

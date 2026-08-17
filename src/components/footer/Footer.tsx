@@ -21,7 +21,7 @@ export function Footer() {
           <div>
             <h4 className="font-display text-xl text-white mb-1">For Special Moments</h4>
             <p className="font-body text-lg text-white/50 max-w-md">
-              Dessert platters, celebration cakes, curated spreads — crafted for your gatherings and events.
+              Dessert platters, celebration cakes, curated spreads, crafted for your gatherings and events.
             </p>
           </div>
           <a

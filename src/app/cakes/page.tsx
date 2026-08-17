@@ -5,7 +5,7 @@ import { CakesHowItWorks } from '@/components/cakes/CakesHowItWorks'
 import { Footer } from '@/components/footer/Footer'
 
 export const metadata: Metadata = {
-  title: 'Custom Cakes — Wool Cup Urban Café & Bistro',
+  title: 'Custom Cakes | Wool Cup Urban Café & Bistro',
   description: 'Handcrafted celebration cakes designed for your special moments. Order custom cakes from Wool Cup, Hyderabad.',
 }
 

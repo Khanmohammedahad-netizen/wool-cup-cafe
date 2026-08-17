@@ -30,13 +30,13 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wool-cup-cafe.vercel.app"),
-  title: "Wool Cup — Coffee, Quieted.",
+  title: "Wool Cup: Coffee, Quieted.",
   description:
     "Single-estate specialty coffee, hand-pulled espresso, and quiet mornings. Film Nagar, Hyderabad.",
   keywords:
     "wool cup, specialty coffee, hyderabad, film nagar, single-estate arabica, espresso, cafe",
   openGraph: {
-    title: "Wool Cup — Coffee, Quieted.",
+    title: "Wool Cup: Coffee, Quieted.",
     description:
       "Single-estate specialty coffee, hand-pulled espresso, and quiet mornings.",
     type: "website",

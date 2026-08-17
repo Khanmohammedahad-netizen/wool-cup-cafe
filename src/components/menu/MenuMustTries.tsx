@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const MUST_TRY_ITEMS = [
   {
     name: 'Honey Garlic Shrimps',
-    description: 'Pan-seared shrimp glazed in honey and garlic — sweet, savory, and quick to disappear.',
+    description: 'Pan-seared shrimp glazed in honey and garlic: sweet, savory, and quick to disappear.',
     price: '—',
     image: '/Food/Honey Garlic Shrimps.JPG',
     bgSize: '473px 708px',

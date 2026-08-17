@@ -62,7 +62,7 @@ export function EventsInquiry() {
           Plan your <em>event.</em>
         </h2>
         <p className="font-body text-base text-[#231f20]/60 mt-4">
-          Tell us what you have in mind — we&apos;ll get back to you on WhatsApp.
+          Tell us what you have in mind. We&apos;ll get back to you on WhatsApp.
         </p>
       </div>
 

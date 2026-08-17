@@ -33,7 +33,7 @@ const MENU_DATA: CategoryData[] = [
       { name: 'Doppio',      description: 'Double the espresso, double the magic.',                                         price: '₹270' },
       { name: 'Cortado',     description: 'Espresso softened with a hint of warm milk for perfect balance.',                price: '₹260', image: '/images/beverages/Juices/Cortado.jpg' },
       { name: 'Cappuccino',  description: 'Classic, creamy, and comforting with a dusting of cocoa.',                      price: '₹270' },
-      { name: 'Flat White',  description: 'Silky micro foam meets bold espresso — a modern favorite.',                      price: '₹290' },
+      { name: 'Flat White',  description: 'Silky micro foam meets bold espresso, a modern favorite.',                      price: '₹290' },
       { name: 'Macchiato',   description: 'Espresso marked with a whisper of milk foam.',                                   price: '₹270', image: '/images/beverages/Juices/Macchiato.jpg' },
     ],
   },
@@ -41,7 +41,7 @@ const MENU_DATA: CategoryData[] = [
     id: 'cold',
     label: 'Cold Brews & Iced',
     items: [
-      { name: 'Classic Iced Americano',   description: 'Espresso over ice — simple and strong.',                                                         price: '₹245' },
+      { name: 'Classic Iced Americano',   description: 'Espresso over ice, simple and strong.',                                                         price: '₹245' },
       { name: 'Cranberry Iced Americano', description: 'Fruity twist on the classic.',                                                                   price: '₹320' },
       { name: 'Orange Iced Americano',    description: 'Bright and bold citrus coffee.',                                                                 price: '₹360' },
       { name: 'OG Cold Brew',             description: 'Straight-up, smooth and slow-brewed.',                                                           price: '₹290', image: '/images/beverages/Juices/OG Cold Brew.jpg' },
@@ -125,7 +125,7 @@ const MENU_DATA: CategoryData[] = [
     label: 'Bites & Burgers',
     items: [
       { name: 'Mediterranean Avocado Toast',       description: 'Avocado with edible flowers, tomatoes, and olives on sourdough.', price: '₹445', note: 'Toast', image: '/Food/Meditrrainean Avocado Toast.JPG' },
-      { name: 'Creamy Chicken Toast',             description: 'Chicken sloppy toast — rich, messy, and worth it.', price: '₹495', note: 'Toast', image: '/Food/Creamy Chicken Toast.JPG'         },
+      { name: 'Creamy Chicken Toast',             description: 'Chicken sloppy toast: rich, messy, and worth it.', price: '₹495', note: 'Toast', image: '/Food/Creamy Chicken Toast.JPG'         },
       { name: 'Wild Mushroom Crostini',            description: '', price: '₹385', note: 'Toast',       image: '/images/3/Wild Mushroom Crostini.jpg'          },
       { name: 'Zucchini Fritters',                description: '', price: '₹345', note: 'Appetiser'                                                          },
       { name: 'Sesame Chicken Tenders',           description: '', price: '₹475', note: 'Appetiser',   image: '/images/2/Sesame Chicken Tenders.jpg'          },
@@ -169,8 +169,8 @@ const MENU_DATA: CategoryData[] = [
     id: 'mains',
     label: 'Mains & Pizzas',
     items: [
-      { name: 'Pasta Picasso — Veg',          description: 'Penne or Spaghetti · Arrabbiata, Alfredo, or Rosatella.', price: '₹425', note: 'Pasta'      },
-      { name: 'Pasta Picasso — Chicken',      description: 'Penne or Spaghetti · Arrabbiata, Alfredo, or Rosatella.', price: '₹475', note: 'Pasta'      },
+      { name: 'Pasta Picasso Veg',          description: 'Penne or Spaghetti · Arrabbiata, Alfredo, or Rosatella.', price: '₹425', note: 'Pasta'      },
+      { name: 'Pasta Picasso Chicken',      description: 'Penne or Spaghetti · Arrabbiata, Alfredo, or Rosatella.', price: '₹475', note: 'Pasta'      },
       { name: 'Chestnut Ravioli',             description: '',                                                        price: '—',    note: 'Pasta'      },
       { name: 'Risotto Alfredo',              description: '',                                                        price: '—',    note: 'Pasta'      },
       { name: 'Cluck & Mac Stack',            description: '',                                                        price: '—',    note: 'Pasta',     image: '/images/1/Cluck & Mac stack.jpg'                   },
@@ -454,7 +454,7 @@ export function MenuFullMenu() {
             ))}
 
             <p className="font-body text-sm text-brown/40 italic text-center pt-4">
-              Items marked &ldquo;Ask us&rdquo; are available in-store — pricing varies. Ask our team.
+              Items marked &ldquo;Ask us&rdquo; are available in-store, pricing varies. Ask our team.
             </p>
           </div>
         </div>

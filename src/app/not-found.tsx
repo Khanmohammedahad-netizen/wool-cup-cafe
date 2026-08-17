@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Page Not Found — Wool Cup Urban Café & Bistro',
+  title: 'Page Not Found | Wool Cup Urban Café & Bistro',
 };
 
 export default function NotFound() {
@@ -35,7 +35,7 @@ export default function NotFound() {
       </h1>
 
       <p className="font-body text-lg text-[#231f20]/60 mb-10 max-w-sm">
-        This page doesn't exist — but a good cup of coffee always finds you.
+        This page doesn't exist, but a good cup of coffee always finds you.
       </p>
 
       <Link

@@ -8,7 +8,7 @@ import { Locations } from '@/components/locations/Locations';
 import { Footer } from '@/components/footer/Footer';
 
 export const metadata: Metadata = {
-  title: 'Wool Cup Urban Café & Bistro — Hyderabad',
+  title: 'Wool Cup Urban Café & Bistro | Hyderabad',
   description: 'A slow café for honest coffee, handcrafted food, and quiet mornings. Located in Hyderabad.',
   openGraph: {
     title: 'Wool Cup Urban Café & Bistro',
