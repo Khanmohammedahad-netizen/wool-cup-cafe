@@ -20,7 +20,7 @@ const LOCATIONS = [
     mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.037130635467!2d78.40618067606774!3d17.41113060237905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb96bc72e8211b%3A0xc3c5d6e2467d022b!2sFilm%20Nagar%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
   },
   {
-    image: '/images/financial-district/fd-02.webp',
+    image: '/images/financial-district/fd-exterior.jpg',
     badge: 'New',
     name: 'Financial District',
     address: 'Ground Floor Survey 88AA, My Space Properties, ADP Blvd, Financial District, Hyderabad, Makthakousarali, Telangana 500032',
