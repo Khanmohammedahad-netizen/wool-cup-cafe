@@ -68,7 +68,7 @@ export function AboutHero() {
           </span>
         </div>
 
-        {/* Right: mascot */}
+        {/* Right: mascot — desktop side column */}
         <div className="mascot-col relative hidden md:block self-stretch overflow-hidden">
           <img
             ref={mascotRef}
@@ -77,6 +77,17 @@ export function AboutHero() {
             aria-hidden="true"
             className="absolute bottom-0 left-1/2 -translate-x-[40%] h-[78%] w-auto object-contain object-bottom z-10"
             style={{ filter: 'drop-shadow(-6px 0 32px rgba(35,31,32,0.05))' }}
+          />
+        </div>
+
+        {/* Mascot — mobile only, below text */}
+        <div className="relative md:hidden flex justify-center items-end overflow-hidden" style={{ height: '52vw', maxHeight: 320 }}>
+          <img
+            src="/images/mascot.png"
+            alt=""
+            aria-hidden="true"
+            className="h-full w-auto object-contain object-bottom"
+            style={{ filter: 'drop-shadow(0 -4px 24px rgba(35,31,32,0.06))' }}
           />
         </div>
       </section>
