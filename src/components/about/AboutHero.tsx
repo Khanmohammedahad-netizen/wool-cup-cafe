@@ -21,7 +21,18 @@ export function AboutHero() {
       gsap.fromTo(
         mascotRef.current,
         { opacity: 0, y: 24 },
-        { opacity: 1, y: 0, duration: 1.4, ease: 'power2.out', delay: 0.15 }
+        {
+          opacity: 1, y: 0, duration: 1.4, ease: 'power2.out', delay: 0.15,
+          onComplete: () => {
+            gsap.to(mascotRef.current, {
+              y: -14,
+              duration: 2.2,
+              ease: 'sine.inOut',
+              yoyo: true,
+              repeat: -1,
+            });
+          },
+        }
       );
     },
     { scope: sectionRef }
