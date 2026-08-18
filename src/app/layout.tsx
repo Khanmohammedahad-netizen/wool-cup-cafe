@@ -29,7 +29,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://wool-cup-cafe.vercel.app"),
+  metadataBase: new URL("https://woolcup.com"),
   title: "Wool Cup: Coffee, Quieted.",
   description:
     "Single-estate specialty coffee, hand-pulled espresso, and quiet mornings. Film Nagar, Hyderabad.",
@@ -64,6 +64,33 @@ export default function RootLayout({
             </filter>
           </defs>
         </svg>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CafeOrCoffeeShop",
+              name: "Wool Cup Urban Café & Bistro",
+              url: "https://woolcup.com",
+              logo: "https://woolcup.com/images/logo.png",
+              image: "https://woolcup.com/images/logo.png",
+              description: "A sanctuary of craft, comfort, and connection. Specialty coffee and handcrafted food in Hyderabad.",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "CC 55, Road No. 1, Film Nagar, Jubilee Hills",
+                addressLocality: "Hyderabad",
+                addressRegion: "Telangana",
+                postalCode: "500033",
+                addressCountry: "IN",
+              },
+              telephone: "+917292944244",
+              openingHours: ["Mo-Th 08:00-23:00", "Fr-Su 08:00-23:30"],
+              servesCuisine: ["Coffee", "Brunch", "Bistro"],
+              priceRange: "₹₹",
+              sameAs: ["https://www.instagram.com/woolcupcafe"],
+            }),
+          }}
+        />
         <LenisProvider>
           <LoadingScreen />
           <Navbar />
