@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { AboutHero } from '@/components/about/AboutHero'
 import { AboutOrigin } from '@/components/about/AboutOrigin'
-import { AboutPhilosophy } from '@/components/about/AboutPhilosophy'
-import { AboutSpace } from '@/components/about/AboutSpace'
 import { AboutPeople } from '@/components/about/AboutPeople'
+import { AboutPhilosophy } from '@/components/about/AboutPhilosophy'
+import { AboutFounderQuote } from '@/components/about/AboutFounderQuote'
 import { Footer } from '@/components/footer/Footer'
 
 export const metadata: Metadata = {
@@ -16,9 +16,9 @@ export default function AboutPage() {
     <main>
       <AboutHero />
       <AboutOrigin />
-      <AboutPhilosophy />
-      <AboutSpace />
       <AboutPeople />
+      <AboutPhilosophy />
+      <AboutFounderQuote />
       <Footer />
     </main>
   )

@@ -27,25 +27,10 @@ const PILLARS = [
 
 export function AboutPhilosophy() {
   const containerRef = useRef<HTMLElement>(null);
-  const quoteRef = useRef<HTMLParagraphElement>(null);
-  const attributionRef = useRef<HTMLParagraphElement>(null);
   const pillarsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(
     () => {
-      gsap.fromTo(
-        [quoteRef.current, attributionRef.current],
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power2.out',
-          stagger: 0.12,
-          scrollTrigger: { trigger: quoteRef.current, start: 'top 85%' },
-        }
-      );
-
       gsap.fromTo(
         pillarsRef.current.filter(Boolean),
         { opacity: 0, y: 40 },
@@ -64,18 +49,8 @@ export function AboutPhilosophy() {
 
   return (
     <section ref={containerRef} className="bg-[#ead8b5]/20 py-24 md:py-32">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <p
-          ref={quoteRef}
-          className="font-display text-3xl md:text-4xl lg:text-5xl text-dark italic leading-tight mb-4"
-        >
-          "We don't just serve coffee. We serve the pause."
-        </p>
-        <p ref={attributionRef} className="font-ui text-sm text-dark/50 mb-20">
-          The Founders
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left mt-16">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
           {PILLARS.map((pillar, i) => (
             <div key={pillar.number} ref={(el) => { pillarsRef.current[i] = el; }}>
               <p className="font-ui text-[10px] uppercase tracking-widest text-dark/30 mb-4">

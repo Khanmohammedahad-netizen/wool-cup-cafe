@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,18 +9,43 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const FOUNDERS = [
   {
-    name: 'Dia Perka',
+    name: 'Diya Perka',
     title: 'Founder',
+    image: '/images/founders/diya.jpg',
     initials: 'DP',
-    bio: "Dia founded Wool Cup from a lifelong passion for coffee and a belief in the power of meaningful spaces. What began with a home espresso machine and an obsession with craft evolved into a vision for a café where exceptional coffee, handcrafted food, and genuine human connection come together. Inspired by a quiet moment shared between three generations of her family, she set out to build a place where people could truly slow down, belong, and feel at home.",
+    bio: "Diya founded Wool Cup from a lifelong passion for coffee and a belief in the power of meaningful spaces. What began with a home espresso machine and an obsession with craft evolved into a vision for a café where exceptional coffee, handcrafted food, and genuine human connection come together. Inspired by a quiet moment shared between three generations of her family, she set out to build a place where people could truly slow down, belong, and feel at home.",
   },
   {
     name: 'Vivek Chowdary',
     title: 'Co-Founder & Head of Operations',
-    initials: 'VM',
+    image: '/images/founders/vivek.jpg',
+    initials: 'VC',
     bio: "Behind every dream is someone who quietly helps make it possible. As Co-Founder and Head of Operations, Vivek Chowdary has been the steady force behind Wool Cup, building systems, leading the team, and ensuring that every visit reflects the values the café was founded upon. His strength lies not in seeking the spotlight, but in making sure everything runs seamlessly so the vision can flourish.",
   },
 ];
+
+function FounderPhoto({ image, initials, name }: { image: string; initials: string; name: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <div className="aspect-[3/4] rounded-2xl bg-[#ead8b5]/40 flex items-center justify-center mb-6 overflow-hidden">
+        <span className="font-display text-6xl text-brown/25 select-none">{initials}</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-[#ead8b5]/40">
+      <img
+        src={image}
+        alt={name}
+        className="object-cover w-full h-full"
+        onError={() => setFailed(true)}
+      />
+    </div>
+  );
+}
 
 export function AboutPeople() {
   const containerRef = useRef<HTMLElement>(null);
@@ -75,11 +100,7 @@ export function AboutPeople() {
               key={founder.name}
               ref={(el) => { cardRefs.current[i] = el; }}
             >
-              <div className="aspect-[3/4] rounded-2xl bg-[#ead8b5]/40 flex items-center justify-center mb-6 overflow-hidden">
-                <span className="font-display text-6xl text-brown/25 select-none">
-                  {founder.initials}
-                </span>
-              </div>
+              <FounderPhoto image={founder.image} initials={founder.initials} name={founder.name} />
               <p className="font-ui text-[10px] uppercase tracking-widest text-brown/60 mb-1">
                 {founder.title}
               </p>
