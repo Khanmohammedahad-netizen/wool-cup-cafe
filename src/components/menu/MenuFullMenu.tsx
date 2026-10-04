@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 import { MenuCategoryNav } from './MenuCategoryNav';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -278,14 +279,15 @@ function MenuItem({
       {image ? (
         <button
           onClick={() => onImageClick?.(image, name)}
-          className="w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden flex-shrink-0 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-brown/50"
+          className="relative w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden flex-shrink-0 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-brown/50"
           aria-label={`View ${name}`}
         >
-          <img
+          <Image
             src={encodeURI(image)}
             alt={name}
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            fill
+            sizes="80px"
+            className="object-cover transition-transform duration-300 hover:scale-105"
           />
         </button>
       ) : null}
@@ -398,10 +400,13 @@ export function MenuFullMenu() {
             >
               Close ×
             </button>
-            <img
+            <Image
               src={encodeURI(previewImage)}
               alt={previewName}
-              className="w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl"
+              width={1600}
+              height={1200}
+              sizes="(max-width: 768px) 100vw, 672px"
+              className="w-full h-auto max-h-[75vh] object-contain rounded-2xl shadow-2xl"
             />
             <p className="font-display text-white/90 text-xl mt-4">{previewName}</p>
           </div>
