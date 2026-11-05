@@ -9,25 +9,25 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const MUST_TRY_ITEMS = [
   {
-    name: 'Honey Garlic Shrimps',
-    description: 'Pan-seared shrimp glazed in honey and garlic: sweet, savory, and quick to disappear.',
-    price: '—',
+    name: 'Honey Chilli Garlic Shrimps',
+    description: 'Juicy shrimps tossed with honey, chilli, garlic & peppers.',
+    price: '₹630',
     image: '/Food/Honey Garlic Shrimps.JPG',
     bgSize: '473px 708px',
     bgPosition: '-60px -336px',
   },
   {
-    name: 'Spicy Peri Peri Grilled Fish with Quinoa Rice',
-    description: 'Fiery peri peri grilled fish over herbed quinoa rice.',
-    price: '—',
+    name: 'Peri Peri Grilled Fish',
+    description: 'Peri peri grilled fish with quinoa, sautéed vegetables & creamy coconut sauce.',
+    price: '₹630',
     image: '/Food/Spicy Peri Peri Grilled Fish with quinoa Rice.JPG',
     bgSize: '560px 840px',
     bgPosition: '-133px -535px',
   },
   {
     name: 'Creamy Chicken Toast',
-    description: 'Buttery toast piled high with creamy, savory chicken.',
-    price: '—',
+    description: 'Sourdough topped with creamy chicken, bell peppers, parmesan and garlic.',
+    price: '₹450',
     image: '/Food/Creamy Chicken Toast.JPG',
     bgSize: '473px 591px',
     bgPosition: '-51px -344px',

@@ -1,16 +1,21 @@
 'use client';
 
 export const CATEGORIES = [
-  { id: 'classics',  label: 'Classics' },
-  { id: 'cold',      label: 'Cold Brews' },
-  { id: 'lattes',    label: 'Lattes' },
-  { id: 'frappes',   label: 'Frappes' },
-  { id: 'matcha',    label: 'Matcha & Tea' },
-  { id: 'food',      label: 'Bites & Burgers' },
-  { id: 'mains',     label: 'Mains & Pizzas' },
-  { id: 'wellness',  label: 'Wellness Bowls' },
-  { id: 'breakfast', label: 'Breakfast' },
-  { id: 'desserts',  label: 'Desserts' },
+  { id: 'classics', label: "Espresso & Brew" },
+  { id: 'cold', label: "Cold Brews" },
+  { id: 'lattes', label: "Lattes" },
+  { id: 'frappes', label: "Frappes" },
+  { id: 'matcha', label: "Matcha & Ube" },
+  { id: 'tea', label: "Teas & Coolers" },
+  { id: 'breakfast', label: "Breakfast" },
+  { id: 'toast', label: "Toast" },
+  { id: 'wellness', label: "Healthy Bowls" },
+  { id: 'salads', label: "Soups & Salads" },
+  { id: 'appetizers', label: "Appetizers" },
+  { id: 'food', label: "Burgers & Sandwiches" },
+  { id: 'pizza', label: "Pizza & Pasta" },
+  { id: 'mains', label: "Mains & Rice Bowls" },
+  { id: 'desserts', label: "Desserts" },
 ] as const;
 
 interface MenuCategoryNavProps {
