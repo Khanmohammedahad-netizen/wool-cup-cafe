@@ -72,8 +72,8 @@ export default function RootLayout({
               "@type": "CafeOrCoffeeShop",
               name: "Wool Cup Urban Café & Bistro",
               url: "https://woolcup.com",
-              logo: "https://woolcup.com/images/logo.png",
-              image: "https://woolcup.com/images/logo.png",
+              logo: "https://woolcup.com/images/logo-brand.png",
+              image: "https://woolcup.com/images/logo-brand.png",
               description: "A sanctuary of craft, comfort, and connection. Specialty coffee and handcrafted food in Hyderabad.",
               address: {
                 "@type": "PostalAddress",
