@@ -197,7 +197,7 @@ const MENU_DATA: CategoryData[] = [
     id: 'wellness',
     label: "Healthy Bowls",
     items: [
-      { name: "Oatmeal Porridge Bowl", description: "Creamy oats layered with apple, almond flakes, crunchy granola, Callebaut chocolate, almond butter and honey.", price: "₹357" },
+      { name: "Oatmeal Porridge Bowl", description: "Creamy oats layered with apple, almond flakes, crunchy granola, Callebaut chocolate, almond butter and honey.", price: "₹350" },
       { name: "Fresh Fruit Bowl", description: "A refreshing mix of seasonal fruits finished with honey and crunchy almond flakes.", price: "₹395" },
       { name: "Yogurt Bowl", description: "Creamy yogurt with mascarpone, granola, seasonal fruits, blueberries and honey with a hint of vanilla.", price: "₹450" },
       { name: "Cocoa Coco Smoothie Bowl", description: "Cocoa powder, coconut milk and dates, topped with banana, granola and coconut flakes.", price: "₹630" },
