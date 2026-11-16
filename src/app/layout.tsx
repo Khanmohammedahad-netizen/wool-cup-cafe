@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
@@ -56,6 +57,8 @@ export default function RootLayout({
       className={`${playfairDisplay.variable} ${cormorantGaramond.variable} ${dmSans.variable}`}
     >
       <body className="antialiased bg-bg text-text selection:bg-cream selection:text-dark">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-YKS228TMQ0" strategy="afterInteractive" />
+        <Script id="ga4" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YKS228TMQ0');`}</Script>
         {/* SVG filter defs — converts black logo pixels to brand brown #6c3b11 */}
         <svg aria-hidden="true" style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
           <defs>
