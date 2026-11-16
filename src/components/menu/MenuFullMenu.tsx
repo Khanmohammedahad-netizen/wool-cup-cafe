@@ -25,6 +25,30 @@ interface CategoryData {
 
 const MENU_DATA: CategoryData[] = [
   {
+    id: 'strawberry',
+    label: "Strawberry Edit",
+    items: [
+      { name: "Strawberry Cold Brew", description: "Slow-steeped cold brew and home made strawberry crush, shaken over ice with a tint of fresh lemon.", price: "₹380", note: "Beverage" },
+      { name: "Strawberry Cooler", description: "Soda, home made strawberry crush, fresh strawberry and lemon.", price: "₹315", note: "Beverage" },
+      { name: "Strawberry Iced Tea", description: "Darjeeling tea, home made strawberry crush and fresh strawberry, shaken over ice with a hint of lemon & mint.", price: "₹340", note: "Beverage" },
+      { name: "Strawberry Matcha", description: "Home made strawberry crush topped with sweetened milk and layered with freshly whisked ceremonial matcha.", price: "₹430", note: "Beverage" },
+      { name: "Strawberry Choco Frappe", description: "Strawberry ice cream blended with home made strawberry crush, milk and Callebaut chocolate, topped with whipped cream.", price: "₹470", note: "Beverage" },
+      { name: "Layered Strawberry Kataifi Trifle", description: "Crispy golden kataifi layered with fresh strawberries, home made strawberry crush, pistachio and silky malai cream, finished with honey.", price: "₹450", note: "Dessert Bar" },
+      { name: "Strawberry Coco Smoothie Bowl", description: "Strawberries, coconut milk, oats and dates, topped with banana, almond flakes, granola and chia seeds.", price: "₹595", note: "Dessert Bar" },
+      { name: "Strawberry OG French Toast", description: "Golden brioche French toast stuffed with fresh strawberries and home made strawberry crush, finished with strawberry cream. Contains egg.", price: "₹480", note: "Dessert Bar" },
+      { name: "Strawberry Nutella French Toast", description: "Golden brioche French toast topped with fresh strawberries, rich Nutella and a swirl of whipped cream. Contains egg.", price: "₹585", note: "Dessert Bar" },
+      { name: "Strawberry Nutella Crepe", description: "Delicate crepes filled with fresh strawberries and rich Nutella, finished with whipped cream. Contains egg.", price: "₹540", note: "Dessert Bar" },
+      { name: "Strawberry Nutella Pancakes", description: "Fluffy pancakes topped with fresh strawberries, Nutella and whipped cream, served with home made strawberry crush. Contains egg.", price: "₹450", note: "Dessert Bar" },
+      { name: "Strawberry Nutella Waffle", description: "Golden waffles topped with fresh strawberries, warm Nutella, whipped cream and a touch of Callebaut chocolate. Contains egg.", price: "₹540", note: "Dessert Bar" },
+      { name: "Strawberry Vanilla Slice", description: "Soft vanilla sponge layered with silky cream and fresh strawberries.", price: "₹315", note: "Food" },
+      { name: "Warm Nutella Strawberries", description: "Fresh strawberries paired with our signature warm house-made Nutella.", price: "₹595", note: "Food" },
+      { name: "Chocolate-Dipped Strawberries", description: "Fresh strawberries dipped in rich Callebaut chocolate.", price: "₹470", note: "Food" },
+      { name: "Choco Strawberry Cake", description: "Rich chocolate cake layered with strawberry cream, strawberry jam and chocolate.", price: "₹380", note: "Food" },
+      { name: "Strawberry Trifle", description: "Layers of vanilla sponge, fresh strawberries and velvety cream. Contains egg.", price: "₹360", note: "Food" },
+      { name: "Strawberry Croissant", description: "Crisp buttery croissant layered with home made strawberry crush, whipped mascarpone cream and fresh sliced strawberries. Contains egg.", price: "₹430", note: "Food" },
+    ],
+  },
+  {
     id: 'classics',
     label: "Espresso & Manual Brew",
     items: [
@@ -385,7 +409,7 @@ function MenuItem({
 }
 
 export function MenuFullMenu() {
-  const [activeCategory, setActiveCategory] = useState('classics');
+  const [activeCategory, setActiveCategory] = useState('strawberry');
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [previewName, setPreviewName] = useState('');
   const containerRef = useRef<HTMLElement>(null);

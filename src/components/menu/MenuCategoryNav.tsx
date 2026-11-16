@@ -1,6 +1,7 @@
 'use client';
 
 export const CATEGORIES = [
+  { id: 'strawberry', label: "Strawberry Edit" },
   { id: 'classics', label: "Espresso & Brew" },
   { id: 'cold', label: "Cold Brews" },
   { id: 'lattes', label: "Lattes" },
