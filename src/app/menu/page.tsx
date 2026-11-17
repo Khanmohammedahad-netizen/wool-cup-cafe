@@ -9,6 +9,7 @@ import { Footer } from '@/components/footer/Footer'
 export const metadata: Metadata = {
   title: 'Menu | Wool Cup Urban Café & Bistro',
   description: 'Specialty coffee, artisanal desserts, and handcrafted dishes at Wool Cup. View our full menu.',
+  alternates: { canonical: '/menu' },
 }
 
 export default function MenuPage() {

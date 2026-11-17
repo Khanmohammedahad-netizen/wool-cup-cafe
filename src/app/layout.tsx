@@ -30,14 +30,17 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://woolcup.com"),
-  title: "Wool Cup: Coffee, Quieted.",
+  metadataBase: new URL("https://www.woolcup.com"),
+  title: "Wool Cup: Specialty Coffee & Brunch Café in Film Nagar, Hyderabad",
+  alternates: { canonical: "/" },
   description:
     "Single-estate specialty coffee, hand-pulled espresso, and quiet mornings. Film Nagar, Hyderabad.",
   keywords:
     "wool cup, specialty coffee, hyderabad, film nagar, single-estate arabica, espresso, cafe",
   openGraph: {
-    title: "Wool Cup: Coffee, Quieted.",
+    title: "Wool Cup: Specialty Coffee & Brunch Café in Film Nagar, Hyderabad",
+    url: "https://www.woolcup.com",
+    siteName: "Wool Cup Urban Café & Bistro",
     description:
       "Single-estate specialty coffee, hand-pulled espresso, and quiet mornings.",
     type: "website",
@@ -74,9 +77,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "CafeOrCoffeeShop",
               name: "Wool Cup Urban Café & Bistro",
-              url: "https://woolcup.com",
-              logo: "https://woolcup.com/images/logo-brand.png",
-              image: "https://woolcup.com/images/logo-brand.png",
+              url: "https://www.woolcup.com",
+              hasMenu: "https://www.woolcup.com/menu",
+              logo: "https://www.woolcup.com/images/logo-brand.png",
+              image: "https://www.woolcup.com/images/logo-brand.png",
               description: "A sanctuary of craft, comfort, and connection. Specialty coffee and handcrafted food in Hyderabad.",
               address: {
                 "@type": "PostalAddress",
