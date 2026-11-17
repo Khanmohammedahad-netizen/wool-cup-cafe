@@ -8,8 +8,8 @@ import { Locations } from '@/components/locations/Locations';
 import { Footer } from '@/components/footer/Footer';
 
 export const metadata: Metadata = {
-  title: 'Wool Cup Urban Café & Bistro | Hyderabad',
-  description: 'A slow café for honest coffee, handcrafted food, and quiet mornings. Located in Hyderabad.',
+  title: 'Wool Cup | Specialty Coffee & Brunch Café in Film Nagar, Hyderabad',
+  description: 'A slow café in Film Nagar, Jubilee Hills for specialty coffee, brunch, desserts and custom cakes. Open daily from 8am in Hyderabad.',
   openGraph: {
     title: 'Wool Cup Urban Café & Bistro',
     description: 'Honest coffee. Handcrafted food. Hyderabad.',
