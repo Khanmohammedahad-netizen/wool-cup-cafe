@@ -168,6 +168,13 @@ export function Navbar() {
               >
                 +91 72929 44244
               </a>
+              <span className="text-white/20">·</span>
+              <a
+                href="tel:+919929292194"
+                className="font-ui text-xs uppercase tracking-[0.15em] text-white/40 hover:text-white/80 transition-colors"
+              >
+                +91 99292 92194
+              </a>
             </motion.div>
           </motion.div>
         )}
