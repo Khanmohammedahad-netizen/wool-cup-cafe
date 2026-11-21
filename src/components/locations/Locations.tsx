@@ -25,7 +25,7 @@ const LOCATIONS = [
     name: 'Financial District',
     address: 'Ground Floor Survey 88AA, My Space Properties, ADP Blvd, Financial District, Hyderabad, Makthakousarali, Telangana 500032',
     hours: 'Mon–Sun: 8am–11pm · Breakfast: 8–11am',
-    phone: '+91 72929 44244',
+    phone: '+91 76610 44244',
     ctaLabel: 'Get Directions →',
     ctaHref: 'https://www.google.com/maps/search/Ground+Floor+Survey+88AA+My+Space+Properties+ADP+Blvd+Financial+District+Hyderabad+Telangana+500032',
     mapSrc: 'https://maps.google.com/maps?q=ADP+Blvd+Financial+District+Hyderabad+Telangana+500032&output=embed',
